@@ -1,11 +1,11 @@
 {
   "config": {
-    "configFile": "D:\\src\\playwright-typescript-login\\playwright.config.ts",
-    "rootDir": "D:/src/playwright-typescript-login/tests",
+    "configFile": "D:\\src\\overengineered-playwright-login\\playwright.config.ts",
+    "rootDir": "D:/src/overengineered-playwright-login/tests",
     "forbidOnly": true,
     "fullyParallel": true,
-    "globalSetup": "D:\\src\\playwright-typescript-login\\src\\utils\\global-setup.ts",
-    "globalTeardown": "D:\\src\\playwright-typescript-login\\src\\utils\\global-teardown.ts",
+    "globalSetup": "D:\\src\\overengineered-playwright-login\\src\\utils\\global-setup.ts",
+    "globalTeardown": "D:\\src\\overengineered-playwright-login\\src\\utils\\global-teardown.ts",
     "globalTimeout": 0,
     "grep": {},
     "grepInvert": null,
@@ -21,7 +21,7 @@
     "preserveOutput": "always",
     "projects": [
       {
-        "outputDir": "D:/src/playwright-typescript-login/test-results",
+        "outputDir": "D:/src/overengineered-playwright-login/test-results",
         "repeatEach": 1,
         "retries": 2,
         "metadata": {
@@ -34,7 +34,7 @@
         },
         "id": "chromium",
         "name": "chromium",
-        "testDir": "D:/src/playwright-typescript-login/tests",
+        "testDir": "D:/src/overengineered-playwright-login/tests",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -42,7 +42,7 @@
         "timeout": 60000
       },
       {
-        "outputDir": "D:/src/playwright-typescript-login/test-results",
+        "outputDir": "D:/src/overengineered-playwright-login/test-results",
         "repeatEach": 1,
         "retries": 2,
         "metadata": {
@@ -55,7 +55,7 @@
         },
         "id": "firefox",
         "name": "firefox",
-        "testDir": "D:/src/playwright-typescript-login/tests",
+        "testDir": "D:/src/overengineered-playwright-login/tests",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -63,7 +63,7 @@
         "timeout": 60000
       },
       {
-        "outputDir": "D:/src/playwright-typescript-login/test-results",
+        "outputDir": "D:/src/overengineered-playwright-login/test-results",
         "repeatEach": 1,
         "retries": 2,
         "metadata": {
@@ -76,7 +76,7 @@
         },
         "id": "webkit",
         "name": "webkit",
-        "testDir": "D:/src/playwright-typescript-login/tests",
+        "testDir": "D:/src/overengineered-playwright-login/tests",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -84,7 +84,7 @@
         "timeout": 60000
       },
       {
-        "outputDir": "D:/src/playwright-typescript-login/test-results",
+        "outputDir": "D:/src/overengineered-playwright-login/test-results",
         "repeatEach": 1,
         "retries": 2,
         "metadata": {
@@ -97,7 +97,7 @@
         },
         "id": "Mobile Chrome",
         "name": "Mobile Chrome",
-        "testDir": "D:/src/playwright-typescript-login/tests",
+        "testDir": "D:/src/overengineered-playwright-login/tests",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -105,7 +105,7 @@
         "timeout": 60000
       },
       {
-        "outputDir": "D:/src/playwright-typescript-login/test-results",
+        "outputDir": "D:/src/overengineered-playwright-login/test-results",
         "repeatEach": 1,
         "retries": 2,
         "metadata": {
@@ -118,7 +118,7 @@
         },
         "id": "Mobile Safari",
         "name": "Mobile Safari",
-        "testDir": "D:/src/playwright-typescript-login/tests",
+        "testDir": "D:/src/overengineered-playwright-login/tests",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -126,7 +126,7 @@
         "timeout": 60000
       },
       {
-        "outputDir": "D:/src/playwright-typescript-login/test-results",
+        "outputDir": "D:/src/overengineered-playwright-login/test-results",
         "repeatEach": 1,
         "retries": 2,
         "metadata": {
@@ -139,7 +139,7 @@
         },
         "id": "Microsoft Edge",
         "name": "Microsoft Edge",
-        "testDir": "D:/src/playwright-typescript-login/tests",
+        "testDir": "D:/src/overengineered-playwright-login/tests",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -147,7 +147,7 @@
         "timeout": 60000
       },
       {
-        "outputDir": "D:/src/playwright-typescript-login/test-results",
+        "outputDir": "D:/src/overengineered-playwright-login/test-results",
         "repeatEach": 1,
         "retries": 2,
         "metadata": {
@@ -160,7 +160,7 @@
         },
         "id": "Google Chrome Beta",
         "name": "Google Chrome Beta",
-        "testDir": "D:/src/playwright-typescript-login/tests",
+        "testDir": "D:/src/overengineered-playwright-login/tests",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -168,7 +168,7 @@
         "timeout": 60000
       },
       {
-        "outputDir": "D:/src/playwright-typescript-login/test-results",
+        "outputDir": "D:/src/overengineered-playwright-login/test-results",
         "repeatEach": 1,
         "retries": 2,
         "metadata": {
@@ -181,7 +181,7 @@
         },
         "id": "setup",
         "name": "setup",
-        "testDir": "D:/src/playwright-typescript-login/tests",
+        "testDir": "D:/src/overengineered-playwright-login/tests",
         "testIgnore": [],
         "testMatch": [
           "/.*\\.setup\\.ts/"
@@ -189,7 +189,7 @@
         "timeout": 60000
       },
       {
-        "outputDir": "D:/src/playwright-typescript-login/test-results",
+        "outputDir": "D:/src/overengineered-playwright-login/test-results",
         "repeatEach": 1,
         "retries": 2,
         "metadata": {
@@ -202,7 +202,7 @@
         },
         "id": "cleanup",
         "name": "cleanup",
-        "testDir": "D:/src/playwright-typescript-login/tests",
+        "testDir": "D:/src/overengineered-playwright-login/tests",
         "testIgnore": [],
         "testMatch": [
           "/.*\\.cleanup\\.ts/"
@@ -210,7 +210,7 @@
         "timeout": 60000
       },
       {
-        "outputDir": "D:/src/playwright-typescript-login/test-results",
+        "outputDir": "D:/src/overengineered-playwright-login/test-results",
         "repeatEach": 1,
         "retries": 2,
         "metadata": {
@@ -223,7 +223,7 @@
         },
         "id": "api",
         "name": "api",
-        "testDir": "D:/src/playwright-typescript-login/tests",
+        "testDir": "D:/src/overengineered-playwright-login/tests",
         "testIgnore": [],
         "testMatch": [
           "/.*\\.api\\.spec\\.ts/"
@@ -252,7 +252,7 @@
         }
       ],
       [
-        "D:\\src\\playwright-typescript-login\\node_modules\\allure-playwright\\dist\\cjs\\index.js",
+        "D:\\src\\overengineered-playwright-login\\node_modules\\allure-playwright\\dist\\cjs\\index.js",
         {
           "outputFolder": "allure-results",
           "suiteTitle": "Playwright Test Automation Framework",
@@ -314,7 +314,7 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 1988,
+                          "duration": 1451,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
@@ -322,18 +322,18 @@
                           "steps": [
                             {
                               "title": "Enter valid credentials",
-                              "duration": 29
+                              "duration": 31
                             },
                             {
                               "title": "Submit login form",
-                              "duration": 159
+                              "duration": 128
                             },
                             {
                               "title": "Validate successful login",
-                              "duration": 24
+                              "duration": 25
                             }
                           ],
-                          "startTime": "2026-03-03T12:22:53.654Z",
+                          "startTime": "2026-03-03T20:00:15.261Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -345,750 +345,8 @@
                   "file": "specs/login.spec.ts",
                   "line": 16,
                   "column": 9
-                },
-                {
-                  "title": "should successfully login with valid credentials @smoke",
-                  "ok": true,
-                  "tags": [
-                    "smoke"
-                  ],
-                  "tests": [
-                    {
-                      "timeout": 60000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "firefox",
-                      "projectName": "firefox",
-                      "results": [
-                        {
-                          "workerIndex": 1,
-                          "parallelIndex": 0,
-                          "status": "passed",
-                          "duration": 1846,
-                          "errors": [],
-                          "stdout": [],
-                          "stderr": [],
-                          "retry": 0,
-                          "steps": [
-                            {
-                              "title": "Enter valid credentials",
-                              "duration": 41
-                            },
-                            {
-                              "title": "Submit login form",
-                              "duration": 145
-                            },
-                            {
-                              "title": "Validate successful login",
-                              "duration": 64
-                            }
-                          ],
-                          "startTime": "2026-03-03T12:22:57.997Z",
-                          "annotations": [],
-                          "attachments": []
-                        }
-                      ],
-                      "status": "expected"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-09f6444019a2cde8ae88",
-                  "file": "specs/login.spec.ts",
-                  "line": 16,
-                  "column": 9
-                },
-                {
-                  "title": "should successfully login with valid credentials @smoke",
-                  "ok": true,
-                  "tags": [
-                    "smoke"
-                  ],
-                  "tests": [
-                    {
-                      "timeout": 60000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "webkit",
-                      "projectName": "webkit",
-                      "results": [
-                        {
-                          "workerIndex": 2,
-                          "parallelIndex": 0,
-                          "status": "passed",
-                          "duration": 1679,
-                          "errors": [],
-                          "stdout": [],
-                          "stderr": [],
-                          "retry": 0,
-                          "steps": [
-                            {
-                              "title": "Enter valid credentials",
-                              "duration": 59
-                            },
-                            {
-                              "title": "Submit login form",
-                              "duration": 275
-                            },
-                            {
-                              "title": "Validate successful login",
-                              "duration": 21
-                            }
-                          ],
-                          "startTime": "2026-03-03T12:23:02.601Z",
-                          "annotations": [],
-                          "attachments": []
-                        }
-                      ],
-                      "status": "expected"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-a4284e1d894fe84ebcbe",
-                  "file": "specs/login.spec.ts",
-                  "line": 16,
-                  "column": 9
-                },
-                {
-                  "title": "should successfully login with valid credentials @smoke",
-                  "ok": true,
-                  "tags": [
-                    "smoke"
-                  ],
-                  "tests": [
-                    {
-                      "timeout": 60000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Chrome",
-                      "projectName": "Mobile Chrome",
-                      "results": [
-                        {
-                          "workerIndex": 3,
-                          "parallelIndex": 0,
-                          "status": "passed",
-                          "duration": 1886,
-                          "errors": [],
-                          "stdout": [],
-                          "stderr": [],
-                          "retry": 0,
-                          "steps": [
-                            {
-                              "title": "Enter valid credentials",
-                              "duration": 29
-                            },
-                            {
-                              "title": "Submit login form",
-                              "duration": 641
-                            },
-                            {
-                              "title": "Validate successful login",
-                              "duration": 21
-                            }
-                          ],
-                          "startTime": "2026-03-03T12:23:06.319Z",
-                          "annotations": [],
-                          "attachments": []
-                        }
-                      ],
-                      "status": "expected"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-35677d222a16832b78c4",
-                  "file": "specs/login.spec.ts",
-                  "line": 16,
-                  "column": 9
-                },
-                {
-                  "title": "should successfully login with valid credentials @smoke",
-                  "ok": true,
-                  "tags": [
-                    "smoke"
-                  ],
-                  "tests": [
-                    {
-                      "timeout": 60000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Safari",
-                      "projectName": "Mobile Safari",
-                      "results": [
-                        {
-                          "workerIndex": 4,
-                          "parallelIndex": 0,
-                          "status": "passed",
-                          "duration": 1621,
-                          "errors": [],
-                          "stdout": [],
-                          "stderr": [],
-                          "retry": 0,
-                          "steps": [
-                            {
-                              "title": "Enter valid credentials",
-                              "duration": 53
-                            },
-                            {
-                              "title": "Submit login form",
-                              "duration": 120
-                            },
-                            {
-                              "title": "Validate successful login",
-                              "duration": 133
-                            }
-                          ],
-                          "startTime": "2026-03-03T12:23:10.174Z",
-                          "annotations": [],
-                          "attachments": []
-                        }
-                      ],
-                      "status": "expected"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-a87c21a0a32998a74dcb",
-                  "file": "specs/login.spec.ts",
-                  "line": 16,
-                  "column": 9
-                },
-                {
-                  "title": "should successfully login with valid credentials @smoke",
-                  "ok": true,
-                  "tags": [
-                    "smoke"
-                  ],
-                  "tests": [
-                    {
-                      "timeout": 60000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Microsoft Edge",
-                      "projectName": "Microsoft Edge",
-                      "results": [
-                        {
-                          "workerIndex": 5,
-                          "parallelIndex": 0,
-                          "status": "passed",
-                          "duration": 1475,
-                          "errors": [],
-                          "stdout": [],
-                          "stderr": [],
-                          "retry": 0,
-                          "steps": [
-                            {
-                              "title": "Enter valid credentials",
-                              "duration": 43
-                            },
-                            {
-                              "title": "Submit login form",
-                              "duration": 130
-                            },
-                            {
-                              "title": "Validate successful login",
-                              "duration": 25
-                            }
-                          ],
-                          "startTime": "2026-03-03T12:23:13.743Z",
-                          "annotations": [],
-                          "attachments": []
-                        }
-                      ],
-                      "status": "expected"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-be1d8ea8544de8d07d9c",
-                  "file": "specs/login.spec.ts",
-                  "line": 16,
-                  "column": 9
-                },
-                {
-                  "title": "should successfully login with valid credentials @smoke",
-                  "ok": false,
-                  "tags": [
-                    "smoke"
-                  ],
-                  "tests": [
-                    {
-                      "timeout": 60000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Google Chrome Beta",
-                      "projectName": "Google Chrome Beta",
-                      "results": [
-                        {
-                          "workerIndex": 6,
-                          "parallelIndex": 0,
-                          "status": "failed",
-                          "duration": 0,
-                          "error": {
-                            "message": "Error: browserType.launch: Chromium distribution 'chrome-beta' is not found at C:\\Users\\tjmah\\AppData\\Local\\Google\\Chrome Beta\\Application\\chrome.exe\nRun \"npx playwright install chrome-beta\"",
-                            "stack": "Error: browserType.launch: Chromium distribution 'chrome-beta' is not found at C:\\Users\\tjmah\\AppData\\Local\\Google\\Chrome Beta\\Application\\chrome.exe\nRun \"npx playwright install chrome-beta\""
-                          },
-                          "errors": [
-                            {
-                              "message": "Error: browserType.launch: Chromium distribution 'chrome-beta' is not found at C:\\Users\\tjmah\\AppData\\Local\\Google\\Chrome Beta\\Application\\chrome.exe\nRun \"npx playwright install chrome-beta\""
-                            }
-                          ],
-                          "stdout": [],
-                          "stderr": [],
-                          "retry": 0,
-                          "startTime": "2026-03-03T12:23:26.620Z",
-                          "annotations": [],
-                          "attachments": []
-                        },
-                        {
-                          "workerIndex": 7,
-                          "parallelIndex": 0,
-                          "status": "failed",
-                          "duration": 0,
-                          "error": {
-                            "message": "Error: browserType.launch: Chromium distribution 'chrome-beta' is not found at C:\\Users\\tjmah\\AppData\\Local\\Google\\Chrome Beta\\Application\\chrome.exe\nRun \"npx playwright install chrome-beta\"",
-                            "stack": "Error: browserType.launch: Chromium distribution 'chrome-beta' is not found at C:\\Users\\tjmah\\AppData\\Local\\Google\\Chrome Beta\\Application\\chrome.exe\nRun \"npx playwright install chrome-beta\""
-                          },
-                          "errors": [
-                            {
-                              "message": "Error: browserType.launch: Chromium distribution 'chrome-beta' is not found at C:\\Users\\tjmah\\AppData\\Local\\Google\\Chrome Beta\\Application\\chrome.exe\nRun \"npx playwright install chrome-beta\""
-                            }
-                          ],
-                          "stdout": [],
-                          "stderr": [],
-                          "retry": 1,
-                          "startTime": "2026-03-03T12:23:27.304Z",
-                          "annotations": [],
-                          "attachments": [
-                            {
-                              "name": "trace",
-                              "contentType": "application/zip",
-                              "path": "D:\\src\\playwright-typescript-login\\test-results\\specs-login-Login-Function-09e80-ith-valid-credentials-smoke-Google-Chrome-Beta-retry1\\trace.zip"
-                            }
-                          ]
-                        },
-                        {
-                          "workerIndex": 8,
-                          "parallelIndex": 0,
-                          "status": "failed",
-                          "duration": 0,
-                          "error": {
-                            "message": "Error: browserType.launch: Chromium distribution 'chrome-beta' is not found at C:\\Users\\tjmah\\AppData\\Local\\Google\\Chrome Beta\\Application\\chrome.exe\nRun \"npx playwright install chrome-beta\"",
-                            "stack": "Error: browserType.launch: Chromium distribution 'chrome-beta' is not found at C:\\Users\\tjmah\\AppData\\Local\\Google\\Chrome Beta\\Application\\chrome.exe\nRun \"npx playwright install chrome-beta\""
-                          },
-                          "errors": [
-                            {
-                              "message": "Error: browserType.launch: Chromium distribution 'chrome-beta' is not found at C:\\Users\\tjmah\\AppData\\Local\\Google\\Chrome Beta\\Application\\chrome.exe\nRun \"npx playwright install chrome-beta\""
-                            }
-                          ],
-                          "stdout": [],
-                          "stderr": [],
-                          "retry": 2,
-                          "startTime": "2026-03-03T12:23:27.979Z",
-                          "annotations": [],
-                          "attachments": []
-                        }
-                      ],
-                      "status": "unexpected"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-56459b9acfeaaedcaa86",
-                  "file": "specs/login.spec.ts",
-                  "line": 16,
-                  "column": 9
                 }
               ]
-            }
-          ]
-        },
-        {
-          "title": "Login Page Structure and Content",
-          "file": "specs/login.spec.ts",
-          "line": 318,
-          "column": 6,
-          "specs": [
-            {
-              "title": "should display correct page elements and text @smoke",
-              "ok": true,
-              "tags": [
-                "smoke"
-              ],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 1435,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "steps": [
-                        {
-                          "title": "Validate page structure",
-                          "duration": 35
-                        },
-                        {
-                          "title": "Validate page content",
-                          "duration": 9
-                        },
-                        {
-                          "title": "Validate form labels",
-                          "duration": 10
-                        }
-                      ],
-                      "startTime": "2026-03-03T12:22:55.774Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "e7da2f3a65ad9cd8e037-5ad9c7cccfc386292603",
-              "file": "specs/login.spec.ts",
-              "line": 319,
-              "column": 7
-            },
-            {
-              "title": "should display correct page elements and text @smoke",
-              "ok": true,
-              "tags": [
-                "smoke"
-              ],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "firefox",
-                  "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 1259,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "steps": [
-                        {
-                          "title": "Validate page structure",
-                          "duration": 43
-                        },
-                        {
-                          "title": "Validate page content",
-                          "duration": 14
-                        },
-                        {
-                          "title": "Validate form labels",
-                          "duration": 11
-                        }
-                      ],
-                      "startTime": "2026-03-03T12:23:00.133Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "e7da2f3a65ad9cd8e037-92d4de53e937fa183517",
-              "file": "specs/login.spec.ts",
-              "line": 319,
-              "column": 7
-            },
-            {
-              "title": "should display correct page elements and text @smoke",
-              "ok": true,
-              "tags": [
-                "smoke"
-              ],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "webkit",
-                  "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 2,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 1332,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "steps": [
-                        {
-                          "title": "Validate page structure",
-                          "duration": 43
-                        },
-                        {
-                          "title": "Validate page content",
-                          "duration": 8
-                        },
-                        {
-                          "title": "Validate form labels",
-                          "duration": 8
-                        }
-                      ],
-                      "startTime": "2026-03-03T12:23:04.318Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "e7da2f3a65ad9cd8e037-d5b0cab8654f368ff4c8",
-              "file": "specs/login.spec.ts",
-              "line": 319,
-              "column": 7
-            },
-            {
-              "title": "should display correct page elements and text @smoke",
-              "ok": true,
-              "tags": [
-                "smoke"
-              ],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "Mobile Chrome",
-                  "projectName": "Mobile Chrome",
-                  "results": [
-                    {
-                      "workerIndex": 3,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 1192,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "steps": [
-                        {
-                          "title": "Validate page structure",
-                          "duration": 26
-                        },
-                        {
-                          "title": "Validate page content",
-                          "duration": 7
-                        },
-                        {
-                          "title": "Validate form labels",
-                          "duration": 5
-                        }
-                      ],
-                      "startTime": "2026-03-03T12:23:08.265Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "e7da2f3a65ad9cd8e037-6c4098f5bd189f6a1161",
-              "file": "specs/login.spec.ts",
-              "line": 319,
-              "column": 7
-            },
-            {
-              "title": "should display correct page elements and text @smoke",
-              "ok": true,
-              "tags": [
-                "smoke"
-              ],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "Mobile Safari",
-                  "projectName": "Mobile Safari",
-                  "results": [
-                    {
-                      "workerIndex": 4,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 1249,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "steps": [
-                        {
-                          "title": "Validate page structure",
-                          "duration": 36
-                        },
-                        {
-                          "title": "Validate page content",
-                          "duration": 9
-                        },
-                        {
-                          "title": "Validate form labels",
-                          "duration": 9
-                        }
-                      ],
-                      "startTime": "2026-03-03T12:23:11.833Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "e7da2f3a65ad9cd8e037-1abd3d3fea8efbc86e91",
-              "file": "specs/login.spec.ts",
-              "line": 319,
-              "column": 7
-            },
-            {
-              "title": "should display correct page elements and text @smoke",
-              "ok": true,
-              "tags": [
-                "smoke"
-              ],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "Microsoft Edge",
-                  "projectName": "Microsoft Edge",
-                  "results": [
-                    {
-                      "workerIndex": 5,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 1269,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "steps": [
-                        {
-                          "title": "Validate page structure",
-                          "duration": 25
-                        },
-                        {
-                          "title": "Validate page content",
-                          "duration": 6
-                        },
-                        {
-                          "title": "Validate form labels",
-                          "duration": 6
-                        }
-                      ],
-                      "startTime": "2026-03-03T12:23:15.359Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "e7da2f3a65ad9cd8e037-2aa10413422931d7e9e1",
-              "file": "specs/login.spec.ts",
-              "line": 319,
-              "column": 7
-            },
-            {
-              "title": "should display correct page elements and text @smoke",
-              "ok": false,
-              "tags": [
-                "smoke"
-              ],
-              "tests": [
-                {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "Google Chrome Beta",
-                  "projectName": "Google Chrome Beta",
-                  "results": [
-                    {
-                      "workerIndex": 9,
-                      "parallelIndex": 0,
-                      "status": "failed",
-                      "duration": 0,
-                      "error": {
-                        "message": "Error: browserType.launch: Chromium distribution 'chrome-beta' is not found at C:\\Users\\tjmah\\AppData\\Local\\Google\\Chrome Beta\\Application\\chrome.exe\nRun \"npx playwright install chrome-beta\"",
-                        "stack": "Error: browserType.launch: Chromium distribution 'chrome-beta' is not found at C:\\Users\\tjmah\\AppData\\Local\\Google\\Chrome Beta\\Application\\chrome.exe\nRun \"npx playwright install chrome-beta\""
-                      },
-                      "errors": [
-                        {
-                          "message": "Error: browserType.launch: Chromium distribution 'chrome-beta' is not found at C:\\Users\\tjmah\\AppData\\Local\\Google\\Chrome Beta\\Application\\chrome.exe\nRun \"npx playwright install chrome-beta\""
-                        }
-                      ],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-03-03T12:23:28.644Z",
-                      "annotations": [],
-                      "attachments": []
-                    },
-                    {
-                      "workerIndex": 10,
-                      "parallelIndex": 0,
-                      "status": "failed",
-                      "duration": 0,
-                      "error": {
-                        "message": "Error: browserType.launch: Chromium distribution 'chrome-beta' is not found at C:\\Users\\tjmah\\AppData\\Local\\Google\\Chrome Beta\\Application\\chrome.exe\nRun \"npx playwright install chrome-beta\"",
-                        "stack": "Error: browserType.launch: Chromium distribution 'chrome-beta' is not found at C:\\Users\\tjmah\\AppData\\Local\\Google\\Chrome Beta\\Application\\chrome.exe\nRun \"npx playwright install chrome-beta\""
-                      },
-                      "errors": [
-                        {
-                          "message": "Error: browserType.launch: Chromium distribution 'chrome-beta' is not found at C:\\Users\\tjmah\\AppData\\Local\\Google\\Chrome Beta\\Application\\chrome.exe\nRun \"npx playwright install chrome-beta\""
-                        }
-                      ],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 1,
-                      "startTime": "2026-03-03T12:23:29.311Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "D:\\src\\playwright-typescript-login\\test-results\\specs-login-Login-Page-Str-47516-age-elements-and-text-smoke-Google-Chrome-Beta-retry1\\trace.zip"
-                        }
-                      ]
-                    },
-                    {
-                      "workerIndex": 11,
-                      "parallelIndex": 0,
-                      "status": "failed",
-                      "duration": 0,
-                      "error": {
-                        "message": "Error: browserType.launch: Chromium distribution 'chrome-beta' is not found at C:\\Users\\tjmah\\AppData\\Local\\Google\\Chrome Beta\\Application\\chrome.exe\nRun \"npx playwright install chrome-beta\"",
-                        "stack": "Error: browserType.launch: Chromium distribution 'chrome-beta' is not found at C:\\Users\\tjmah\\AppData\\Local\\Google\\Chrome Beta\\Application\\chrome.exe\nRun \"npx playwright install chrome-beta\""
-                      },
-                      "errors": [
-                        {
-                          "message": "Error: browserType.launch: Chromium distribution 'chrome-beta' is not found at C:\\Users\\tjmah\\AppData\\Local\\Google\\Chrome Beta\\Application\\chrome.exe\nRun \"npx playwright install chrome-beta\""
-                        }
-                      ],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 2,
-                      "startTime": "2026-03-03T12:23:29.972Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "unexpected"
-                }
-              ],
-              "id": "e7da2f3a65ad9cd8e037-6e6912089cde5c6ff1bb",
-              "file": "specs/login.spec.ts",
-              "line": 319,
-              "column": 7
             }
           ]
         }
@@ -1097,11 +355,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-03-03T12:22:51.285Z",
-    "duration": 38758.636,
-    "expected": 12,
+    "startTime": "2026-03-03T20:00:12.873Z",
+    "duration": 4077.2940000000003,
+    "expected": 1,
     "skipped": 0,
-    "unexpected": 2,
+    "unexpected": 0,
     "flaky": 0
   }
 }

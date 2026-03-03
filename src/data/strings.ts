@@ -6,7 +6,7 @@
 import * as stringsData from './strings.json';
 
 export type StringCategory = keyof typeof stringsData;
-export type StringKey<T extends StringCategory> = keyof typeof stringsData[T];
+export type StringKey<T extends StringCategory> = keyof (typeof stringsData)[T];
 
 /**
  * String manager for accessing localized strings
@@ -32,16 +32,13 @@ export class StringManager {
   /**
    * Get a string by category and key
    */
-  getString<T extends StringCategory>(
-    category: T,
-    key: StringKey<T>
-  ): string {
+  getString<T extends StringCategory>(category: T, key: StringKey<T>): string {
     const categoryStrings = this.strings[category];
     if (!categoryStrings) {
       throw new Error(`String category '${category}' not found`);
     }
 
-    const value = categoryStrings[key as keyof typeof categoryStrings];
+    const value = categoryStrings[key];
     if (typeof value !== 'string') {
       throw new Error(`String key '${String(key)}' not found in category '${category}'`);
     }
@@ -52,7 +49,7 @@ export class StringManager {
   /**
    * Get all strings for a category
    */
-  getCategory<T extends StringCategory>(category: T): typeof stringsData[T] {
+  getCategory<T extends StringCategory>(category: T): (typeof stringsData)[T] {
     const categoryStrings = this.strings[category];
     if (!categoryStrings) {
       throw new Error(`String category '${category}' not found`);
@@ -63,10 +60,7 @@ export class StringManager {
   /**
    * Check if a string exists
    */
-  hasString<T extends StringCategory>(
-    category: T,
-    key: StringKey<T>
-  ): boolean {
+  hasString<T extends StringCategory>(category: T, key: StringKey<T>): boolean {
     try {
       this.getString(category, key);
       return true;
@@ -84,7 +78,7 @@ export class StringManager {
     replacements: Record<string, string> = {}
   ): string {
     let text = this.getString(category, key);
-    
+
     Object.entries(replacements).forEach(([placeholder, value]) => {
       text = text.replace(new RegExp(`{${placeholder}}`, 'g'), value);
     });

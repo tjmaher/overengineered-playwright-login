@@ -10,10 +10,10 @@ import { SecureAreaPage } from '../../src/pages/secure-area-page';
 
 test.describe('Secure Area Functionality', () => {
   test.describe('Logout Tests', () => {
-    test('should successfully logout and show confirmation message @smoke', async ({ 
-      authenticatedPage, 
-      secureAreaPage, 
-      testStrings 
+    test('should successfully logout and show confirmation message @smoke', async ({
+      authenticatedPage,
+      secureAreaPage,
+      testStrings,
     }) => {
       await test.step('Validate user is on secure area', async () => {
         expect(await secureAreaPage.isAuthenticated()).toBe(true);
@@ -36,9 +36,9 @@ test.describe('Secure Area Functionality', () => {
       });
     });
 
-    test('should logout using keyboard navigation', async ({ 
-      authenticatedPage, 
-      secureAreaPage 
+    test('should logout using keyboard navigation', async ({
+      authenticatedPage,
+      secureAreaPage,
     }) => {
       await test.step('Navigate to logout button via keyboard', async () => {
         await secureAreaPage.testKeyboardNavigation();
@@ -55,9 +55,9 @@ test.describe('Secure Area Functionality', () => {
       });
     });
 
-    test('should handle multiple logout attempts gracefully', async ({ 
-      authenticatedPage, 
-      secureAreaPage 
+    test('should handle multiple logout attempts gracefully', async ({
+      authenticatedPage,
+      secureAreaPage,
     }) => {
       await test.step('Logout first time', async () => {
         await secureAreaPage.logoutAndValidate();
@@ -66,7 +66,7 @@ test.describe('Secure Area Functionality', () => {
       await test.step('Try to logout again (should redirect or handle gracefully)', async () => {
         // Navigate to logout URL directly
         await authenticatedPage.goto('/logout');
-        
+
         // Should redirect to login page
         expect(await secureAreaPage.getCurrentUrl()).toContain('/login');
       });
@@ -74,9 +74,9 @@ test.describe('Secure Area Functionality', () => {
   });
 
   test.describe('Secure Area Access Control', () => {
-    test('should prevent unauthenticated access to secure area', async ({ 
-      page, 
-      secureAreaPage 
+    test('should prevent unauthenticated access to secure area', async ({
+      page,
+      secureAreaPage,
     }) => {
       await test.step('Try to access secure area without authentication', async () => {
         await page.goto('/secure');
@@ -91,9 +91,9 @@ test.describe('Secure Area Functionality', () => {
       });
     });
 
-    test('should maintain authentication state across page refreshes', async ({ 
-      authenticatedPage, 
-      secureAreaPage 
+    test('should maintain authentication state across page refreshes', async ({
+      authenticatedPage,
+      secureAreaPage,
     }) => {
       await test.step('Refresh page while authenticated', async () => {
         await secureAreaPage.testPageRefresh();
@@ -105,10 +105,10 @@ test.describe('Secure Area Functionality', () => {
       });
     });
 
-    test('should handle browser navigation (back/forward)', async ({ 
-      authenticatedPage, 
+    test('should handle browser navigation (back/forward)', async ({
+      authenticatedPage,
       secureAreaPage,
-      loginPage
+      loginPage,
     }) => {
       await test.step('Navigate to login page first', async () => {
         await loginPage.goto();
@@ -130,10 +130,10 @@ test.describe('Secure Area Functionality', () => {
   });
 
   test.describe('Secure Area Content and Structure', () => {
-    test('should display correct page elements and content @smoke', async ({ 
-      authenticatedPage, 
-      secureAreaPage, 
-      testStrings 
+    test('should display correct page elements and content @smoke', async ({
+      authenticatedPage,
+      secureAreaPage,
+      testStrings,
     }) => {
       await test.step('Validate page structure', async () => {
         await secureAreaPage.validatePageStructure();
@@ -142,7 +142,7 @@ test.describe('Secure Area Functionality', () => {
       await test.step('Validate page content', async () => {
         const heading = await secureAreaPage.getPageHeading();
         expect(heading).toBe(testStrings.secureArea.headingText);
-        
+
         const welcome = await secureAreaPage.getWelcomeMessage();
         expect(welcome).toBe(testStrings.secureArea.welcomeMessage);
       });
@@ -150,15 +150,15 @@ test.describe('Secure Area Functionality', () => {
       await test.step('Validate logout button', async () => {
         expect(await secureAreaPage.isLogoutButtonVisible()).toBe(true);
         expect(await secureAreaPage.isLogoutButtonEnabled()).toBe(true);
-        
+
         const logoutText = await secureAreaPage.getLogoutButtonText();
         expect(logoutText.toLowerCase()).toContain('logout');
       });
     });
 
-    test('should have proper accessibility attributes', async ({ 
-      authenticatedPage, 
-      secureAreaPage 
+    test('should have proper accessibility attributes', async ({
+      authenticatedPage,
+      secureAreaPage,
     }) => {
       await test.step('Validate accessibility features', async () => {
         await secureAreaPage.validateAccessibility();
@@ -171,13 +171,10 @@ test.describe('Secure Area Functionality', () => {
   });
 
   test.describe('Session Management Tests', () => {
-    test('should maintain session indicators', async ({ 
-      authenticatedPage, 
-      secureAreaPage 
-    }) => {
+    test('should maintain session indicators', async ({ authenticatedPage, secureAreaPage }) => {
       await test.step('Validate all session indicators', async () => {
         const indicators = await secureAreaPage.getSecurityIndicators();
-        
+
         expect(indicators.hasLogoutButton).toBe(true);
         expect(indicators.isOnSecureUrl).toBe(true);
         expect(indicators.hasWelcomeMessage).toBe(true);
@@ -185,10 +182,7 @@ test.describe('Secure Area Functionality', () => {
       });
     });
 
-    test('should handle user idle behavior', async ({ 
-      authenticatedPage, 
-      secureAreaPage 
-    }) => {
+    test('should handle user idle behavior', async ({ authenticatedPage, secureAreaPage }) => {
       await test.step('Simulate user idle time', async () => {
         // Simulate 5 seconds of idle time
         await secureAreaPage.simulateIdleBehavior(5000);
@@ -200,11 +194,11 @@ test.describe('Secure Area Functionality', () => {
       });
     });
 
-    test('should handle concurrent sessions (security)', async ({ 
-      browser, 
-      loginPage, 
-      secureAreaPage, 
-      validCredentials 
+    test('should handle concurrent sessions (security)', async ({
+      browser,
+      loginPage,
+      secureAreaPage,
+      validCredentials,
     }) => {
       // Create a second browser context to test concurrent sessions
       const secondContext = await browser.newContext();
@@ -237,9 +231,9 @@ test.describe('Secure Area Functionality', () => {
   });
 
   test.describe('Error Handling Tests', () => {
-    test('should handle network interruptions gracefully', async ({ 
-      authenticatedPage, 
-      secureAreaPage 
+    test('should handle network interruptions gracefully', async ({
+      authenticatedPage,
+      secureAreaPage,
     }) => {
       await test.step('Simulate network condition', async () => {
         // Set slow network conditions to test resilience
@@ -253,12 +247,12 @@ test.describe('Secure Area Functionality', () => {
       });
     });
 
-    test('should handle JavaScript errors gracefully', async ({ 
-      authenticatedPage, 
-      secureAreaPage 
+    test('should handle JavaScript errors gracefully', async ({
+      authenticatedPage,
+      secureAreaPage,
     }) => {
-      let jsErrors: string[] = [];
-      
+      const jsErrors: string[] = [];
+
       await test.step('Monitor JavaScript errors', async () => {
         authenticatedPage.on('console', msg => {
           if (msg.type() === 'error') {
@@ -273,61 +267,57 @@ test.describe('Secure Area Functionality', () => {
 
       await test.step('Validate no critical JavaScript errors', async () => {
         // Filter out expected/minor errors
-        const criticalErrors = jsErrors.filter(error => 
-          !error.includes('favicon') && 
-          !error.includes('404')
+        const criticalErrors = jsErrors.filter(
+          error => !error.includes('favicon') && !error.includes('404')
         );
-        
+
         expect(criticalErrors.length).toBe(0);
       });
     });
   });
 
   test.describe('Performance Tests', () => {
-    test('should load secure area within acceptable time', async ({ 
-      loginPage, 
-      validCredentials 
+    test('should load secure area within acceptable time', async ({
+      loginPage,
+      validCredentials,
     }) => {
       const startTime = Date.now();
-      
+
       await test.step('Measure secure area access time', async () => {
         await loginPage.goto();
         await loginPage.loginWithValidCredentials(validCredentials);
-        
+
         const totalTime = Date.now() - startTime;
         expect(totalTime).toBeLessThan(8000); // Should complete within 8 seconds
-        
-        console.log(`Secure area access completed in ${totalTime}ms`);
+
+        console.info(`Secure area access completed in ${totalTime}ms`);
       });
     });
 
-    test('should logout within acceptable time', async ({ 
-      authenticatedPage, 
-      secureAreaPage 
-    }) => {
+    test('should logout within acceptable time', async ({ authenticatedPage, secureAreaPage }) => {
       const startTime = Date.now();
-      
+
       await test.step('Measure logout performance', async () => {
         await secureAreaPage.logout();
-        
+
         const logoutTime = Date.now() - startTime;
         expect(logoutTime).toBeLessThan(3000); // Should complete within 3 seconds
-        
-        console.log(`Logout completed in ${logoutTime}ms`);
+
+        console.info(`Logout completed in ${logoutTime}ms`);
       });
     });
   });
 
   test.describe('Cross-Browser Compatibility', () => {
     ['chromium', 'firefox', 'webkit'].forEach(browserName => {
-      test(`should work correctly in ${browserName}`, async ({ 
-        authenticatedPage, 
-        secureAreaPage 
+      test(`should work correctly in ${browserName}`, async ({
+        authenticatedPage,
+        secureAreaPage,
       }) => {
         await test.step(`Validate functionality in ${browserName}`, async () => {
           await secureAreaPage.validatePageStructure();
           await secureAreaPage.validateSessionState();
-          
+
           // Test logout functionality
           await secureAreaPage.logoutAndValidate();
         });
@@ -337,11 +327,11 @@ test.describe('Secure Area Functionality', () => {
 });
 
 test.describe('End-to-End User Journey', () => {
-  test('should complete full login-logout cycle successfully @smoke', async ({ 
-    loginPage, 
-    secureAreaPage, 
-    validCredentials, 
-    testStrings 
+  test('should complete full login-logout cycle successfully @smoke', async ({
+    loginPage,
+    secureAreaPage,
+    validCredentials,
+    testStrings,
   }) => {
     await test.step('Navigate to login page', async () => {
       await loginPage.goto();
@@ -368,10 +358,10 @@ test.describe('End-to-End User Journey', () => {
     });
   });
 
-  test('should maintain security throughout user session', async ({ 
-    loginPage, 
-    secureAreaPage, 
-    validCredentials 
+  test('should maintain security throughout user session', async ({
+    loginPage,
+    secureAreaPage,
+    validCredentials,
   }) => {
     await test.step('Complete login process', async () => {
       await loginPage.goto();
@@ -381,7 +371,7 @@ test.describe('End-to-End User Journey', () => {
     await test.step('Test session security features', async () => {
       // Validate secure URL
       expect(await secureAreaPage.getCurrentUrl()).toContain('/secure');
-      
+
       // Test unauthorized access prevention
       const newPage = await secureAreaPage.page.context().newPage();
       try {

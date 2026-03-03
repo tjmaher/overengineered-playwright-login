@@ -41,7 +41,7 @@ export const INVALID_USERS: Record<string, Partial<UserCredentials>> = {
     password: 'SuperSecretPassword!',
   },
   invalidPassword: {
-    username: 'tomsmith', 
+    username: 'tomsmith',
     password: 'wrongpassword',
   },
   emptyUsername: {
@@ -65,12 +65,12 @@ export const INVALID_USERS: Record<string, Partial<UserCredentials>> = {
     password: '   ',
   },
   nullUsername: {
-    username: undefined as any,
-    password: 'SuperSecretPassword!', 
+    username: null as unknown as string,
+    password: 'SuperSecretPassword!',
   },
   nullPassword: {
     username: 'tomsmith',
-    password: undefined as any,
+    password: null as unknown as string,
   },
 } as const;
 
@@ -110,7 +110,7 @@ export const EDGE_CASE_DATA = {
   },
   unicodeChars: {
     username: '测试用户',
-    password: 'пароль123',  
+    password: 'пароль123',
   },
 } as const;
 
@@ -130,7 +130,7 @@ export class CredentialsHelper {
   }
 
   /**
-   * Get an invalid user by key  
+   * Get an invalid user by key
    */
   static getInvalidUser(key: keyof typeof INVALID_USERS): Partial<UserCredentials> {
     const user = INVALID_USERS[key];
@@ -170,7 +170,7 @@ export class CredentialsHelper {
    */
   static validateCredentials(credentials: Partial<UserCredentials>): boolean {
     return Boolean(
-      credentials.username && 
+      credentials.username &&
       credentials.password &&
       credentials.username.trim().length > 0 &&
       credentials.password.trim().length > 0

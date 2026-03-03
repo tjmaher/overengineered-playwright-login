@@ -45,7 +45,7 @@ export class LoginPage extends BasePage {
   constructor(page: Page, baseUrl?: string) {
     super(page, baseUrl);
 
-    // Initialize private locators with multiple selector strategies for reliability    
+    // Initialize private locators with multiple selector strategies for reliability
     this.usernameInput = this.page.locator('#username');
     this.passwordInput = this.page.locator('#password');
     this.loginButton = this.page.locator('button[type="submit"], input[type="submit"]');
@@ -75,7 +75,7 @@ export class LoginPage extends BasePage {
       await this.waitForElement(this.usernameInput);
       await this.waitForElement(this.passwordInput);
       await this.waitForElement(this.loginButton);
-      
+
       const title = await this.getTitle();
       return title === LoginPage.EXPECTED_TITLE;
     } catch {
@@ -126,7 +126,7 @@ export class LoginPage extends BasePage {
   }
 
   /**
-   * Clear password field  
+   * Clear password field
    */
   async clearPassword(): Promise<void> {
     await this.clearInput(this.passwordInput);
@@ -136,24 +136,14 @@ export class LoginPage extends BasePage {
    * Clear all form fields
    */
   async clearAllFields(): Promise<void> {
-    await Promise.all([
-      this.clearUsername(),
-      this.clearPassword(),
-    ]);
+    await Promise.all([this.clearUsername(), this.clearPassword()]);
   }
 
   /**
    * Comprehensive login method with options
    */
-  async login(
-    credentials: Partial<UserCredentials>, 
-    options: LoginOptions = {}
-  ): Promise<void> {
-    const {
-      submit = true,
-      clearFields = true,
-      waitForNavigation = true,
-    } = options;
+  async login(credentials: Partial<UserCredentials>, options: LoginOptions = {}): Promise<void> {
+    const { submit = true, clearFields = true, waitForNavigation = true } = options;
 
     // Clear fields if requested
     if (clearFields) {
@@ -184,10 +174,10 @@ export class LoginPage extends BasePage {
    * Quick login with valid credentials
    */
   async loginWithValidCredentials(credentials: UserCredentials): Promise<void> {
-    await this.login(credentials, { 
-      submit: true, 
-      clearFields: true, 
-      waitForNavigation: true 
+    await this.login(credentials, {
+      submit: true,
+      clearFields: true,
+      waitForNavigation: true,
     });
   }
 
@@ -200,11 +190,7 @@ export class LoginPage extends BasePage {
   ): Promise<void> {
     await this.login(credentials);
 
-    const {
-      expectSuccess = false,
-      expectedUrl,
-      expectedMessage,
-    } = validationOptions;
+    const { expectSuccess = false, expectedUrl, expectedMessage } = validationOptions;
 
     if (expectedUrl) {
       await this.waitForUrl(expectedUrl);
@@ -324,7 +310,7 @@ export class LoginPage extends BasePage {
   }
 
   /**
-   * Focus on password field  
+   * Focus on password field
    */
   async focusPasswordField(): Promise<void> {
     await this.passwordInput.focus();
@@ -346,11 +332,13 @@ export class LoginPage extends BasePage {
     isPasswordRequired: boolean;
     isFormValid: boolean;
   }> {
-    const usernameRequired = await this.getElementAttribute(this.usernameInput, 'required') !== null;
-    const passwordRequired = await this.getElementAttribute(this.passwordInput, 'required') !== null;
+    const usernameRequired =
+      (await this.getElementAttribute(this.usernameInput, 'required')) !== null;
+    const passwordRequired =
+      (await this.getElementAttribute(this.passwordInput, 'required')) !== null;
     const usernameValue = await this.getUsername();
     const passwordValue = await this.getPassword();
-    
+
     return {
       isUsernameRequired: usernameRequired,
       isPasswordRequired: passwordRequired,
@@ -363,13 +351,13 @@ export class LoginPage extends BasePage {
    */
   async validatePageStructure(): Promise<void> {
     await super.validatePageStructure();
-    
+
     // Validate required elements are present
     await expect(this.usernameInput).toBeVisible();
     await expect(this.passwordInput).toBeVisible();
     await expect(this.loginButton).toBeVisible();
     await expect(this.pageHeading).toBeVisible();
-    
+
     // Validate page content
     const heading = await this.getPageHeading();
     expect(heading).toBe(TestStrings.loginPage.headingText);
@@ -382,10 +370,10 @@ export class LoginPage extends BasePage {
     // Check for proper labels
     const usernameLabelFor = await this.getElementAttribute(this.usernameLabel, 'for');
     const passwordLabelFor = await this.getElementAttribute(this.passwordLabel, 'for');
-    
+
     expect(usernameLabelFor).toBe('username');
     expect(passwordLabelFor).toBe('password');
-    
+
     // Check input types
     const passwordType = await this.getElementAttribute(this.passwordInput, 'type');
     expect(passwordType).toBe('password');
@@ -398,7 +386,7 @@ export class LoginPage extends BasePage {
     // Tab through form fields
     await this.usernameInput.press('Tab');
     await expect(this.passwordInput).toBeFocused();
-    
+
     await this.passwordInput.press('Tab');
     await expect(this.loginButton).toBeFocused();
   }
@@ -413,19 +401,19 @@ export class LoginPage extends BasePage {
         await this.enterUsername('tomsmith');
         await this.enterPassword('SuperSecretPassword!');
         break;
-        
+
       case 'slow':
         // Slow typing with delays
         await this.typeText(this.usernameInput, 'tomsmith', 200);
         await this.typeText(this.passwordInput, 'SuperSecretPassword!', 200);
         break;
-        
+
       case 'erratic':
         // Erratic behavior: type, clear, retype
         await this.enterUsername('wrong');
         await this.clearUsername();
         await this.enterUsername('tomsmith');
-        
+
         await this.enterPassword('wrong');
         await this.clearPassword();
         await this.enterPassword('SuperSecretPassword!');

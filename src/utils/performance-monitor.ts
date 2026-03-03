@@ -51,8 +51,10 @@ export class PerformanceMonitor {
    */
   async getWebVitals(): Promise<PerformanceMetrics> {
     return await this.page.evaluate(() => {
-      const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
-      
+      const navigation = performance.getEntriesByType(
+        'navigation'
+      )[0] as PerformanceNavigationTiming;
+
       return {
         navigationStart: navigation.fetchStart, // Use fetchStart as navigationStart replacement
         domContentLoaded: navigation.domContentLoadedEventEnd - navigation.fetchStart,
@@ -70,8 +72,10 @@ export class PerformanceMonitor {
    */
   async getLoadTimeMetrics(): Promise<LoadTimeMetrics> {
     return await this.page.evaluate(() => {
-      const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
-      
+      const navigation = performance.getEntriesByType(
+        'navigation'
+      )[0] as PerformanceNavigationTiming;
+
       return {
         totalLoadTime: navigation.loadEventEnd - navigation.fetchStart,
         domLoadTime: navigation.domContentLoadedEventEnd - navigation.fetchStart,
@@ -86,7 +90,7 @@ export class PerformanceMonitor {
   async getNetworkMetrics(): Promise<NetworkMetrics> {
     return await this.page.evaluate(() => {
       const resources = performance.getEntriesByType('resource') as PerformanceResourceTiming[];
-      
+
       let totalBytes = 0;
       let largestRequest = { url: '', size: 0 };
       let slowestRequest = { url: '', duration: 0 };
@@ -118,16 +122,19 @@ export class PerformanceMonitor {
   /**
    * Measure page load performance
    */
-  async measurePageLoad(url: string, options: { timeout?: number } = {}): Promise<{
+  async measurePageLoad(
+    url: string,
+    options: { timeout?: number } = {}
+  ): Promise<{
     loadTime: number;
     metrics: PerformanceMetrics;
     networkMetrics: NetworkMetrics;
   }> {
     this.startMeasurement();
-    
-    await this.page.goto(url, { 
+
+    await this.page.goto(url, {
       waitUntil: 'networkidle',
-      timeout: options.timeout || 30000
+      timeout: options.timeout || 30000,
     });
 
     const loadTime = Date.now() - this.startTime;
@@ -149,7 +156,7 @@ export class PerformanceMonitor {
     operationName: string
   ): Promise<{ result: T; performanceData: any }> {
     const startTime = performance.now();
-    
+
     // Start monitoring network
     const requests: any[] = [];
     this.page.on('request', request => {
@@ -184,7 +191,7 @@ export class PerformanceMonitor {
       responses: responses.slice(0, 10),
     };
 
-    console.log(`Performance: ${operationName} took ${executionTime.toFixed(2)}ms`);
+    console.info(`Performance: ${operationName} took ${executionTime.toFixed(2)}ms`);
 
     return { result, performanceData };
   }
@@ -229,11 +236,9 @@ export class PerformanceAssertions {
    */
   static assertLoadTime(actualMs: number, maxMs: number, pageName = 'Page'): void {
     if (actualMs > maxMs) {
-      throw new Error(
-        `${pageName} load time (${actualMs}ms) exceeds maximum allowed (${maxMs}ms)`
-      );
+      throw new Error(`${pageName} load time (${actualMs}ms) exceeds maximum allowed (${maxMs}ms)`);
     }
-    console.log(`✅ ${pageName} loaded in ${actualMs}ms (under ${maxMs}ms limit)`);
+    console.info(`✅ ${pageName} loaded in ${actualMs}ms (under ${maxMs}ms limit)`);
   }
 
   /**
@@ -241,11 +246,9 @@ export class PerformanceAssertions {
    */
   static assertRequestCount(actualCount: number, maxCount: number): void {
     if (actualCount > maxCount) {
-      throw new Error(
-        `Request count (${actualCount}) exceeds maximum allowed (${maxCount})`
-      );
+      throw new Error(`Request count (${actualCount}) exceeds maximum allowed (${maxCount})`);
     }
-    console.log(`✅ Request count ${actualCount} is within limit (${maxCount})`);
+    console.info(`✅ Request count ${actualCount} is within limit (${maxCount})`);
   }
 
   /**
@@ -254,12 +257,10 @@ export class PerformanceAssertions {
   static assertPageSize(actualBytes: number, maxBytes: number): void {
     const actualKB = Math.round(actualBytes / 1024);
     const maxKB = Math.round(maxBytes / 1024);
-    
+
     if (actualBytes > maxBytes) {
-      throw new Error(
-        `Page size (${actualKB}KB) exceeds maximum allowed (${maxKB}KB)`
-      );
+      throw new Error(`Page size (${actualKB}KB) exceeds maximum allowed (${maxKB}KB)`);
     }
-    console.log(`✅ Page size ${actualKB}KB is within limit (${maxKB}KB)`);
+    console.info(`✅ Page size ${actualKB}KB is within limit (${maxKB}KB)`);
   }
 }

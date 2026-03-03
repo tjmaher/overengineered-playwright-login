@@ -8,7 +8,7 @@ import * as fs from 'fs/promises';
 import * as path from 'path';
 
 async function globalSetup(_config: FullConfig): Promise<void> {
-  console.log('🚀 Starting Global Setup...');
+  console.warn('🚀 Starting Global Setup...');
 
   try {
     // Ensure required directories exist
@@ -23,7 +23,7 @@ async function globalSetup(_config: FullConfig): Promise<void> {
     // Optionally warm up the application
     await warmupApplication();
 
-    console.log('✅ Global Setup completed successfully');
+    console.warn('✅ Global Setup completed successfully');
   } catch (error) {
     console.error('❌ Global Setup failed:', error);
     throw error;
@@ -49,7 +49,7 @@ async function ensureDirectories(): Promise<void> {
       await fs.access(dir);
     } catch {
       await fs.mkdir(dir, { recursive: true });
-      console.log(`📁 Created directory: ${dir}`);
+      console.warn(`📁 Created directory: ${dir}`);
     }
   }
 }
@@ -58,29 +58,25 @@ async function ensureDirectories(): Promise<void> {
  * Clear previous test artifacts
  */
 async function clearArtifacts(): Promise<void> {
-  const artifactDirs = [
-    'test-results',
-    'allure-results',
-    'playwright-report/data',
-  ];
+  const artifactDirs = ['test-results', 'allure-results', 'playwright-report/data'];
 
   for (const dir of artifactDirs) {
     try {
       const files = await fs.readdir(dir).catch(() => []);
-      
+
       for (const file of files) {
         const filePath = path.join(dir, file);
         const stat = await fs.stat(filePath).catch(() => null);
-        
+
         if (stat?.isFile()) {
           await fs.unlink(filePath);
         }
       }
-      
+
       if (files.length > 0) {
-        console.log(`🧹 Cleaned artifacts from: ${dir}`);
+        console.warn(`🧹 Cleaned artifacts from: ${dir}`);
       }
-    } catch (error) {
+    } catch {
       // Ignore errors - directory might not exist yet
     }
   }
@@ -101,7 +97,7 @@ async function validateEnvironment(): Promise<void> {
 
   if (missingVars.length > 0) {
     console.warn(`⚠️  Missing environment variables: ${missingVars.join(', ')}`);
-    console.log('Using default values...');
+    console.warn('Using default values...');
   }
 
   // Set defaults
@@ -109,9 +105,9 @@ async function validateEnvironment(): Promise<void> {
   process.env.TIMEOUT = process.env.TIMEOUT || '30000';
   process.env.RETRIES = process.env.RETRIES || '0';
 
-  console.log(`🌐 Base URL: ${process.env.BASE_URL}`);
-  console.log(`⏱️  Timeout: ${process.env.TIMEOUT}ms`);
-  console.log(`🔄 Retries: ${process.env.RETRIES}`);
+  console.warn(`🌐 Base URL: ${process.env.BASE_URL}`);
+  console.warn(`⏱️  Timeout: ${process.env.TIMEOUT}ms`);
+  console.warn(`🔄 Retries: ${process.env.RETRIES}`);
 }
 
 /**
@@ -119,9 +115,11 @@ async function validateEnvironment(): Promise<void> {
  */
 async function warmupApplication(): Promise<void> {
   const baseUrl = process.env.BASE_URL;
-  if (!baseUrl) return;
+  if (!baseUrl) {
+    return;
+  }
 
-  console.log(`🔥 Warming up application at: ${baseUrl}`);
+  console.warn(`🔥 Warming up application at: ${baseUrl}`);
 
   try {
     const browser = await chromium.launch();
@@ -129,15 +127,15 @@ async function warmupApplication(): Promise<void> {
     const page = await context.newPage();
 
     // Navigate to the base URL to warm up the application
-    await page.goto(baseUrl, { 
+    await page.goto(baseUrl, {
       timeout: 30000,
-      waitUntil: 'domcontentloaded' 
+      waitUntil: 'domcontentloaded',
     });
 
     await page.waitForLoadState('networkidle');
-    
+
     await browser.close();
-    console.log('✅ Application warmed up successfully');
+    console.warn('✅ Application warmed up successfully');
   } catch (error) {
     console.warn('⚠️  Application warmup failed (this may be expected):', error);
     // Don't throw - warmup failure shouldn't stop tests

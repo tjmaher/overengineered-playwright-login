@@ -16,7 +16,7 @@ export interface APIResponse {
   status: number;
   statusText: string;
   headers: Record<string, string>;
-  body: any;
+  body: unknown;
   responseTime: number;
   url: string;
 }
@@ -28,6 +28,18 @@ export interface APITestResult {
   errors: string[];
 }
 
+interface ResponseData {
+  [key: string]: any;
+}
+
+interface RequestData {
+  [key: string]: any;
+}
+
+interface ValidationSchema {
+  [key: string]: any;
+}
+
 /**
  * API testing and validation utilities
  */
@@ -37,15 +49,15 @@ export class APITester {
   private defaultHeaders: Record<string, string>;
 
   constructor(
-    request: APIRequestContext, 
-    baseURL: string = '', 
+    request: APIRequestContext,
+    baseURL: string = '',
     defaultHeaders: Record<string, string> = {}
   ) {
     this.request = request;
     this.baseURL = baseURL;
     this.defaultHeaders = {
       'Content-Type': 'application/json',
-      'Accept': 'application/json',
+      Accept: 'application/json',
       ...defaultHeaders,
     };
   }
@@ -53,22 +65,19 @@ export class APITester {
   /**
    * Perform GET request with validation
    */
-  async get(
-    endpoint: string, 
-    options: APITestOptions = {}
-  ): Promise<APITestResult> {
+  async get(endpoint: string, options: APITestOptions = {}): Promise<APITestResult> {
     const startTime = Date.now();
     const url = this.buildURL(endpoint);
-    
+
     try {
       const response = await this.request.get(url, {
         headers: { ...this.defaultHeaders, ...options.headers },
-        timeout: options.timeout || 30000,
+        timeout: options.timeout ?? 30000,
       });
 
       const responseTime = Date.now() - startTime;
       const apiResponse = await this.parseResponse(response, url, responseTime);
-      
+
       return this.validateAndReturn(apiResponse, options);
     } catch (error) {
       return this.handleError(error as Error, url);
@@ -80,22 +89,22 @@ export class APITester {
    */
   async post(
     endpoint: string,
-    data: any,
+    data: RequestData,
     options: APITestOptions = {}
   ): Promise<APITestResult> {
     const startTime = Date.now();
     const url = this.buildURL(endpoint);
-    
+
     try {
       const response = await this.request.post(url, {
         headers: { ...this.defaultHeaders, ...options.headers },
         data: JSON.stringify(data),
-        timeout: options.timeout || 30000,
+        timeout: options.timeout ?? 30000,
       });
 
       const responseTime = Date.now() - startTime;
       const apiResponse = await this.parseResponse(response, url, responseTime);
-      
+
       return this.validateAndReturn(apiResponse, options);
     } catch (error) {
       return this.handleError(error as Error, url);
@@ -107,22 +116,22 @@ export class APITester {
    */
   async put(
     endpoint: string,
-    data: any,
+    data: RequestData,
     options: APITestOptions = {}
   ): Promise<APITestResult> {
     const startTime = Date.now();
     const url = this.buildURL(endpoint);
-    
+
     try {
       const response = await this.request.put(url, {
         headers: { ...this.defaultHeaders, ...options.headers },
         data: JSON.stringify(data),
-        timeout: options.timeout || 30000,
+        timeout: options.timeout ?? 30000,
       });
 
       const responseTime = Date.now() - startTime;
       const apiResponse = await this.parseResponse(response, url, responseTime);
-      
+
       return this.validateAndReturn(apiResponse, options);
     } catch (error) {
       return this.handleError(error as Error, url);
@@ -132,22 +141,19 @@ export class APITester {
   /**
    * Perform DELETE request with validation
    */
-  async delete(
-    endpoint: string,
-    options: APITestOptions = {}
-  ): Promise<APITestResult> {
+  async delete(endpoint: string, options: APITestOptions = {}): Promise<APITestResult> {
     const startTime = Date.now();
     const url = this.buildURL(endpoint);
-    
+
     try {
       const response = await this.request.delete(url, {
         headers: { ...this.defaultHeaders, ...options.headers },
-        timeout: options.timeout || 30000,
+        timeout: options.timeout ?? 30000,
       });
 
       const responseTime = Date.now() - startTime;
       const apiResponse = await this.parseResponse(response, url, responseTime);
-      
+
       return this.validateAndReturn(apiResponse, options);
     } catch (error) {
       return this.handleError(error as Error, url);
@@ -164,9 +170,10 @@ export class APITester {
   /**
    * Test API authentication
    */
-  async testAuthentication(
-    credentials: { username: string; password: string }
-  ): Promise<APITestResult> {
+  async testAuthentication(credentials: {
+    username: string;
+    password: string;
+  }): Promise<APITestResult> {
     return await this.post('/auth/login', credentials);
   }
 
@@ -189,10 +196,10 @@ export class APITester {
     for (let i = 0; i < requestCount; i++) {
       const result = await this.get(endpoint);
       results.push(result);
-      
+
       // Small delay to avoid overwhelming the server
       if (i < requestCount - 1) {
-        await new Promise(resolve => setTimeout(resolve, timeWindow / requestCount));
+        await new Promise<void>(resolve => setTimeout(resolve, timeWindow / requestCount));
       }
     }
 
@@ -214,21 +221,21 @@ export class APITester {
    */
   async testResponseSchema(
     endpoint: string,
-    expectedSchema: any,
+    expectedSchema: ValidationSchema,
     method: 'GET' | 'POST' | 'PUT' | 'DELETE' = 'GET',
-    data?: any
+    data?: RequestData
   ): Promise<APITestResult> {
     let result: APITestResult;
-    
+
     switch (method) {
       case 'GET':
         result = await this.get(endpoint);
         break;
       case 'POST':
-        result = await this.post(endpoint, data || {});
+        result = await this.post(endpoint, data ?? {});
         break;
       case 'PUT':
-        result = await this.put(endpoint, data || {});
+        result = await this.put(endpoint, data ?? {});
         break;
       case 'DELETE':
         result = await this.delete(endpoint);
@@ -275,15 +282,15 @@ export class APITester {
     const results: APITestResult[] = [];
     const startTime = Date.now();
     const endTime = startTime + duration;
-    
+
     const workers = Array.from({ length: concurrentUsers }, async () => {
       while (Date.now() < endTime) {
         const result = await this.get(endpoint);
         results.push(result);
-        
+
         // Wait to maintain requests per second
-        await new Promise(resolve => 
-          setTimeout(resolve, (1000 / requestsPerSecond) / concurrentUsers)
+        await new Promise<void>(resolve =>
+          setTimeout(resolve, 1000 / requestsPerSecond / concurrentUsers)
         );
       }
     });
@@ -294,7 +301,7 @@ export class APITester {
     const failedRequests = results.length - successfulRequests;
     const responseTimes = results.map(r => r.response.responseTime);
     const totalDuration = Date.now() - startTime;
-    
+
     return {
       totalRequests: results.length,
       successfulRequests,
@@ -314,10 +321,10 @@ export class APITester {
     if (endpoint.startsWith('http')) {
       return endpoint;
     }
-    
+
     const base = this.baseURL.endsWith('/') ? this.baseURL.slice(0, -1) : this.baseURL;
     const path = endpoint.startsWith('/') ? endpoint : `/${endpoint}`;
-    
+
     return `${base}${path}`;
   }
 
@@ -327,10 +334,10 @@ export class APITester {
     responseTime: number
   ): Promise<APIResponse> {
     let body: any;
-    
+
     try {
-      const contentType = response.headers()['content-type'] || '';
-      
+      const contentType = response.headers['content-type'] ?? '';
+
       if (contentType.includes('application/json')) {
         body = await response.json();
       } else {
@@ -341,19 +348,16 @@ export class APITester {
     }
 
     return {
-      status: response.status(),
-      statusText: response.statusText(),
-      headers: response.headers(),
+      status: response.status,
+      statusText: response.statusText,
+      headers: response.headers,
       body,
       responseTime,
       url,
     };
   }
 
-  private validateAndReturn(
-    apiResponse: APIResponse,
-    options: APITestOptions
-  ): APITestResult {
+  private validateAndReturn(apiResponse: APIResponse, options: APITestOptions): APITestResult {
     const assertions: string[] = [];
     const errors: string[] = [];
     let passed = true;
@@ -399,17 +403,17 @@ export class APITester {
     };
   }
 
-  private validateSchema(data: any, schema: any): void {
+  private validateSchema(data: any, schema: ValidationSchema): void {
     // Simplified schema validation - in production use a proper schema validator
     if (typeof schema === 'object' && schema !== null) {
       Object.keys(schema).forEach(key => {
         if (!(key in data)) {
           throw new Error(`Missing required property: ${key}`);
         }
-        
-        const expectedType = typeof schema[key];
+
+        const expectedType = typeof (schema as any)[key];
         const actualType = typeof data[key];
-        
+
         if (expectedType !== actualType) {
           throw new Error(`Property ${key} expected type ${expectedType}, got ${actualType}`);
         }
@@ -443,10 +447,10 @@ export class APIAssertions {
   /**
    * Assert response contains expected data
    */
-  static assertResponseContains(response: any, expectedData: any): void {
+  static assertResponseContains(response: ResponseData, expectedData: RequestData): void {
     const responseStr = JSON.stringify(response);
     const expectedStr = JSON.stringify(expectedData);
-    
+
     if (!responseStr.includes(expectedStr)) {
       throw new Error(`Response does not contain expected data`);
     }
@@ -455,10 +459,7 @@ export class APIAssertions {
   /**
    * Assert response headers
    */
-  static assertHeaders(
-    actual: Record<string, string>, 
-    expected: Record<string, string>
-  ): void {
+  static assertHeaders(actual: Record<string, string>, expected: Record<string, string>): void {
     Object.entries(expected).forEach(([key, value]) => {
       if (actual[key] !== value) {
         throw new Error(`Expected header ${key}: ${value}, got ${actual[key]}`);
@@ -474,7 +475,7 @@ export class APITestDataGenerator {
   /**
    * Generate test user data
    */
-  static generateUser(): any {
+  static generateUser(): RequestData {
     const timestamp = Date.now();
     return {
       username: `testuser_${timestamp}`,
@@ -490,7 +491,9 @@ export class APITestDataGenerator {
    */
   static generateRandomString(length: number): string {
     const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    return Array.from({ length }, () => chars.charAt(Math.floor(Math.random() * chars.length))).join('');
+    return Array.from({ length }, () =>
+      chars.charAt(Math.floor(Math.random() * chars.length))
+    ).join('');
   }
 
   /**

@@ -7,7 +7,12 @@
 import { test as baseTest, Page } from '@playwright/test';
 import { LoginPage } from '../pages/login-page';
 import { SecureAreaPage } from '../pages/secure-area-page';
-import { VALID_USERS, INVALID_USERS, CredentialsHelper, UserCredentials } from '../data/credentials';
+import {
+  VALID_USERS,
+  INVALID_USERS,
+  CredentialsHelper,
+  UserCredentials,
+} from '../data/credentials';
 import { TestStrings } from '../data/strings';
 
 // Extend base test with custom fixtures
@@ -15,15 +20,15 @@ export interface TestFixtures {
   // Page Objects
   loginPage: LoginPage;
   secureAreaPage: SecureAreaPage;
-  
+
   // Authentication Helpers
   authenticatedPage: Page; // Page that's already logged in
   validCredentials: UserCredentials;
-  
+
   // Test Data
   testStrings: typeof TestStrings;
   credentialsHelper: typeof CredentialsHelper;
-  
+
   // Utility Functions
   loginAsValidUser: () => Promise<void>;
   navigateToLogin: () => Promise<void>;
@@ -43,7 +48,7 @@ export const test = baseTest.extend<TestFixtures>({
   },
 
   /**
-   * Secure Area Page fixture - provides fresh instance for each test  
+   * Secure Area Page fixture - provides fresh instance for each test
    */
   secureAreaPage: async ({ page }, use) => {
     const secureAreaPage = new SecureAreaPage(page);
@@ -77,16 +82,16 @@ export const test = baseTest.extend<TestFixtures>({
   authenticatedPage: async ({ page, loginPage, validCredentials }, use) => {
     // Navigate to login page
     await loginPage.goto();
-    
+
     // Validate page loaded
     await loginPage.isLoaded();
-    
+
     // Login with valid credentials
     await loginPage.loginWithValidCredentials(validCredentials);
-    
+
     // Validate successful login
     await loginPage.validateSuccessfulLogin();
-    
+
     // Provide the authenticated page
     await use(page);
   },
@@ -100,7 +105,7 @@ export const test = baseTest.extend<TestFixtures>({
       await loginPage.loginWithValidCredentials(validCredentials);
       await loginPage.validateSuccessfulLogin();
     };
-    
+
     await use(loginAsValidUser);
   },
 
@@ -112,7 +117,7 @@ export const test = baseTest.extend<TestFixtures>({
       await loginPage.goto();
       await loginPage.validatePageStructure();
     };
-    
+
     await use(navigateToLogin);
   },
 
@@ -123,11 +128,11 @@ export const test = baseTest.extend<TestFixtures>({
     const takeScreenshot = async (): Promise<void> => {
       if (testInfo.status !== 'passed') {
         const screenshotPath = `screenshots/failure-${testInfo.title.replace(/\s+/g, '-')}-${Date.now()}.png`;
-        await page.screenshot({ 
-          path: screenshotPath, 
-          fullPage: true 
+        await page.screenshot({
+          path: screenshotPath,
+          fullPage: true,
         });
-        
+
         // Attach screenshot to test report
         testInfo.attachments.push({
           name: 'failure-screenshot',
@@ -136,9 +141,9 @@ export const test = baseTest.extend<TestFixtures>({
         });
       }
     };
-    
+
     await use(takeScreenshot);
-    
+
     // Execute after test completion
     await takeScreenshot();
   },
@@ -156,7 +161,7 @@ export const smokeTest = test.extend({
 });
 
 /**
- * Test for regression scenarios  
+ * Test for regression scenarios
  */
 export const regressionTest = test.extend({
   // Add regression test specific setup if needed
@@ -217,22 +222,22 @@ export class TestContextHelper {
    * Log test information
    */
   static logTestInfo(testInfo: any): void {
-    console.log(`🧪 Running test: ${testInfo.title}`);
-    console.log(`📝 Test file: ${testInfo.file}`);
-    console.log(`🏷️  Project: ${testInfo.project?.name || 'default'}`);
+    console.info(`🧪 Running test: ${testInfo.title}`);
+    console.info(`📝 Test file: ${testInfo.file}`);
+    console.info(`🏷️  Project: ${testInfo.project?.name ?? 'default'}`);
   }
 
   /**
    * Create test step
    */
   static async step<T>(name: string, body: () => Promise<T>): Promise<T> {
-    console.log(`📍 Step: ${name}`);
+    console.info(`📍 Step: ${name}`);
     const startTime = Date.now();
-    
+
     try {
       const result = await body();
       const duration = Date.now() - startTime;
-      console.log(`✅ Step completed: ${name} (${duration}ms)`);
+      console.info(`✅ Step completed: ${name} (${duration}ms)`);
       return result;
     } catch (error) {
       const duration = Date.now() - startTime;

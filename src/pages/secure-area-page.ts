@@ -1,5 +1,5 @@
 /**
- * Secure Area Page Object  
+ * Secure Area Page Object
  * Represents the secure area page at https://the-internet.herokuapp.com/secure
  * Follows Page Object Model (POM) design pattern with private locators
  */
@@ -29,7 +29,7 @@ export class SecureAreaPage extends BasePage {
   // Page-specific constants
   private static readonly SECURE_PATH = '/secure';
   private static readonly EXPECTED_TITLE = 'The Internet';
-  
+
   constructor(page: Page, baseUrl?: string) {
     super(page, baseUrl);
 
@@ -58,12 +58,13 @@ export class SecureAreaPage extends BasePage {
     try {
       await this.waitForElement(this.pageHeading);
       await this.waitForElement(this.logoutButton);
-      
+
       const title = await this.getTitle();
       const heading = await this.getPageHeading();
-      
-      return title === SecureAreaPage.EXPECTED_TITLE && 
-             heading === TestStrings.secureArea.headingText;
+
+      return (
+        title === SecureAreaPage.EXPECTED_TITLE && heading === TestStrings.secureArea.headingText
+      );
     } catch {
       return false;
     }
@@ -75,7 +76,7 @@ export class SecureAreaPage extends BasePage {
   async isAuthenticated(): Promise<boolean> {
     try {
       const currentUrl = this.getCurrentUrl();
-      return currentUrl.includes('/secure') && await this.isLogoutButtonVisible();
+      return currentUrl.includes('/secure') && (await this.isLogoutButtonVisible());
     } catch {
       return false;
     }
@@ -90,7 +91,7 @@ export class SecureAreaPage extends BasePage {
   }
 
   /**
-   * Get welcome message text  
+   * Get welcome message text
    */
   async getWelcomeMessage(): Promise<string> {
     return await this.getElementText(this.welcomeMessage);
@@ -129,16 +130,13 @@ export class SecureAreaPage extends BasePage {
    * Perform logout operation
    */
   async logout(options: LogoutOptions = {}): Promise<void> {
-    const {
-      waitForNavigation = true,
-      expectedRedirectUrl = '/login',
-    } = options;
+    const { waitForNavigation = true, expectedRedirectUrl = '/login' } = options;
 
     await this.clickLogoutButton();
 
     if (waitForNavigation) {
       await this.page.waitForLoadState('networkidle');
-      
+
       if (expectedRedirectUrl) {
         await this.waitForUrl(expectedRedirectUrl);
       }
@@ -197,16 +195,16 @@ export class SecureAreaPage extends BasePage {
    */
   async validatePageStructure(): Promise<void> {
     await super.validatePageStructure();
-    
+
     // Validate required elements are present
     await expect(this.pageHeading).toBeVisible();
     await expect(this.welcomeMessage).toBeVisible();
     await expect(this.logoutButton).toBeVisible();
-    
+
     // Validate page content
     const heading = await this.getPageHeading();
     expect(heading).toBe(TestStrings.secureArea.headingText);
-    
+
     const welcome = await this.getWelcomeMessage();
     expect(welcome).toBe(TestStrings.secureArea.welcomeMessage);
   }
@@ -218,7 +216,7 @@ export class SecureAreaPage extends BasePage {
     // Check logout button is properly accessible
     const logoutHref = await this.getElementAttribute(this.logoutButton, 'href');
     expect(logoutHref).toContain('logout');
-    
+
     // Validate button is keyboard accessible
     await this.logoutButton.focus();
     await expect(this.logoutButton).toBeFocused();
@@ -230,7 +228,7 @@ export class SecureAreaPage extends BasePage {
   async testKeyboardNavigation(): Promise<void> {
     // Test Tab navigation to logout button
     await this.page.keyboard.press('Tab');
-    
+
     // Test Space/Enter key activation
     await this.logoutButton.focus();
     await expect(this.logoutButton).toBeFocused();
@@ -243,12 +241,12 @@ export class SecureAreaPage extends BasePage {
     // This method can be used to test that unauthenticated users
     // are redirected to login page
     const currentUrl = this.getCurrentUrl();
-    
+
     if (currentUrl.includes('/login')) {
       // User was redirected to login - expected behavior
       return;
     }
-    
+
     // If we're still on secure page, that's a security issue
     const isOnSecure = currentUrl.includes('/secure');
     expect(isOnSecure).toBeFalsy();
@@ -276,7 +274,7 @@ export class SecureAreaPage extends BasePage {
    */
   async validateSessionState(): Promise<void> {
     const indicators = await this.getSecurityIndicators();
-    
+
     // All security indicators should be present for authenticated user
     expect(indicators.hasLogoutButton).toBe(true);
     expect(indicators.isOnSecureUrl).toBe(true);
@@ -290,7 +288,7 @@ export class SecureAreaPage extends BasePage {
   async simulateIdleBehavior(duration: number = 5000): Promise<void> {
     // Simulate user being idle on the page
     await this.page.waitForTimeout(duration);
-    
+
     // Validate page is still accessible (no session timeout)
     await this.validateSessionState();
   }
@@ -301,7 +299,7 @@ export class SecureAreaPage extends BasePage {
   async testPageRefresh(): Promise<void> {
     await this.refresh();
     await this.waitForPageLoad();
-    
+
     // Validate user is still authenticated after refresh
     await this.validateSessionState();
   }
@@ -311,18 +309,18 @@ export class SecureAreaPage extends BasePage {
    */
   async testBrowserNavigation(): Promise<void> {
     const originalUrl = this.getCurrentUrl();
-    
+
     // Go back and forward
     await this.goBack();
     await this.page.waitForTimeout(1000);
-    
+
     await this.goForward();
     await this.page.waitForTimeout(1000);
-    
+
     // Validate we're back on the secure page
     const currentUrl = this.getCurrentUrl();
     expect(currentUrl).toBe(originalUrl);
-    
+
     await this.validateSessionState();
   }
 }

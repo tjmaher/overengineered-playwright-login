@@ -30,7 +30,7 @@ export interface ScreenshotOptions {
 export abstract class BasePage {
   public page: Page;
   public readonly baseUrl: string;
-  
+
   // Common locators that exist on most pages
   protected readonly pageTitle: Locator;
   protected readonly loadingSpinner: Locator;
@@ -40,7 +40,7 @@ export abstract class BasePage {
   constructor(page: Page, baseUrl = '') {
     this.page = page;
     this.baseUrl = baseUrl || process.env.BASE_URL || '';
-    
+
     // Initialize common locators
     this.pageTitle = this.page.locator('title');
     this.loadingSpinner = this.page.locator('[data-testid="loading"], .loading, .spinner');
@@ -129,7 +129,7 @@ export abstract class BasePage {
    */
   async getElementText(locator: Locator): Promise<string> {
     await this.waitForElement(locator);
-    return await locator.textContent() || '';
+    return (await locator.textContent()) || '';
   }
 
   /**
@@ -143,7 +143,10 @@ export abstract class BasePage {
   /**
    * Click element with enhanced error handling
    */
-  async clickElement(locator: Locator, options: { timeout?: number; force?: boolean } = {}): Promise<void> {
+  async clickElement(
+    locator: Locator,
+    options: { timeout?: number; force?: boolean } = {}
+  ): Promise<void> {
     await this.waitForElement(locator);
     await locator.click({
       timeout: options.timeout || 10000,
@@ -170,15 +173,19 @@ export abstract class BasePage {
   /**
    * Fill input field with enhanced validation
    */
-  async fillInput(locator: Locator, value: string, options: { clear?: boolean } = {}): Promise<void> {
+  async fillInput(
+    locator: Locator,
+    value: string,
+    options: { clear?: boolean } = {}
+  ): Promise<void> {
     await this.waitForElement(locator);
-    
+
     if (options.clear !== false) {
       await locator.fill(''); // Clear existing value
     }
-    
+
     await locator.fill(value);
-    
+
     // Verify the value was entered correctly
     const actualValue = await locator.inputValue();
     if (actualValue !== value) {
@@ -241,19 +248,19 @@ export abstract class BasePage {
       fullPage: options.fullPage || false,
       type: options.type || 'png',
     };
-    
+
     if (options.quality !== undefined) {
       screenshotOptions.quality = options.quality;
     }
-    
+
     if (options.clip !== undefined) {
       screenshotOptions.clip = options.clip;
     }
-    
+
     if (options.path !== undefined) {
       screenshotOptions.path = options.path;
     }
-    
+
     return await this.page.screenshot(screenshotOptions);
   }
 
@@ -294,11 +301,11 @@ export abstract class BasePage {
    */
   async isOnPage(urlPattern: string | RegExp): Promise<boolean> {
     const currentUrl = this.getCurrentUrl();
-    
+
     if (typeof urlPattern === 'string') {
       return currentUrl.includes(urlPattern);
     }
-    
+
     return urlPattern.test(currentUrl);
   }
 
@@ -307,7 +314,7 @@ export abstract class BasePage {
    */
   async waitForUrl(urlPattern: string | RegExp, timeout = 10000): Promise<void> {
     await this.page.waitForFunction(
-      (pattern) => {
+      pattern => {
         const url = window.location.href;
         if (typeof pattern === 'string') {
           return url.includes(pattern);
@@ -341,10 +348,10 @@ export abstract class BasePage {
    * Get alert text
    */
   async getAlertText(): Promise<string> {
-    return new Promise((resolve) => {
-      this.page.once('dialog', (dialog) => {
+    return new Promise(resolve => {
+      this.page.once('dialog', dialog => {
         resolve(dialog.message());
-        dialog.accept();
+        void dialog.accept(); // Mark as intentionally not awaited
       });
     });
   }
@@ -363,8 +370,8 @@ export abstract class BasePage {
   async logPageInfo(): Promise<void> {
     const title = await this.getTitle();
     const url = this.getCurrentUrl();
-    
-    console.log(`Page Info - Title: "${title}", URL: "${url}"`);
+
+    console.info(`Page Info - Title: "${title}", URL: "${url}"`);
   }
 
   /**

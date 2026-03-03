@@ -5,7 +5,6 @@
 
 import { Page, expect } from '@playwright/test';
 import * as fs from 'fs/promises';
-import * as path from 'path';
 
 export interface VisualTestOptions {
   threshold?: number;
@@ -43,7 +42,7 @@ export class VisualTester {
    * Take a screenshot and compare to baseline
    */
   async compareScreenshot(
-    name: string, 
+    name: string,
     options: VisualTestOptions = {}
   ): Promise<ScreenshotComparisonResult> {
     // Ensure directories exist
@@ -87,7 +86,7 @@ export class VisualTester {
     options: VisualTestOptions = {}
   ): Promise<ScreenshotComparisonResult> {
     const element = this.page.locator(selector);
-    
+
     try {
       await expect(element).toHaveScreenshot(`${name}-element.png`, {
         threshold: options.threshold || 0.2,
@@ -112,7 +111,7 @@ export class VisualTester {
     browsers: string[] = ['chromium', 'firefox', 'webkit']
   ): Promise<Record<string, ScreenshotComparisonResult>> {
     const results: Record<string, ScreenshotComparisonResult> = {};
-    
+
     for (const browser of browsers) {
       const browserName = `${name}-${browser}`;
       results[browser] = await this.compareScreenshot(browserName);
@@ -131,9 +130,9 @@ export class VisualTester {
     const results: Record<string, ScreenshotComparisonResult> = {};
 
     for (const viewport of viewports) {
-      await this.page.setViewportSize({ 
-        width: viewport.width, 
-        height: viewport.height 
+      await this.page.setViewportSize({
+        width: viewport.width,
+        height: viewport.height,
       });
 
       // Wait for layout changes
@@ -159,7 +158,7 @@ export class VisualTester {
 
     for (const state of states) {
       await state.setup();
-      
+
       // Wait for state changes to complete
       await this.page.waitForTimeout(500);
 
@@ -185,15 +184,12 @@ export class VisualTester {
 
     for (const interaction of interactions) {
       await interaction.action();
-      
+
       // Wait for visual changes
       await this.page.waitForTimeout(300);
 
       const testName = `${name}-form-${interaction.name}`;
-      results[interaction.name] = await this.compareElementScreenshot(
-        formSelector,
-        testName
-      );
+      results[interaction.name] = await this.compareElementScreenshot(formSelector, testName);
     }
 
     return results;
@@ -204,9 +200,9 @@ export class VisualTester {
    */
   async accessibilityVisualTest(name: string): Promise<ScreenshotComparisonResult> {
     // Focus elements to show focus indicators
-    const focusableElements = await this.page.locator(
-      'a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])'
-    ).all();
+    const focusableElements = await this.page
+      .locator('a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])')
+      .all();
 
     if (focusableElements.length > 0) {
       await focusableElements[0].focus();
@@ -248,9 +244,7 @@ export class VisualTester {
   /**
    * Generate visual test report
    */
-  async generateVisualReport(
-    results: Record<string, ScreenshotComparisonResult>
-  ): Promise<string> {
+  async generateVisualReport(results: Record<string, ScreenshotComparisonResult>): Promise<string> {
     const totalTests = Object.keys(results).length;
     const passedTests = Object.values(results).filter(r => r.passed).length;
     const failedTests = totalTests - passedTests;
@@ -260,7 +254,7 @@ export class VisualTester {
 
     if (failedTests > 0) {
       report += `## Failed Tests (${failedTests})\n\n`;
-      
+
       Object.entries(results).forEach(([testName, result]) => {
         if (!result.passed) {
           report += `### ${testName}\n`;
@@ -278,7 +272,7 @@ export class VisualTester {
 
     if (passedTests > 0) {
       report += `## Passed Tests (${passedTests})\n\n`;
-      
+
       Object.entries(results).forEach(([testName, result]) => {
         if (result.passed) {
           report += `- ✅ ${testName}\n`;
@@ -297,7 +291,7 @@ export class VisualTester {
     try {
       await fs.mkdir(this.baselineDir, { recursive: true });
       await fs.mkdir(this.outputDir, { recursive: true });
-    } catch (error) {
+    } catch {
       // Directories might already exist
     }
   }

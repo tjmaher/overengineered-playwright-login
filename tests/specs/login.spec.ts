@@ -13,10 +13,10 @@ test.describe('Login Functionality', () => {
   });
 
   test.describe('Positive Login Tests', () => {
-    test('should successfully login with valid credentials @smoke', async ({ 
-      loginPage, 
-      validCredentials, 
-      testStrings 
+    test('should successfully login with valid credentials @smoke', async ({
+      loginPage,
+      validCredentials,
+      testStrings,
     }) => {
       await test.step('Enter valid credentials', async () => {
         await loginPage.enterUsername(validCredentials.username);
@@ -33,9 +33,9 @@ test.describe('Login Functionality', () => {
       });
     });
 
-    test('should login successfully using Enter key submission', async ({ 
-      loginPage, 
-      validCredentials 
+    test('should login successfully using Enter key submission', async ({
+      loginPage,
+      validCredentials,
     }) => {
       await test.step('Fill credentials and submit via Enter', async () => {
         await loginPage.enterUsername(validCredentials.username);
@@ -48,10 +48,10 @@ test.describe('Login Functionality', () => {
       });
     });
 
-    test('should maintain login state after page refresh', async ({ 
-      loginPage, 
+    test('should maintain login state after page refresh', async ({
+      loginPage,
       validCredentials,
-      page
+      page,
     }) => {
       await test.step('Login successfully', async () => {
         await loginPage.loginWithValidCredentials(validCredentials);
@@ -65,12 +65,9 @@ test.describe('Login Functionality', () => {
   });
 
   test.describe('Negative Login Tests', () => {
-    test('should show error for invalid username', async ({ 
-      loginPage, 
-      testStrings 
-    }) => {
+    test('should show error for invalid username', async ({ loginPage, testStrings }) => {
       const invalidCreds = TestDataHelper.getInvalidUser('invalidUsername');
-      
+
       await test.step('Enter invalid username with valid password', async () => {
         await loginPage.login(invalidCreds);
       });
@@ -81,12 +78,9 @@ test.describe('Login Functionality', () => {
       });
     });
 
-    test('should show error for invalid password', async ({ 
-      loginPage, 
-      testStrings 
-    }) => {
+    test('should show error for invalid password', async ({ loginPage, testStrings }) => {
       const invalidCreds = TestDataHelper.getInvalidUser('invalidPassword');
-      
+
       await test.step('Enter valid username with invalid password', async () => {
         await loginPage.login(invalidCreds);
       });
@@ -96,12 +90,9 @@ test.describe('Login Functionality', () => {
       });
     });
 
-    test('should show error for empty username', async ({ 
-      loginPage, 
-      testStrings 
-    }) => {
+    test('should show error for empty username', async ({ loginPage, testStrings }) => {
       const invalidCreds = TestDataHelper.getInvalidUser('emptyUsername');
-      
+
       await test.step('Submit with empty username', async () => {
         await loginPage.login(invalidCreds);
       });
@@ -111,12 +102,9 @@ test.describe('Login Functionality', () => {
       });
     });
 
-    test('should show error for empty password', async ({ 
-      loginPage, 
-      testStrings 
-    }) => {
+    test('should show error for empty password', async ({ loginPage, testStrings }) => {
       const invalidCreds = TestDataHelper.getInvalidUser('emptyPassword');
-      
+
       await test.step('Submit with empty password', async () => {
         await loginPage.login(invalidCreds);
       });
@@ -126,12 +114,9 @@ test.describe('Login Functionality', () => {
       });
     });
 
-    test('should show error for both empty fields', async ({ 
-      loginPage, 
-      testStrings 
-    }) => {
+    test('should show error for both empty fields', async ({ loginPage, testStrings }) => {
       const invalidCreds = TestDataHelper.getInvalidUser('bothEmpty');
-      
+
       await test.step('Submit with both fields empty', async () => {
         await loginPage.login(invalidCreds);
       });
@@ -141,12 +126,9 @@ test.describe('Login Functionality', () => {
       });
     });
 
-    test('should handle whitespace-only credentials', async ({ 
-      loginPage, 
-      testStrings 
-    }) => {
+    test('should handle whitespace-only credentials', async ({ loginPage, testStrings }) => {
       const whitespaceCreds = TestDataHelper.getInvalidUser('whitespaceUsername');
-      
+
       await test.step('Submit with whitespace username', async () => {
         await loginPage.login(whitespaceCreds);
       });
@@ -187,7 +169,7 @@ test.describe('Login Functionality', () => {
 
     test('should handle SQL injection attempts', async ({ loginPage }) => {
       const sqlInjectionCreds = EDGE_CASE_DATA.sqlInjection;
-      
+
       await test.step('Attempt SQL injection', async () => {
         await loginPage.enterUsername(sqlInjectionCreds.username);
         await loginPage.enterPassword(sqlInjectionCreds.password);
@@ -203,7 +185,7 @@ test.describe('Login Functionality', () => {
 
     test('should handle XSS attempts', async ({ loginPage, page }) => {
       const xssCreds = EDGE_CASE_DATA.xssPayload;
-      
+
       await test.step('Attempt XSS injection', async () => {
         await loginPage.enterUsername(xssCreds.username);
         await loginPage.enterPassword(xssCreds.password);
@@ -220,7 +202,7 @@ test.describe('Login Functionality', () => {
 
     test('should handle unicode characters', async ({ loginPage }) => {
       const unicodeCreds = EDGE_CASE_DATA.unicodeChars;
-      
+
       await test.step('Enter unicode characters', async () => {
         await loginPage.enterUsername(unicodeCreds.username);
         await loginPage.enterPassword(unicodeCreds.password);
@@ -247,7 +229,7 @@ test.describe('Login Functionality', () => {
 
     test('should validate form field states', async ({ loginPage }) => {
       const formState = await loginPage.validateFormState();
-      
+
       expect(formState.isUsernameRequired).toBeDefined();
       expect(formState.isPasswordRequired).toBeDefined();
       expect(formState.isFormValid).toBe(false); // Empty form should be invalid
@@ -283,13 +265,17 @@ test.describe('Login Functionality', () => {
       });
     });
 
-    test('should not store sensitive data in browser history', async ({ page, loginPage, validCredentials }) => {
+    test('should not store sensitive data in browser history', async ({
+      page,
+      loginPage,
+      validCredentials,
+    }) => {
       await test.step('Login and check history', async () => {
         await loginPage.loginWithValidCredentials(validCredentials);
-        
+
         // Navigate back to check if password is retained (it shouldn't be)
         await page.goBack();
-        
+
         const retainedPassword = await loginPage.getPassword();
         expect(retainedPassword).toBe(''); // Password should not be retained
       });
@@ -297,31 +283,28 @@ test.describe('Login Functionality', () => {
   });
 
   test.describe('Performance Tests', () => {
-    test('should login within acceptable time limits', async ({ 
-      loginPage, 
-      validCredentials 
-    }) => {
+    test('should login within acceptable time limits', async ({ loginPage, validCredentials }) => {
       const startTime = Date.now();
-      
+
       await test.step('Measure login performance', async () => {
         await loginPage.loginWithValidCredentials(validCredentials);
-        
+
         const loginTime = Date.now() - startTime;
         expect(loginTime).toBeLessThan(5000); // Should complete within 5 seconds
-        
-        console.log(`Login completed in ${loginTime}ms`);
+
+        console.info(`Login completed in ${loginTime}ms`);
       });
     });
   });
 });
 
 test.describe('Login Page Structure and Content', () => {
-  test('should display correct page elements and text @smoke', async ({ 
-    loginPage, 
-    testStrings 
+  test('should display correct page elements and text @smoke', async ({
+    loginPage,
+    testStrings,
   }) => {
     await loginPage.goto();
-    
+
     await test.step('Validate page structure', async () => {
       await loginPage.validatePageStructure();
     });
@@ -329,7 +312,7 @@ test.describe('Login Page Structure and Content', () => {
     await test.step('Validate page content', async () => {
       const heading = await loginPage.getPageHeading();
       expect(heading).toBe(testStrings.loginPage.headingText);
-      
+
       const instruction = await loginPage.getInstructionText();
       expect(instruction).toBe(testStrings.loginPage.instructionText);
     });
@@ -337,8 +320,8 @@ test.describe('Login Page Structure and Content', () => {
     await test.step('Validate form labels', async () => {
       const usernameLabel = await loginPage.getUsernameLabel();
       expect(usernameLabel).toBe(testStrings.loginPage.usernameLabel);
-      
-      const passwordLabel = await loginPage.getPasswordLabel();  
+
+      const passwordLabel = await loginPage.getPasswordLabel();
       expect(passwordLabel).toBe(testStrings.loginPage.passwordLabel);
     });
   });

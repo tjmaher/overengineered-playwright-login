@@ -40,6 +40,11 @@ on:
           - 'production'
           - 'staging'
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 env:
   # Environment Configuration
   NODE_VERSION: '18'
@@ -318,7 +323,7 @@ jobs:
   generate-reports:
     name: 📋 Generate Test Reports
     runs-on: ubuntu-latest
-    needs: [cross-browser-tests, parallel-tests]
+    needs: [code-quality, security-scan, smoke-tests, cross-browser-tests, parallel-tests, performance-tests]
     if: always()
     
     steps:
@@ -349,13 +354,214 @@ jobs:
         run: |
           npm run allure:generate
           
-      - name: 🌐 Deploy Allure Report to GitHub Pages
+      - name: 📄 Create Reports Dashboard
+        if: always() && github.ref == 'refs/heads/main'
+        run: |
+          mkdir -p reports-dashboard
+          cat > reports-dashboard/index.html << 'EOF'
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>CI/CD Test Reports - Overengineered Playwright Framework</title>
+              <style>
+                  body {
+                      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+                      margin: 0;
+                      padding: 20px;
+                      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                      min-height: 100vh;
+                  }
+                  .container {
+                      max-width: 1200px;
+                      margin: 0 auto;
+                      background: white;
+                      border-radius: 12px;
+                      padding: 2rem;
+                      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+                  }
+                  .header {
+                      text-align: center;
+                      margin-bottom: 2rem;
+                      padding-bottom: 1rem;
+                      border-bottom: 3px solid #f0f0f0;
+                  }
+                  .header h1 {
+                      color: #2c3e50;
+                      margin: 0;
+                      font-size: 2.5rem;
+                  }
+                  .subtitle {
+                      color: #7f8c8d;
+                      margin: 0.5rem 0;
+                      font-size: 1.1rem;
+                  }
+                  .timestamp {
+                      color: #95a5a6;
+                      font-size: 0.9rem;
+                      font-style: italic;
+                  }
+                  .reports-grid {
+                      display: grid;
+                      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                      gap: 2rem;
+                      margin: 2rem 0;
+                  }
+                  .report-card {
+                      background: #f8f9fa;
+                      border-radius: 8px;
+                      padding: 1.5rem;
+                      border-left: 5px solid #3498db;
+                      transition: all 0.3s ease;
+                      position: relative;
+                  }
+                  .report-card:hover {
+                      transform: translateY(-5px);
+                      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+                  }
+                  .report-card.allure {
+                      border-left-color: #e74c3c;
+                  }
+                  .report-card.playwright {
+                      border-left-color: #2ecc71;
+                  }
+                  .report-title {
+                      font-size: 1.3rem;
+                      font-weight: 600;
+                      color: #2c3e50;
+                      margin-bottom: 0.5rem;
+                      display: flex;
+                      align-items: center;
+                      gap: 0.5rem;
+                  }
+                  .report-description {
+                      color: #5a6c7d;
+                      margin-bottom: 1rem;
+                      line-height: 1.5;
+                  }
+                  .report-link {
+                      display: inline-block;
+                      background: #3498db;
+                      color: white;
+                      padding: 0.75rem 1.5rem;
+                      text-decoration: none;
+                      border-radius: 6px;
+                      font-weight: 500;
+                      transition: background 0.3s ease;
+                  }
+                  .report-link:hover {
+                      background: #2980b9;
+                  }
+                  .report-card.allure .report-link {
+                      background: #e74c3c;
+                  }
+                  .report-card.allure .report-link:hover {
+                      background: #c0392b;
+                  }
+                  .report-card.playwright .report-link {
+                      background: #2ecc71;
+                  }
+                  .report-card.playwright .report-link:hover {
+                      background: #27ae60;
+                  }
+                  .status-badge {
+                      position: absolute;
+                      top: 1rem;
+                      right: 1rem;
+                      padding: 0.25rem 0.75rem;
+                      border-radius: 12px;
+                      font-size: 0.8rem;
+                      font-weight: 600;
+                      text-transform: uppercase;
+                      background: #d4edda;
+                      color: #155724;
+                  }
+                  .footer {
+                      text-align: center;
+                      margin-top: 3rem;
+                      padding-top: 2rem;
+                      border-top: 2px solid #ecf0f1;
+                      color: #7f8c8d;
+                  }
+                  .github-link {
+                      color: #3498db;
+                      text-decoration: none;
+                      font-weight: 500;
+                  }
+                  .github-link:hover {
+                      text-decoration: underline;
+                  }
+              </style>
+          </head>
+          <body>
+              <div class="container">
+                  <div class="header">
+                      <h1>🤖 CI/CD Test Reports</h1>
+                      <p class="subtitle">Automated Test Results for Overengineered Playwright Framework</p>
+                      <p class="timestamp">Generated: $(date -u '+%Y-%m-%d %H:%M:%S UTC')</p>
+                  </div>
+                  
+                  <div class="reports-grid">
+                      <div class="report-card playwright">
+                          <div class="status-badge">Latest</div>
+                          <div class="report-title">
+                              🎭 Playwright HTML Report
+                          </div>
+                          <div class="report-description">
+                              Interactive test results with traces, screenshots, and detailed execution logs.
+                          </div>
+                          <a href="./playwright-report/index.html" class="report-link">View Report</a>
+                      </div>
+          
+                      <div class="report-card allure">
+                          <div class="status-badge">Enhanced</div>
+                          <div class="report-title">
+                              📊 Allure Test Report
+                          </div>
+                          <div class="report-description">
+                              Rich test analytics with trends, graphs, and comprehensive test suite overview.
+                          </div>
+                          <a href="./allure-report/index.html" class="report-link">View Report</a>
+                      </div>
+                  </div>
+                  
+                  <div class="footer">
+                      <p>
+                          🔗 <a href="https://github.com/tjmaher/overengineered-playwright-login" class="github-link">
+                              Source Code
+                          </a> •
+                          <a href="https://github.com/tjmaher/overengineered-playwright-login/actions" class="github-link">
+                              Workflow Runs
+                          </a>
+                      </p>
+                  </div>
+              </div>
+          </body>
+          </html>
+          EOF
+          
+      - name: 📁 Prepare Reports for Pages Deployment
+        if: always() && github.ref == 'refs/heads/main'
+        run: |
+          # Copy reports to dashboard
+          if [ -d "playwright-report" ]; then
+            cp -r playwright-report reports-dashboard/
+          fi
+          
+          if [ -d "allure-report" ]; then
+            cp -r allure-report reports-dashboard/
+          fi
+          
+      - name: 🛠️ Setup Pages
         if: github.ref == 'refs/heads/main'
-        uses: peaceiris/actions-gh-pages@v3
+        uses: actions/configure-pages@v5
+        
+      - name: 📤 Upload Pages Artifact
+        if: github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./allure-report
-          destination_dir: allure-report
+          path: './reports-dashboard'
           
       - name: 📊 Upload Combined Reports
         if: always()
@@ -408,7 +614,7 @@ jobs:
   cleanup:
     name: 🧹 Cleanup & Optimization
     runs-on: ubuntu-latest
-    needs: [notify-results]
+    needs: [code-quality, security-scan, smoke-tests, cross-browser-tests, parallel-tests, performance-tests, generate-reports, notify-results]
     if: always()
     
     steps:
@@ -446,5 +652,24 @@ jobs:
           echo "| Smoke Tests | ${{ needs.smoke-tests.result == 'success' && '✅' || '❌' }} |" >> $GITHUB_STEP_SUMMARY
           echo "| Cross-Browser Tests | ${{ needs.cross-browser-tests.result == 'success' && '✅' || '❌' }} |" >> $GITHUB_STEP_SUMMARY
           echo "| Parallel Tests | ${{ needs.parallel-tests.result == 'success' && '✅' || '❌' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Performance Tests | ${{ needs.performance-tests.result == 'success' && '✅' || '❌' }} |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "📋 [View Detailed Allure Report](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/allure-report/)" >> $GITHUB_STEP_SUMMARY
+
+  # ========================================
+  # STAGE 10: DEPLOY REPORTS TO GITHUB PAGES
+  # ========================================
+  deploy-reports:
+    name: 🌐 Deploy Reports to GitHub Pages
+    runs-on: ubuntu-latest
+    needs: [generate-reports]
+    if: github.ref == 'refs/heads/main'
+    
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+      
+    steps:
+      - name: 🚀 Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

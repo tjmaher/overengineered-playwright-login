@@ -50,7 +50,7 @@ export class AccessibilityTester {
     for (const img of images) {
       const alt = await img.getAttribute('alt');
       const src = await img.getAttribute('src');
-      
+
       if (alt === null || alt.trim() === '') {
         issues.push({
           rule: 'img-alt',
@@ -69,12 +69,14 @@ export class AccessibilityTester {
       const id = await input.getAttribute('id');
       const ariaLabel = await input.getAttribute('aria-label');
       const ariaLabelledBy = await input.getAttribute('aria-labelledby');
-      
-      // Skip hidden inputs
-      if (type === 'hidden') continue;
 
-      const hasLabel = id && await this.page.locator(`label[for="${id}"]`).count() > 0;
-      
+      // Skip hidden inputs
+      if (type === 'hidden') {
+        continue;
+      }
+
+      const hasLabel = id && (await this.page.locator(`label[for="${id}"]`).count()) > 0;
+
       if (!hasLabel && !ariaLabel && !ariaLabelledBy) {
         issues.push({
           rule: 'label',
@@ -89,27 +91,28 @@ export class AccessibilityTester {
     // Check for heading structure
     const headings = await this.page.locator('h1, h2, h3, h4, h5, h6').all();
     let previousLevel = 0;
-    
+
     for (const heading of headings) {
       const tagName = await heading.evaluate(el => el.tagName.toLowerCase());
       const level = parseInt(tagName.substring(1));
-      
+
       if (level > previousLevel + 1) {
         issues.push({
           rule: 'heading-order',
-          impact: 'moderate', 
+          impact: 'moderate',
           description: 'Heading levels should not skip',
           element: tagName,
           suggestion: 'Use heading levels in sequential order (h1, h2, h3...)',
         });
       }
-      
+
       previousLevel = level;
     }
 
     // Check for color contrast (basic check)
     const textElements = await this.page.locator('p, span, div, a, button, label').all();
-    for (const element of textElements.slice(0, 10)) { // Limit for performance
+    for (const element of textElements.slice(0, 10)) {
+      // Limit for performance
       const styles = await element.evaluate(el => {
         const computed = window.getComputedStyle(el);
         return {
@@ -138,9 +141,9 @@ export class AccessibilityTester {
    * Test keyboard navigation
    */
   async testKeyboardNavigation(): Promise<KeyboardNavigationResult> {
-    const focusableElements = await this.page.locator(
-      'a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])'
-    ).all();
+    const focusableElements = await this.page
+      .locator('a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])')
+      .all();
 
     const focusOrder: string[] = [];
     let canFocusElement = true;
@@ -151,10 +154,12 @@ export class AccessibilityTester {
         await this.page.keyboard.press('Tab');
         const focused = await this.page.evaluate(() => {
           const active = document.activeElement;
-          return active ? active.tagName.toLowerCase() + (active.id ? `#${active.id}` : '') : 'none';
+          return active
+            ? active.tagName.toLowerCase() + (active.id ? `#${active.id}` : '')
+            : 'none';
         });
         focusOrder.push(focused);
-      } catch (error) {
+      } catch {
         canFocusElement = false;
         break;
       }
@@ -164,7 +169,7 @@ export class AccessibilityTester {
     const trapsFocus = focusOrder.length > 0 && focusOrder[0] === focusOrder[focusOrder.length - 1];
 
     // Check for skip links
-    const hasSkipLinks = await this.page.locator('a[href^="#"], .skip-link').count() > 0;
+    const hasSkipLinks = (await this.page.locator('a[href^="#"], .skip-link').count()) > 0;
 
     return {
       canFocusElement,
@@ -182,16 +187,17 @@ export class AccessibilityTester {
 
     // Check for required ARIA attributes
     const elementsWithRoles = await this.page.locator('[role]').all();
-    
+
     for (const element of elementsWithRoles) {
       const role = await element.getAttribute('role');
       const tagName = await element.evaluate(el => el.tagName.toLowerCase());
 
       // Check for required aria-label on certain roles
       if (['button', 'link', 'menuitem'].includes(role || '')) {
-        const hasLabel = await element.getAttribute('aria-label') ||
-                       await element.getAttribute('aria-labelledby') ||
-                       await element.textContent();
+        const hasLabel =
+          (await element.getAttribute('aria-label')) ||
+          (await element.getAttribute('aria-labelledby')) ||
+          (await element.textContent());
 
         if (!hasLabel || hasLabel.trim() === '') {
           issues.push({
@@ -208,13 +214,23 @@ export class AccessibilityTester {
     // Check for invalid ARIA attributes
     const elementsWithAria = await this.page.locator('[aria-*]').all();
     const validAriaAttributes = [
-      'aria-label', 'aria-labelledby', 'aria-describedby', 'aria-hidden',
-      'aria-expanded', 'aria-controls', 'aria-owns', 'aria-live',
-      'aria-atomic', 'aria-relevant', 'aria-busy', 'aria-disabled'
+      'aria-label',
+      'aria-labelledby',
+      'aria-describedby',
+      'aria-hidden',
+      'aria-expanded',
+      'aria-controls',
+      'aria-owns',
+      'aria-live',
+      'aria-atomic',
+      'aria-relevant',
+      'aria-busy',
+      'aria-disabled',
     ];
 
-    for (const element of elementsWithAria.slice(0, 10)) { // Limit for performance
-      const attributes = await element.evaluate(el => 
+    for (const element of elementsWithAria.slice(0, 10)) {
+      // Limit for performance
+      const attributes = await element.evaluate(el =>
         Array.from(el.attributes)
           .filter(attr => attr.name.startsWith('aria-'))
           .map(attr => attr.name)
@@ -247,7 +263,7 @@ export class AccessibilityTester {
     for (const link of links) {
       const text = await link.textContent();
       const ariaLabel = await link.getAttribute('aria-label');
-      
+
       if ((!text || text.trim() === '') && (!ariaLabel || ariaLabel.trim() === '')) {
         issues.push({
           rule: 'link-name',
@@ -264,7 +280,7 @@ export class AccessibilityTester {
     for (const button of buttons) {
       const text = await button.textContent();
       const ariaLabel = await button.getAttribute('aria-label');
-      
+
       if ((!text || text.trim() === '') && (!ariaLabel || ariaLabel.trim() === '')) {
         issues.push({
           rule: 'button-name',
@@ -291,18 +307,17 @@ export class AccessibilityTester {
     const screenReaderIssues = await this.testScreenReaderContent();
 
     const allIssues = [...basicIssues, ...ariaIssues, ...screenReaderIssues];
-    
-    const issuesBySeverity = allIssues.reduce((acc, issue) => {
-      acc[issue.impact] = (acc[issue.impact] || 0) + 1;
-      return acc;
-    }, {} as Record<string, number>);
+
+    const issuesBySeverity = allIssues.reduce(
+      (acc, issue) => {
+        acc[issue.impact] = (acc[issue.impact] || 0) + 1;
+        return acc;
+      },
+      {} as Record<string, number>
+    );
 
     // Mock passed rules (in real implementation, this would track what was checked)
-    const passedRules = [
-      'page-has-heading-one',
-      'html-has-lang',
-      'meta-viewport',
-    ];
+    const passedRules = ['page-has-heading-one', 'html-has-lang', 'meta-viewport'];
 
     return {
       url,
@@ -317,31 +332,28 @@ export class AccessibilityTester {
   /**
    * Assert accessibility compliance
    */
-  async assertAccessibility(options: {
-    maxCritical?: number;
-    maxSerious?: number;
-    maxModerate?: number;
-    allowedRules?: string[];
-  } = {}): Promise<void> {
+  async assertAccessibility(
+    options: {
+      maxCritical?: number;
+      maxSerious?: number;
+      maxModerate?: number;
+      allowedRules?: string[];
+    } = {}
+  ): Promise<void> {
     const report = await this.generateAccessibilityReport();
-    
-    const {
-      maxCritical = 0,
-      maxSerious = 0,
-      maxModerate = 5,
-      allowedRules = []
-    } = options;
 
-    const criticalIssues = report.issues.filter(issue => 
-      issue.impact === 'critical' && !allowedRules.includes(issue.rule)
+    const { maxCritical = 0, maxSerious = 0, maxModerate = 5, allowedRules = [] } = options;
+
+    const criticalIssues = report.issues.filter(
+      issue => issue.impact === 'critical' && !allowedRules.includes(issue.rule)
     );
-    
-    const seriousIssues = report.issues.filter(issue => 
-      issue.impact === 'serious' && !allowedRules.includes(issue.rule)
+
+    const seriousIssues = report.issues.filter(
+      issue => issue.impact === 'serious' && !allowedRules.includes(issue.rule)
     );
-    
-    const moderateIssues = report.issues.filter(issue => 
-      issue.impact === 'moderate' && !allowedRules.includes(issue.rule)
+
+    const moderateIssues = report.issues.filter(
+      issue => issue.impact === 'moderate' && !allowedRules.includes(issue.rule)
     );
 
     if (criticalIssues.length > maxCritical) {
@@ -362,7 +374,9 @@ export class AccessibilityTester {
       );
     }
 
-    console.log(`✅ Accessibility check passed: ${report.totalIssues} issues found within acceptable limits`);
+    console.warn(
+      `✅ Accessibility check passed: ${report.totalIssues} issues found within acceptable limits`
+    );
   }
 }
 
@@ -392,21 +406,26 @@ export class AccessibilityHelpers {
    */
   static logAccessibilityIssues(issues: AccessibilityIssue[]): void {
     if (issues.length === 0) {
-      console.log('✅ No accessibility issues found');
+      console.info('✅ No accessibility issues found');
       return;
     }
 
-    console.log(`\n🔍 Found ${issues.length} accessibility issues:`);
-    
+    console.warn(`\n🔍 Found ${issues.length} accessibility issues:`);
+
     issues.forEach((issue, index) => {
-      const icon = issue.impact === 'critical' ? '🚨' : 
-                   issue.impact === 'serious' ? '⚠️' : 
-                   issue.impact === 'moderate' ? '⚡' : 'ℹ️';
-      
-      console.log(`${index + 1}. ${icon} ${issue.rule} (${issue.impact})`);
-      console.log(`   Element: ${issue.element}`);
-      console.log(`   Issue: ${issue.description}`);
-      console.log(`   Fix: ${issue.suggestion}\n`);
+      const icon =
+        issue.impact === 'critical'
+          ? '🚨'
+          : issue.impact === 'serious'
+            ? '⚠️'
+            : issue.impact === 'moderate'
+              ? '⚡'
+              : 'ℹ️';
+
+      console.warn(`${index + 1}. ${icon} ${issue.rule} (${issue.impact})`);
+      console.warn(`   Element: ${issue.element}`);
+      console.warn(`   Issue: ${issue.description}`);
+      console.warn(`   Fix: ${issue.suggestion}\n`);
     });
   }
 }
