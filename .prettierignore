@@ -1,0 +1,11 @@
+node_modules/
+dist/
+allure-results/
+allure-report/
+playwright-report/
+test-results/
+coverage/
+.nyc_output/
+*.log
+*.min.js
+*.min.css

@@ -1,0 +1,58 @@
+{
+  "login": {
+    "pageTitle": "The Internet",
+    "headingText": "Login Page", 
+    "instructionText": "This is where you can log into the secure area. Enter tomsmith for the username and SuperSecretPassword! for the password. If the information is wrong you should see error messages.",
+    "usernameLabel": "Username",
+    "passwordLabel": "Password",
+    "loginButtonText": "Login"
+  },
+  "secureArea": {
+    "pageTitle": "The Internet", 
+    "headingText": "Secure Area",
+    "welcomeMessage": "Welcome to the Secure Area. When you are done click logout below.",
+    "logoutButtonText": "Logout"
+  },
+  "alerts": {
+    "loginSuccess": "You logged into a secure area!",
+    "logoutSuccess": "You logged out of the secure area!",
+    "invalidUsername": "Your username is invalid!",
+    "invalidPassword": "Your password is invalid!",
+    "emptyUsername": "Your username is invalid!",
+    "emptyPassword": "Your password is invalid!",
+    "blankCredentials": "Your username is invalid!"
+  },
+  "errorMessages": {
+    "pageNotFound": "Page not found",
+    "serverError": "Internal server error",
+    "timeout": "Request timeout",
+    "networkError": "Network error"
+  },
+  "validation": {
+    "requiredField": "This field is required",
+    "invalidFormat": "Invalid format", 
+    "tooShort": "Too short",
+    "tooLong": "Too long"
+  },
+  "navigation": {
+    "home": "Home",
+    "login": "Login", 
+    "logout": "Logout",
+    "back": "Back",
+    "forward": "Forward",
+    "refresh": "Refresh"
+  },
+  "accessibility": {
+    "usernameAriaLabel": "Username input field",
+    "passwordAriaLabel": "Password input field", 
+    "loginButtonAriaLabel": "Login submit button",
+    "logoutButtonAriaLabel": "Logout button",
+    "alertAriaLabel": "Alert message"
+  },
+  "testData": {
+    "longText": "This is a very long text string that exceeds normal input length limits and is used for testing boundary conditions and input validation",
+    "specialCharacters": "!@#$%^&*()_+-=[]{}|;':\",./<>?",
+    "numbers": "1234567890",
+    "mixedCase": "UpPeRcAsE LoWeRcAsE"
+  }
+}

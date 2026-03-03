@@ -1,0 +1,450 @@
+name: 🎭 Playwright Test Automation Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+  schedule:
+    # Run tests daily at 2 AM UTC
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+    inputs:
+      test_suite:
+        description: 'Test suite to run'
+        required: false
+        default: 'all'
+        type: 'choice'
+        options:
+          - 'all'
+          - 'smoke'
+          - 'regression'
+          - 'login'
+          - 'secure-area'
+      browser:
+        description: 'Browser to test'
+        required: false
+        default: 'all'
+        type: 'choice'
+        options:
+          - 'all'
+          - 'chromium'
+          - 'firefox'
+          - 'webkit'
+      environment:
+        description: 'Environment to test against'
+        required: false
+        default: 'production'
+        type: 'choice'
+        options:
+          - 'production'
+          - 'staging'
+
+env:
+  # Environment Configuration
+  NODE_VERSION: '18'
+  BASE_URL: 'https://the-internet.herokuapp.com'
+  CI: true
+  
+  # Test Configuration
+  PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: 0
+  FORCE_COLOR: 1
+  
+  # Allure Configuration
+  ALLURE_RESULTS_DIR: 'allure-results'
+  ALLURE_REPORT_DIR: 'allure-report'
+
+jobs:
+  # ========================================
+  # STAGE 1: CODE QUALITY & VALIDATION
+  # ========================================
+  code-quality:
+    name: 🔍 Code Quality & Linting
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+        
+      - name: 🏗️ Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          
+      - name: 📦 Install Dependencies
+        run: npm ci
+        
+      - name: 🏗️ Build TypeScript
+        run: npm run build
+        
+      - name: 🔍 Run ESLint
+        run: npm run lint
+        
+      - name: 🎨 Check Prettier Formatting
+        run: npm run format:check
+        
+      - name: 🔧 TypeScript Type Check
+        run: npm run type-check
+        
+      - name: 📊 Upload Code Quality Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: code-quality-results
+          path: |
+            dist/
+            **/*.log
+
+  # ========================================
+  # STAGE 2: SECURITY SCANNING
+  # ========================================
+  security-scan:
+    name: 🛡️ Security Scanning
+    runs-on: ubuntu-latest
+    needs: code-quality
+    
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+        
+      - name: 🏗️ Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          
+      - name: 🔒 Run npm audit
+        run: |
+          npm audit --audit-level=critical
+          npm audit --json > audit-results.json || true
+          
+      - name: 📊 Upload Security Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: security-scan-results
+          path: audit-results.json
+
+  # ========================================
+  # STAGE 3: SMOKE TESTS (FAST FEEDBACK)
+  # ========================================
+  smoke-tests:
+    name: 🚀 Smoke Tests
+    runs-on: ubuntu-latest
+    needs: [code-quality, security-scan]
+    
+    strategy:
+      matrix:
+        browser: [chromium]
+        
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+        
+      - name: 🏗️ Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          
+      - name: 📦 Install Dependencies
+        run: npm ci
+        
+      - name: 🎭 Install Playwright Browsers
+        run: npx playwright install --with-deps ${{ matrix.browser }}
+        
+      - name: 🧪 Run Smoke Tests
+        run: npm run test:smoke -- --project=${{ matrix.browser }}
+        env:
+          BROWSER: ${{ matrix.browser }}
+          
+      - name: 📊 Upload Smoke Test Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: smoke-test-results-${{ matrix.browser }}
+          path: |
+            test-results/
+            allure-results/
+          retention-days: 7
+
+  # ========================================
+  # STAGE 4: CROSS-BROWSER TESTING
+  # ========================================
+  cross-browser-tests:
+    name: 🌐 Cross-Browser Tests
+    runs-on: ${{ matrix.os }}
+    needs: smoke-tests
+    if: github.event_name != 'pull_request' || contains(github.event.pull_request.labels.*.name, 'full-test')
+    
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        browser: [chromium, firefox, webkit]
+        exclude:
+          # WebKit is not supported on Windows in GitHub Actions
+          - os: windows-latest
+            browser: webkit
+    
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+        
+      - name: 🏗️ Setup Node.js  
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          
+      - name: 📦 Install Dependencies
+        run: npm ci
+        
+      - name: 🎭 Install Playwright Browsers
+        run: npx playwright install --with-deps ${{ matrix.browser }}
+        
+      - name: 🧪 Run Tests
+        run: |
+          if [ "${{ github.event.inputs.test_suite }}" = "smoke" ]; then
+            npm run test:smoke -- --project=${{ matrix.browser }}
+          elif [ "${{ github.event.inputs.test_suite }}" = "regression" ]; then
+            npm run test:regression -- --project=${{ matrix.browser }}
+          else
+            npm run test -- --project=${{ matrix.browser }}
+          fi
+        shell: bash
+        env:
+          BROWSER: ${{ matrix.browser }}
+          
+      - name: 📊 Upload Test Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-results-${{ matrix.os }}-${{ matrix.browser }}
+          path: |
+            test-results/
+            allure-results/
+            playwright-report/
+          retention-days: 30
+
+  # ========================================
+  # STAGE 5: PARALLEL TEST EXECUTION
+  # ========================================
+  parallel-tests:
+    name: ⚡ Parallel Test Execution
+    runs-on: ubuntu-latest
+    needs: smoke-tests
+    
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1/4, 2/4, 3/4, 4/4]
+        
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+        
+      - name: 🏗️ Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          
+      - name: 📦 Install Dependencies
+        run: npm ci
+        
+      - name: 🎭 Install Playwright Browsers
+        run: npx playwright install --with-deps
+        
+      - name: 🧪 Run Tests (Shard ${{ matrix.shard }})
+        run: npx playwright test --shard=${{ matrix.shard }}
+        env:
+          SHARD: ${{ matrix.shard }}
+          
+      - name: 📊 Upload Shard Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: shard-results-${{ matrix.shard }}
+          path: |
+            test-results/
+            allure-results/
+          retention-days: 7
+
+  # ========================================
+  # STAGE 6: PERFORMANCE TESTING
+  # ========================================
+  performance-tests:
+    name: 📈 Performance Testing
+    runs-on: ubuntu-latest
+    needs: smoke-tests
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+        
+      - name: 🏗️ Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          
+      - name: 📦 Install Dependencies
+        run: npm ci
+        
+      - name: 🎭 Install Playwright Browsers
+        run: npx playwright install --with-deps chromium
+        
+      - name: 📈 Run Performance Tests
+        run: |
+          npx playwright test --grep="should.*within acceptable time" --project=chromium
+        env:
+          PERFORMANCE_TEST: true
+          
+      - name: 📊 Upload Performance Results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: performance-test-results
+          path: |
+            test-results/
+            allure-results/
+
+  # ========================================
+  # STAGE 7: REPORT GENERATION
+  # ========================================
+  generate-reports:
+    name: 📋 Generate Test Reports
+    runs-on: ubuntu-latest
+    needs: [cross-browser-tests, parallel-tests]
+    if: always()
+    
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+        
+      - name: 🏗️ Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          
+      - name: 📦 Install Dependencies
+        run: npm ci
+        
+      - name: 📥 Download All Test Results
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts/
+          
+      - name: 🔄 Merge Allure Results  
+        run: |
+          mkdir -p allure-results
+          find artifacts/ -name "allure-results" -type d -exec cp -r {}/* allure-results/ \; 2>/dev/null || true
+          ls -la allure-results/
+          
+      - name: 📋 Generate Allure Report
+        run: |
+          npm run allure:generate
+          
+      - name: 🌐 Deploy Allure Report to GitHub Pages
+        if: github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./allure-report
+          destination_dir: allure-report
+          
+      - name: 📊 Upload Combined Reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: combined-test-reports
+          path: |
+            allure-report/
+            playwright-report/
+          retention-days: 90
+
+  # ========================================
+  # STAGE 8: NOTIFICATION & MONITORING
+  # ========================================
+  notify-results:
+    name: 📢 Notify Results
+    runs-on: ubuntu-latest
+    needs: [cross-browser-tests, parallel-tests, generate-reports]
+    if: always()
+    
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+        
+      - name: 📊 Calculate Test Results
+        id: test-results
+        run: |
+          # This would normally integrate with your notification system
+          echo "Tests completed. Check the Allure report for detailed results."
+          
+          # Set outputs for potential Slack/Teams notifications
+          echo "status=${{ needs.cross-browser-tests.result }}" >> $GITHUB_OUTPUT
+          echo "report_url=https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/allure-report/" >> $GITHUB_OUTPUT
+          
+      - name: 🚨 Notify on Failure  
+        if: contains(needs.*.result, 'failure')
+        run: |
+          echo "❌ Tests failed! Check the workflow logs and Allure report."
+          echo "Report URL: ${{ steps.test-results.outputs.report_url }}"
+          
+      - name: ✅ Notify on Success
+        if: needs.cross-browser-tests.result == 'success' && needs.parallel-tests.result == 'success'
+        run: |
+          echo "✅ All tests passed successfully!"
+          echo "Report URL: ${{ steps.test-results.outputs.report_url }}"
+
+  # ========================================
+  # STAGE 9: CLEANUP & OPTIMIZATION
+  # ========================================
+  cleanup:
+    name: 🧹 Cleanup & Optimization
+    runs-on: ubuntu-latest
+    needs: [notify-results]
+    if: always()
+    
+    steps:
+      - name: 🏗️ Cleanup Old Artifacts
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const artifacts = await github.rest.actions.listWorkflowRunArtifacts({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              run_id: context.runId,
+            });
+            
+            // Keep only the most recent artifacts
+            const oldArtifacts = artifacts.data.artifacts
+              .filter(artifact => artifact.name.startsWith('test-results-'))
+              .filter((_, index) => index > 10); // Keep only last 10
+              
+            for (const artifact of oldArtifacts) {
+              await github.rest.actions.deleteArtifact({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                artifact_id: artifact.id,
+              });
+            }
+            
+      - name: 📊 Workflow Summary
+        run: |
+          echo "## 🎭 Playwright Test Results Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Stage | Status |" >> $GITHUB_STEP_SUMMARY
+          echo "|-------|--------|" >> $GITHUB_STEP_SUMMARY
+          echo "| Code Quality | ${{ needs.code-quality.result == 'success' && '✅' || '❌' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Security Scan | ${{ needs.security-scan.result == 'success' && '✅' || '❌' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Smoke Tests | ${{ needs.smoke-tests.result == 'success' && '✅' || '❌' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Cross-Browser Tests | ${{ needs.cross-browser-tests.result == 'success' && '✅' || '❌' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| Parallel Tests | ${{ needs.parallel-tests.result == 'success' && '✅' || '❌' }} |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "📋 [View Detailed Allure Report](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/allure-report/)" >> $GITHUB_STEP_SUMMARY
