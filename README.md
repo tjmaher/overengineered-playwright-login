@@ -29,6 +29,7 @@ An Overengineered, production-ready test automation framework built with GitHub 
 This framework provides automated testing for login functionality using the [The Internet](https://the-internet.herokuapp.com/login) demo application. It demonstrates industry-standard practices for building scalable, maintainable test automation frameworks using modern tools and methodologies.
 
 ### Key Testing Areas
+
 - **Login Authentication**: Valid/invalid credential scenarios
 - **Security Testing**: XSS, SQL injection, session management
 - **User Experience**: Keyboard navigation, accessibility testing
@@ -36,9 +37,10 @@ This framework provides automated testing for login functionality using the [The
 - **Performance Testing**: Response time validation
 
 ### 📈 Test Coverage Statistics
+
 - **Login Page Tests**: `20 comprehensive test cases`
   - 3 Positive login scenarios
-  - 6 Negative login scenarios  
+  - 6 Negative login scenarios
   - 5 Edge case validations
   - 4 User experience tests
   - 2 Security-focused tests
@@ -55,6 +57,7 @@ This framework provides automated testing for login functionality using the [The
 ## ✨ Features
 
 ### 🔧 Technical Stack
+
 - **🎭 Playwright**: Cross-browser automation framework
 - **📘 TypeScript**: Type-safe testing with modern JavaScript features
 - **📋 Allure Reports**: Comprehensive test reporting with screenshots and traces
@@ -63,6 +66,7 @@ This framework provides automated testing for login functionality using the [The
 - **📦 Page Object Model**: Maintainable test architecture
 
 ### 🚀 Framework Capabilities
+
 - **Cross-Platform Testing**: Windows, macOS, Linux support
 - **Parallel Execution**: Optimized test performance with sharding
 - **Visual Testing**: Screenshot comparison and visual regression
@@ -72,6 +76,7 @@ This framework provides automated testing for login functionality using the [The
 - **Performance Monitoring**: Load time and response metrics
 
 ### 📊 Advanced Reporting
+
 - **Allure Integration**: Rich HTML reports with test analytics
 - **GitHub Pages**: Automated report deployment
 - **Slack/Teams Integration**: Test result notifications
@@ -89,15 +94,15 @@ graph TD
     C --> D[Base Page]
     C --> E[Login Page]
     C --> F[Secure Area Page]
-    
+
     G[Test Data Layer] --> H[Credentials]
     G --> I[Strings/Localization]
     G --> J[Configuration]
-    
+
     K[Utilities] --> L[Global Setup]
     K --> M[Global Teardown]
     K --> N[Helpers]
-    
+
     O[Reporting] --> P[Allure Reports]
     O --> Q[HTML Reports]
     O --> R[Screenshots]
@@ -105,6 +110,7 @@ graph TD
 ```
 
 ### Design Patterns Used
+
 - **Page Object Model (POM)**: Encapsulation of page elements and actions
 - **Factory Pattern**: Dynamic test data generation
 - **Builder Pattern**: Flexible test configuration
@@ -123,17 +129,20 @@ graph TD
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/your-org/overengineered-playwright-login.git
    cd overengineered-playwright-login
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Install browsers**
+
    ```bash
    npm run install:browsers
    ```
@@ -146,6 +155,7 @@ graph TD
 ### Environment Setup
 
 1. **Copy environment template**
+
    ```bash
    cp .env.example .env
    ```
@@ -198,23 +208,27 @@ playwright-typescript-login/
 ### Login Tests (`tests/specs/login.spec.ts`)
 
 #### ✅ Positive Test Cases
+
 - **Valid Login**: Successful authentication with correct credentials
 - **Keyboard Navigation**: Login using Tab and Enter keys
 - **Session Persistence**: Login state maintained after page refresh
 
 #### ❌ Negative Test Cases
+
 - **Invalid Username**: Error handling for incorrect username
 - **Invalid Password**: Error handling for incorrect password
 - **Empty Fields**: Validation for missing credentials
 - **Whitespace Input**: Handling of whitespace-only input
 
 #### 🔒 Security Test Cases
+
 - **SQL Injection**: Prevention of SQL injection attacks
 - **XSS Prevention**: Cross-site scripting attempt blocking
 - **Password Masking**: Sensitive data protection in DOM
 - **Session Security**: Secure session management
 
 #### 🎭 Edge Cases
+
 - **Long Input**: Very long username/password handling
 - **Special Characters**: Unicode and special character support
 - **Network Issues**: Resilience to connection problems
@@ -222,16 +236,19 @@ playwright-typescript-login/
 ### Secure Area Tests (`tests/specs/secure-area.spec.ts`)
 
 #### 🔐 Authentication Tests
+
 - **Successful Logout**: Proper logout with confirmation message
 - **Unauthorized Access**: Prevention of unauthenticated access
 - **Session Validation**: Authenticated state verification
 
 #### 🔄 Session Management
+
 - **Concurrent Sessions**: Multiple browser session handling
 - **Session Timeout**: Idle timeout behavior (if applicable)
 - **Browser Navigation**: Back/forward button handling
 
 #### 🌐 Cross-Browser Compatibility
+
 - **Chrome/Chromium**: Full functionality verification
 - **Firefox**: Feature parity testing
 - **Safari/WebKit**: Cross-platform consistency
@@ -240,21 +257,21 @@ playwright-typescript-login/
 
 ### Environment Variables
 
-| Variable | Description | Default | Example |
-|----------|-------------|---------|---------|
-| `BASE_URL` | Application base URL | `https://the-internet.herokuapp.com` | `http://localhost:3000` |
-| `HEADLESS` | Run browsers in headless mode | `true` | `false` |
-| `BROWSER` | Default browser for tests | `chromium` | `firefox`, `webkit` |
-| `TIMEOUT` | Default timeout in milliseconds | `30000` | `60000` |
-| `RETRIES` | Number of test retries | `0` | `2` |
-| `WORKERS` | Number of parallel workers | `1` | `4` |
+| Variable   | Description                     | Default                              | Example                 |
+| ---------- | ------------------------------- | ------------------------------------ | ----------------------- |
+| `BASE_URL` | Application base URL            | `https://the-internet.herokuapp.com` | `http://localhost:3000` |
+| `HEADLESS` | Run browsers in headless mode   | `true`                               | `false`                 |
+| `BROWSER`  | Default browser for tests       | `chromium`                           | `firefox`, `webkit`     |
+| `TIMEOUT`  | Default timeout in milliseconds | `30000`                              | `60000`                 |
+| `RETRIES`  | Number of test retries          | `0`                                  | `2`                     |
+| `WORKERS`  | Number of parallel workers      | `1`                                  | `4`                     |
 
 ### Playwright Configuration
 
 The `playwright.config.ts` file provides comprehensive configuration:
 
 - **Multiple Browsers**: Chrome, Firefox, Safari support
-- **Mobile Testing**: iPhone and Android device emulation  
+- **Mobile Testing**: iPhone and Android device emulation
 - **Visual Testing**: Screenshot comparison settings
 - **Reporting**: Multiple report formats (HTML, JSON, Allure)
 - **Retries**: Configurable retry logic for flaky tests
@@ -283,7 +300,7 @@ npm run test:debug
 ```bash
 # Run tests in specific browsers
 npm run test:chromium
-npm run test:firefox  
+npm run test:firefox
 npm run test:webkit
 
 # Run mobile tests
@@ -344,7 +361,8 @@ npm run allure:serve
 ```
 
 ### Report Features
-- **Test Execution Trends**: Historical success/failure rates  
+
+- **Test Execution Trends**: Historical success/failure rates
 - **Test Case Documentation**: Detailed step-by-step execution
 - **Screenshots and Videos**: Visual evidence of test execution
 - **Performance Metrics**: Execution time analysis
@@ -356,20 +374,20 @@ npm run allure:serve
 # View built-in HTML report
 npm run show:report
 
-# View execution traces 
+# View execution traces
 npm run show:trace
 ```
 
 ### Artifacts Generated
 
-| Artifact Type | Location | Description |
-|---------------|----------|-------------|
-| Screenshots | `test-results/` | Failure screenshots |
-| Videos | `test-results/` | Test execution recordings |
-| Traces | `test-results/` | Detailed execution traces |
-| HTML Reports | `playwright-report/` | Built-in Playwright reports |
-| Allure Results | `allure-results/` | Raw Allure test data |
-| Allure Reports | `allure-report/` | Generated HTML reports |
+| Artifact Type  | Location             | Description                 |
+| -------------- | -------------------- | --------------------------- |
+| Screenshots    | `test-results/`      | Failure screenshots         |
+| Videos         | `test-results/`      | Test execution recordings   |
+| Traces         | `test-results/`      | Detailed execution traces   |
+| HTML Reports   | `playwright-report/` | Built-in Playwright reports |
+| Allure Results | `allure-results/`    | Raw Allure test data        |
+| Allure Reports | `allure-report/`     | Generated HTML reports      |
 
 ## 🔄 CI/CD Pipeline
 
@@ -405,7 +423,7 @@ The GitHub Actions pipeline provides comprehensive testing with multiple stages:
 
 ```bash
 # Format code
-npm run format 
+npm run format
 
 # Check formatting
 npm run format:check
@@ -461,7 +479,7 @@ The project uses Husky for Git hooks:
 
 - **TypeScript**: Strict mode enabled with comprehensive type checking
 - **Prettier**: Code formatting and style consistency
-- **Naming Conventions**: 
+- **Naming Conventions**:
   - Files: kebab-case (`login-page.ts`)
   - Classes: PascalCase (`LoginPage`)
   - Methods: camelCase (`enterUsername`)
@@ -480,7 +498,7 @@ The project uses Husky for Git hooks:
 ### Documentation Links
 
 - **[Playwright Documentation](https://playwright.dev/)**: Official Playwright guides
-- **[TypeScript Handbook](https://www.typescriptlang.org/docs/)**: TypeScript language reference  
+- **[TypeScript Handbook](https://www.typescriptlang.org/docs/)**: TypeScript language reference
 - **[Allure Reports](https://docs.qameta.io/allure/)**: Advanced reporting documentation
 - **[GitHub Actions](https://docs.github.com/en/actions)**: CI/CD workflow documentation
 
@@ -555,29 +573,30 @@ During the initial framework creation, several TypeScript compilation errors wer
 
 ### **Specific Errors Found and Fixed**
 
-| Error Type | Count | Example | Resolution |
-|------------|-------|---------|------------|
-| **Property Access** | 4 | `Property 'page' is protected` | Changed to `public` access |
-| **Import Assertions** | 1 | `Import assertions not supported` | Used `import *` syntax |
-| **Unused Variables** | 6 | `'poweredByLink' is declared but never used` | Commented out or prefixed with `_` |
-| **API Compatibility** | 3 | `Property 'navigationStart' does not exist` | Used `fetchStart` alternative |
-| **Configuration Issues** | 2 | `'mode' does not exist in type` | Removed invalid configuration options |
+| Error Type               | Count | Example                                      | Resolution                            |
+| ------------------------ | ----- | -------------------------------------------- | ------------------------------------- |
+| **Property Access**      | 4     | `Property 'page' is protected`               | Changed to `public` access            |
+| **Import Assertions**    | 1     | `Import assertions not supported`            | Used `import *` syntax                |
+| **Unused Variables**     | 6     | `'poweredByLink' is declared but never used` | Commented out or prefixed with `_`    |
+| **API Compatibility**    | 3     | `Property 'navigationStart' does not exist`  | Used `fetchStart` alternative         |
+| **Configuration Issues** | 2     | `'mode' does not exist in type`              | Removed invalid configuration options |
 
 ### **Actual Fixes Implemented**
 
 **Phase 1: Screenshot and Import Fixes**
+
 ```typescript
 // BEFORE: Incompatible screenshot options
-await page.screenshot({ 
-  path: screenshotPath, 
-  fullPage: true, 
-  mode: 'fullPage' 
+await page.screenshot({
+  path: screenshotPath,
+  fullPage: true,
+  mode: 'fullPage',
 });
 
 // AFTER: Fixed screenshot options
-await page.screenshot({ 
-  path: screenshotPath, 
-  fullPage: true 
+await page.screenshot({
+  path: screenshotPath,
+  fullPage: true,
 });
 ```
 
@@ -585,11 +604,12 @@ await page.screenshot({
 // BEFORE: Import assertion syntax
 import strings from './strings.json' assert { type: 'json' };
 
-// AFTER: Standard import syntax  
+// AFTER: Standard import syntax
 import * as strings from './strings.json';
 ```
 
 **Phase 2: Property Access and Visibility Fixes**
+
 ```typescript
 // BEFORE: Protected properties causing test access issues
 export class BasePage {
@@ -605,6 +625,7 @@ export class BasePage {
 ```
 
 **Phase 3: Unused Variable Resolution**
+
 ```typescript
 // BEFORE: Unused variables causing compilation errors
 private poweredByLink = this.page.locator('a[href="http://elemental-selenium.com/"]');
@@ -616,6 +637,7 @@ private elementalSeleniumLink = this.page.locator('a[href="http://elementalselen
 ```
 
 **Phase 4: API Compatibility Updates**
+
 ```typescript
 // BEFORE: Deprecated navigation timing API
 const navigationStart = performanceNavigation.navigationStart;
@@ -625,11 +647,12 @@ const navigationStart = performanceNavigation.fetchStart || Date.now();
 ```
 
 **Phase 5: Configuration Corrections**
+
 ```typescript
 // BEFORE: Invalid tsconfig.json settings
 {
   "target": "ES2022",
-  "module": "ESNext", 
+  "module": "ESNext",
   "exactOptionalPropertyTypes": true
 }
 
@@ -643,7 +666,8 @@ const navigationStart = performanceNavigation.fetchStart || Date.now();
 
 ### **Prevention Strategies Implemented**
 
-1. **Automated Type Checking** 
+1. **Automated Type Checking**
+
    ```json
    "scripts": {
      "pretest": "npm run type-check",
@@ -652,10 +676,11 @@ const navigationStart = performanceNavigation.fetchStart || Date.now();
    ```
 
 2. **Relaxed Initial Configuration**
+
    ```json
    {
      "noUnusedLocals": false,
-     "noUnusedParameters": false, 
+     "noUnusedParameters": false,
      "exactOptionalPropertyTypes": false
    }
    ```

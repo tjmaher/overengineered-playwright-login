@@ -13,12 +13,12 @@ module.exports = [
       parserOptions: {
         ecmaVersion: 2022,
         sourceType: 'module',
-        project: './tsconfig.json'
+        project: './tsconfig.json',
       },
       globals: {
         ...globals.node,
         ...globals.browser,
-      }
+      },
     },
     plugins: {
       '@typescript-eslint': typescript,
@@ -27,11 +27,14 @@ module.exports = [
     rules: {
       'prettier/prettier': 'error',
       'no-unused-vars': 'off',
-      '@typescript-eslint/no-unused-vars': ['warn', { 
-        argsIgnorePattern: '^_',
-        varsIgnorePattern: '^_',
-        caughtErrorsIgnorePattern: '^_'
-      }],
+      '@typescript-eslint/no-unused-vars': [
+        'warn',
+        {
+          argsIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          caughtErrorsIgnorePattern: '^_',
+        },
+      ],
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-floating-promises': 'warn',
       '@typescript-eslint/prefer-nullish-coalescing': 'off',
@@ -44,9 +47,9 @@ module.exports = [
       'no-empty-pattern': 'off',
       'prefer-const': 'error',
       'no-var': 'error',
-      'eqeqeq': ['error', 'always'],
-      'curly': ['error', 'all']
-    }
+      eqeqeq: ['error', 'always'],
+      curly: ['error', 'all'],
+    },
   },
   {
     ignores: [
@@ -55,7 +58,7 @@ module.exports = [
       'allure-results/**',
       'allure-report/**',
       'playwright-report/**',
-      'test-results/**'
-    ]
-  }
+      'test-results/**',
+    ],
+  },
 ];

@@ -36,9 +36,7 @@
         "name": "chromium",
         "testDir": "D:/src/overengineered-playwright-login/tests",
         "testIgnore": [],
-        "testMatch": [
-          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
-        ],
+        "testMatch": ["**/*.@(spec|test).?(c|m)[jt]s?(x)"],
         "timeout": 60000
       },
       {
@@ -57,9 +55,7 @@
         "name": "firefox",
         "testDir": "D:/src/overengineered-playwright-login/tests",
         "testIgnore": [],
-        "testMatch": [
-          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
-        ],
+        "testMatch": ["**/*.@(spec|test).?(c|m)[jt]s?(x)"],
         "timeout": 60000
       },
       {
@@ -78,9 +74,7 @@
         "name": "webkit",
         "testDir": "D:/src/overengineered-playwright-login/tests",
         "testIgnore": [],
-        "testMatch": [
-          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
-        ],
+        "testMatch": ["**/*.@(spec|test).?(c|m)[jt]s?(x)"],
         "timeout": 60000
       },
       {
@@ -99,9 +93,7 @@
         "name": "Mobile Chrome",
         "testDir": "D:/src/overengineered-playwright-login/tests",
         "testIgnore": [],
-        "testMatch": [
-          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
-        ],
+        "testMatch": ["**/*.@(spec|test).?(c|m)[jt]s?(x)"],
         "timeout": 60000
       },
       {
@@ -120,9 +112,7 @@
         "name": "Mobile Safari",
         "testDir": "D:/src/overengineered-playwright-login/tests",
         "testIgnore": [],
-        "testMatch": [
-          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
-        ],
+        "testMatch": ["**/*.@(spec|test).?(c|m)[jt]s?(x)"],
         "timeout": 60000
       },
       {
@@ -141,9 +131,7 @@
         "name": "Microsoft Edge",
         "testDir": "D:/src/overengineered-playwright-login/tests",
         "testIgnore": [],
-        "testMatch": [
-          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
-        ],
+        "testMatch": ["**/*.@(spec|test).?(c|m)[jt]s?(x)"],
         "timeout": 60000
       },
       {
@@ -162,9 +150,7 @@
         "name": "Google Chrome Beta",
         "testDir": "D:/src/overengineered-playwright-login/tests",
         "testIgnore": [],
-        "testMatch": [
-          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
-        ],
+        "testMatch": ["**/*.@(spec|test).?(c|m)[jt]s?(x)"],
         "timeout": 60000
       },
       {
@@ -183,9 +169,7 @@
         "name": "setup",
         "testDir": "D:/src/overengineered-playwright-login/tests",
         "testIgnore": [],
-        "testMatch": [
-          "/.*\\.setup\\.ts/"
-        ],
+        "testMatch": ["/.*\\.setup\\.ts/"],
         "timeout": 60000
       },
       {
@@ -204,9 +188,7 @@
         "name": "cleanup",
         "testDir": "D:/src/overengineered-playwright-login/tests",
         "testIgnore": [],
-        "testMatch": [
-          "/.*\\.cleanup\\.ts/"
-        ],
+        "testMatch": ["/.*\\.cleanup\\.ts/"],
         "timeout": 60000
       },
       {
@@ -225,9 +207,7 @@
         "name": "api",
         "testDir": "D:/src/overengineered-playwright-login/tests",
         "testIgnore": [],
-        "testMatch": [
-          "/.*\\.api\\.spec\\.ts/"
-        ],
+        "testMatch": ["/.*\\.api\\.spec\\.ts/"],
         "timeout": 60000
       }
     ],
@@ -299,9 +279,7 @@
                 {
                   "title": "should successfully logout and show confirmation message @smoke",
                   "ok": true,
-                  "tags": [
-                    "smoke"
-                  ],
+                  "tags": ["smoke"],
                   "tests": [
                     {
                       "timeout": 60000,

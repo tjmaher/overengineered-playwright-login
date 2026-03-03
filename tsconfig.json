@@ -33,15 +33,6 @@
     "noUnusedParameters": false,
     "exactOptionalPropertyTypes": false
   },
-  "include": [
-    "src/**/*",
-    "tests/**/*",
-    "*.config.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "allure-results",
-    "allure-report"
-  ]
+  "include": ["src/**/*", "tests/**/*", "*.config.ts"],
+  "exclude": ["node_modules", "dist", "allure-results", "allure-report"]
 }

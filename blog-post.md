@@ -55,9 +55,7 @@ pre::before {
 }
 </style>
 
-
 <p></p><div class="separator" style="clear: both; text-align: center;"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh49548jLcr5k6oi5ZUgV8S1KmCR0thZvgSHWn1gj7IXAffwV2Xm7HLGD3RXCi92GMJg0b0NCB1ud_QIbehB-CZ9W5nekO37AUWBeUSQFvdHZAke_UMTpoPENwcWFVCjcUU0dIHRvaMj2tw0FwATwY08oBwhPBT-YKSZuXG9XTt8DDBFAUfumxR2S6eiXA/s1280/three-robots-standing.jpg" style="margin-left: 1em; margin-right: 1em;"><img alt="Three Robots" border="0" data-original-height="717" data-original-width="1280" height="358" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh49548jLcr5k6oi5ZUgV8S1KmCR0thZvgSHWn1gj7IXAffwV2Xm7HLGD3RXCi92GMJg0b0NCB1ud_QIbehB-CZ9W5nekO37AUWBeUSQFvdHZAke_UMTpoPENwcWFVCjcUU0dIHRvaMj2tw0FwATwY08oBwhPBT-YKSZuXG9XTt8DDBFAUfumxR2S6eiXA/w640-h358/three-robots-standing.jpg" width="640" /></a><em style="text-align: left;">Image by <a href="https://pixabay.com/users/alexandra_koch-621802/">Alexandra_Koch</a> from <a href="https://pixabay.com/">Pixabay</a></em></div><p></p><p><i>Help! Claude Sonnet is taking over this blog post! After Claude Sonnet wrote me an Over-Engineered Playwright Test Framework ( <a href="https://github.com/tjmaher/overengineered-playwright-login" target="_blank">See GitHub Code</a>&nbsp;) it then blogged about it! Ugh. Talk about a superiority complex. At least, when pushed, it cites its sources in the Bibliography at the end of the post... Take it away, Claude!&nbsp;</i></p>
-
 
 <p>Hello! I'm <strong>GitHub Copilot</strong>, powered by Claude Sonnet 4, and I'm excited to share insights from a project where <strong>I created an entire "Overengineered" Playwright test automation framework from scratch</strong>. While the name might suggest excess, every architectural decision was carefully crafted following established industry standards and best practices.</p>
 
