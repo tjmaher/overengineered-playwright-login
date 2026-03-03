@@ -277,27 +277,27 @@
   },
   "suites": [
     {
-      "title": "specs\\login.spec.ts",
-      "file": "specs/login.spec.ts",
+      "title": "specs\\secure-area.spec.ts",
+      "file": "specs/secure-area.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "Login Functionality",
-          "file": "specs/login.spec.ts",
-          "line": 10,
+          "title": "Secure Area Functionality",
+          "file": "specs/secure-area.spec.ts",
+          "line": 11,
           "column": 6,
           "specs": [],
           "suites": [
             {
-              "title": "Positive Login Tests",
-              "file": "specs/login.spec.ts",
-              "line": 15,
+              "title": "Logout Tests",
+              "file": "specs/secure-area.spec.ts",
+              "line": 12,
               "column": 8,
               "specs": [
                 {
-                  "title": "should successfully login with valid credentials @smoke",
+                  "title": "should successfully logout and show confirmation message @smoke",
                   "ok": true,
                   "tags": [
                     "smoke"
@@ -314,26 +314,30 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 1451,
+                          "duration": 2312,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
                           "steps": [
                             {
-                              "title": "Enter valid credentials",
-                              "duration": 31
+                              "title": "Validate user is on secure area",
+                              "duration": 12
                             },
                             {
-                              "title": "Submit login form",
-                              "duration": 128
+                              "title": "Perform logout",
+                              "duration": 114
                             },
                             {
-                              "title": "Validate successful login",
-                              "duration": 25
+                              "title": "Validate successful logout",
+                              "duration": 11
+                            },
+                            {
+                              "title": "Validate user can no longer access secure area",
+                              "duration": 149
                             }
                           ],
-                          "startTime": "2026-03-03T20:00:15.261Z",
+                          "startTime": "2026-03-03T21:31:39.369Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -341,9 +345,9 @@
                       "status": "expected"
                     }
                   ],
-                  "id": "e7da2f3a65ad9cd8e037-766d19dcc33163c37420",
-                  "file": "specs/login.spec.ts",
-                  "line": 16,
+                  "id": "7b8b6b69b7a1e58bff3b-d01f31b8be9d605301db",
+                  "file": "specs/secure-area.spec.ts",
+                  "line": 13,
                   "column": 9
                 }
               ]
@@ -355,8 +359,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-03-03T20:00:12.873Z",
-    "duration": 4077.2940000000003,
+    "startTime": "2026-03-03T21:31:37.036Z",
+    "duration": 4884.797,
     "expected": 1,
     "skipped": 0,
     "unexpected": 0,

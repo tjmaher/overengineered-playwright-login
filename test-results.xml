@@ -1,6 +1,6 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="4.077294">
-<testsuite name="specs\login.spec.ts" timestamp="2026-03-03T20:00:14.603Z" hostname="chromium" tests="1" failures="0" skipped="0" time="1.451" errors="0">
-<testcase name="Login Functionality › Positive Login Tests › should successfully login with valid credentials @smoke" classname="specs\login.spec.ts" time="1.451">
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="4.884797">
+<testsuite name="specs\secure-area.spec.ts" timestamp="2026-03-03T21:31:38.715Z" hostname="chromium" tests="1" failures="0" skipped="0" time="2.312" errors="0">
+<testcase name="Secure Area Functionality › Logout Tests › should successfully logout and show confirmation message @smoke" classname="specs\secure-area.spec.ts" time="2.312">
 </testcase>
 </testsuite>
 </testsuites>

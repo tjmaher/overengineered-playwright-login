@@ -4,8 +4,8 @@
  * Includes positive, negative, and edge case scenarios
  */
 
-import { test, expect, TestDataHelper, TestContextHelper } from '../../src/fixtures/test-fixtures';
-import { INVALID_USERS, EDGE_CASE_DATA } from '../../src/data/credentials';
+import { test, expect, TestDataHelper } from '../../src/fixtures/test-fixtures';
+import { EDGE_CASE_DATA } from '../../src/data/credentials';
 
 test.describe('Login Functionality', () => {
   test.beforeEach(async ({ navigateToLogin }) => {
@@ -16,7 +16,6 @@ test.describe('Login Functionality', () => {
     test('should successfully login with valid credentials @smoke', async ({
       loginPage,
       validCredentials,
-      testStrings,
     }) => {
       await test.step('Enter valid credentials', async () => {
         await loginPage.enterUsername(validCredentials.username);
@@ -235,7 +234,7 @@ test.describe('Login Functionality', () => {
       expect(formState.isFormValid).toBe(false); // Empty form should be invalid
     });
 
-    test('should support different typing patterns', async ({ loginPage, validCredentials }) => {
+    test('should support different typing patterns', async ({ loginPage }) => {
       await test.step('Test fast typing', async () => {
         await loginPage.simulateUserBehavior('fast');
         await loginPage.clickLoginButton();
@@ -243,7 +242,7 @@ test.describe('Login Functionality', () => {
       });
     });
 
-    test('should handle erratic user behavior', async ({ loginPage, validCredentials }) => {
+    test('should handle erratic user behavior', async ({ loginPage }) => {
       await test.step('Test erratic typing with corrections', async () => {
         await loginPage.simulateUserBehavior('erratic');
         await loginPage.clickLoginButton();

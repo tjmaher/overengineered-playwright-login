@@ -4,7 +4,7 @@
  * Focuses on logout functionality and authenticated user experience
  */
 
-import { test, expect, TestContextHelper } from '../../src/fixtures/test-fixtures';
+import { test, expect } from '../../src/fixtures/test-fixtures';
 import { LoginPage } from '../../src/pages/login-page';
 import { SecureAreaPage } from '../../src/pages/secure-area-page';
 
@@ -36,10 +36,7 @@ test.describe('Secure Area Functionality', () => {
       });
     });
 
-    test('should logout using keyboard navigation', async ({
-      authenticatedPage,
-      secureAreaPage,
-    }) => {
+    test('should logout using keyboard navigation', async ({ secureAreaPage }) => {
       await test.step('Navigate to logout button via keyboard', async () => {
         await secureAreaPage.testKeyboardNavigation();
       });
@@ -92,7 +89,6 @@ test.describe('Secure Area Functionality', () => {
     });
 
     test('should maintain authentication state across page refreshes', async ({
-      authenticatedPage,
       secureAreaPage,
     }) => {
       await test.step('Refresh page while authenticated', async () => {
@@ -106,7 +102,6 @@ test.describe('Secure Area Functionality', () => {
     });
 
     test('should handle browser navigation (back/forward)', async ({
-      authenticatedPage,
       secureAreaPage,
       loginPage,
     }) => {
@@ -131,7 +126,6 @@ test.describe('Secure Area Functionality', () => {
 
   test.describe('Secure Area Content and Structure', () => {
     test('should display correct page elements and content @smoke', async ({
-      authenticatedPage,
       secureAreaPage,
       testStrings,
     }) => {
@@ -156,10 +150,7 @@ test.describe('Secure Area Functionality', () => {
       });
     });
 
-    test('should have proper accessibility attributes', async ({
-      authenticatedPage,
-      secureAreaPage,
-    }) => {
+    test('should have proper accessibility attributes', async ({ secureAreaPage }) => {
       await test.step('Validate accessibility features', async () => {
         await secureAreaPage.validateAccessibility();
       });
@@ -171,7 +162,7 @@ test.describe('Secure Area Functionality', () => {
   });
 
   test.describe('Session Management Tests', () => {
-    test('should maintain session indicators', async ({ authenticatedPage, secureAreaPage }) => {
+    test('should maintain session indicators', async ({ secureAreaPage }) => {
       await test.step('Validate all session indicators', async () => {
         const indicators = await secureAreaPage.getSecurityIndicators();
 
@@ -182,7 +173,7 @@ test.describe('Secure Area Functionality', () => {
       });
     });
 
-    test('should handle user idle behavior', async ({ authenticatedPage, secureAreaPage }) => {
+    test('should handle user idle behavior', async ({ secureAreaPage }) => {
       await test.step('Simulate user idle time', async () => {
         // Simulate 5 seconds of idle time
         await secureAreaPage.simulateIdleBehavior(5000);
@@ -196,7 +187,6 @@ test.describe('Secure Area Functionality', () => {
 
     test('should handle concurrent sessions (security)', async ({
       browser,
-      loginPage,
       secureAreaPage,
       validCredentials,
     }) => {
@@ -294,7 +284,7 @@ test.describe('Secure Area Functionality', () => {
       });
     });
 
-    test('should logout within acceptable time', async ({ authenticatedPage, secureAreaPage }) => {
+    test('should logout within acceptable time', async ({ secureAreaPage }) => {
       const startTime = Date.now();
 
       await test.step('Measure logout performance', async () => {
@@ -310,10 +300,7 @@ test.describe('Secure Area Functionality', () => {
 
   test.describe('Cross-Browser Compatibility', () => {
     ['chromium', 'firefox', 'webkit'].forEach(browserName => {
-      test(`should work correctly in ${browserName}`, async ({
-        authenticatedPage,
-        secureAreaPage,
-      }) => {
+      test(`should work correctly in ${browserName}`, async ({ secureAreaPage }) => {
         await test.step(`Validate functionality in ${browserName}`, async () => {
           await secureAreaPage.validatePageStructure();
           await secureAreaPage.validateSessionState();
@@ -331,7 +318,6 @@ test.describe('End-to-End User Journey', () => {
     loginPage,
     secureAreaPage,
     validCredentials,
-    testStrings,
   }) => {
     await test.step('Navigate to login page', async () => {
       await loginPage.goto();

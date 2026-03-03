@@ -59,7 +59,7 @@ This framework provides automated testing for login functionality using the [The
 - **📘 TypeScript**: Type-safe testing with modern JavaScript features
 - **📋 Allure Reports**: Comprehensive test reporting with screenshots and traces
 - **🔄 GitHub Actions**: Full CI/CD pipeline with multiple stages
-- **🎨 ESLint + Prettier**: Code quality and formatting
+- **🎨 Prettier**: Code formatting
 - **📦 Page Object Model**: Maintainable test architecture
 
 ### 🚀 Framework Capabilities
@@ -187,7 +187,6 @@ playwright-typescript-login/
 ├── 📁 test-results/                # Playwright test artifacts (generated)
 ├── .env                           # Environment configuration
 ├── .env.example                   # Environment template
-├── .eslintrc.json                 # ESLint configuration
 ├── .prettierrc.json               # Prettier configuration
 ├── playwright.config.ts           # Playwright configuration
 ├── tsconfig.json                  # TypeScript configuration
@@ -378,7 +377,7 @@ The GitHub Actions pipeline provides comprehensive testing with multiple stages:
 
 ### Pipeline Stages
 
-1. **🔍 Code Quality**: Linting, formatting, type checking
+1. **🔍 Code Quality**: Type checking, formatting
 2. **🛡️ Security Scan**: Vulnerability assessment
 3. **🚀 Smoke Tests**: Fast feedback for critical functionality
 4. **🌐 Cross-Browser Tests**: Multi-platform validation
@@ -405,12 +404,6 @@ The GitHub Actions pipeline provides comprehensive testing with multiple stages:
 ### Code Quality Tools
 
 ```bash
-# Run linter
-npm run lint
-
-# Fix linting issues
-npm run lint:fix
-
 # Format code
 npm run format 
 
@@ -467,7 +460,7 @@ The project uses Husky for Git hooks:
 ### Coding Standards
 
 - **TypeScript**: Strict mode enabled with comprehensive type checking
-- **ESLint**: Extended recommended rules with Prettier integration
+- **Prettier**: Code formatting and style consistency
 - **Naming Conventions**: 
   - Files: kebab-case (`login-page.ts`)
   - Classes: PascalCase (`LoginPage`)
@@ -653,8 +646,8 @@ const navigationStart = performanceNavigation.fetchStart || Date.now();
 1. **Automated Type Checking** 
    ```json
    "scripts": {
-     "pretest": "npm run type-check && npm run lint",
-     "validate": "npm run type-check && npm run lint && npm run format:check"
+     "pretest": "npm run type-check",
+     "validate": "npm run type-check && npm run format:check"
    }
    ```
 

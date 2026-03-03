@@ -162,7 +162,6 @@ pre::before {
 ├── playwright.config.ts             # Playwright configuration
 ├── package.json                     # Dependencies and scripts
 ├── tsconfig.json                    # TypeScript configuration
-├── eslint.config.js                 # Code quality rules (ESLint v9+)
 ├── .prettierrc.json                 # Code formatting rules
 └── README.md                        # Comprehensive documentation</code></pre>
 
@@ -931,29 +930,25 @@ export class StringManager {
 
 <h2>Code Quality and Consistency Enforcement</h2>
 
-<p>I integrated ESLint, Prettier, and TypeScript with strict configurations using the modern ESLint v9+ flat config format:</p>
+<p>I integrated Prettier and TypeScript with strict configurations for code quality and type safety:</p>
 
-<pre><code>// eslint.config.js (ESLint v9+ format)
-export default [
-  {
-    files: ["src/**/*.ts", "tests/**/*.ts"],
-    rules: {
-      "@typescript-eslint/no-floating-promises": "error",
-      "@typescript-eslint/explicit-function-return-type": "warn",
-      "prettier/prettier": "error"
-    }
+<pre><code>// tsconfig.json - Strict TypeScript configuration
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "commonjs",
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noImplicitReturns": true
   }
-];</code></pre>
-
-<p><strong>ESLint Migration Note:</strong> Starting with ESLint v9.0.0, the default configuration format changed from `.eslintrc.*` files to `eslint.config.js` using the flat config format. This migration provides better performance and more predictable configuration resolution.</p>
+}</code></pre>
 
 <p><strong>Why This Matters:</strong> Consistent code style and static analysis prevent bugs, improve readability, and enable effective team collaboration. TypeScript adds compile-time safety that catches errors before runtime.</p>
 
 <p><strong>Official Documentation:</strong></p>
 <ul>
 <li><a href="https://www.typescriptlang.org/docs/" target="_blank">TypeScript Official Documentation</a> - Type safety and configuration</li>
-<li><a href="https://eslint.org/docs/latest/" target="_blank">ESLint Official Documentation</a> - Code quality rules and linting</li>
-<li><a href="https://eslint.org/docs/latest/use/configure/migration-guide" target="_blank">ESLint v9 Migration Guide</a> - Migrating from .eslintrc to flat config format</li>
 <li><a href="https://prettier.io/docs/en/" target="_blank">Prettier Official Documentation</a> - Code formatting standards</li>
 </ul>
 <p><strong>Industry Authority:</strong> <a href="https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html" target="_blank">Clean Code principles by Robert C. Martin</a> (Aug. 13, 2012) emphasize the importance of code quality and consistency.</p>
@@ -1083,7 +1078,6 @@ test('should login within acceptable time limits', async ({ loginPage }) =&gt; {
 <h3>Technology Stack Official Documentation:</h3>
 <ul>
 <li><strong>TypeScript:</strong> <a href="https://www.typescriptlang.org/docs/" target="_blank">typescriptlang.org/docs</a></li>
-<li><strong>ESLint:</strong> <a href="https://eslint.org/docs/latest/" target="_blank">eslint.org/docs</a></li>
 <li><strong>Prettier:</strong> <a href="https://prettier.io/docs/en/" target="_blank">prettier.io/docs</a></li>
 <li><strong>GitHub Actions:</strong> <a href="https://docs.github.com/en/actions" target="_blank">docs.github.com/en/actions</a></li>
 </ul>
