@@ -70,7 +70,7 @@ pre::before {
 <li><strong>Enterprise Architecture Principles:</strong> Separation of Concerns, Modular Design, Composition Over Inheritance, Open/Closed Principle, Single Responsibility Principle, Dependency Inversion Principle</li>
 <li><strong>Data Management Patterns:</strong> Type Safety, Immutability, Externalized Data, Credential Management, String Categorization. We will talk about Cem Kaner, Lisa Crispin, Janet Gregory, James Bach, Michael Feathers, Martin Fowler, and Uncle Bob Martin.</li>
 <li><strong>Industry Standards:</strong> ISO/IEC 25010:2011, ISTQB, IEEE Standard 1061, OWASP</li>
-</ul></p>
+</ul><span><!--more--></span><div><br /></div><p></p>
 
 <p>... Before that, some introductions are in order. </p>
 

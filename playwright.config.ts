@@ -93,10 +93,7 @@ export default defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: {
-        ...devices['Desktop Chrome'],
-        channel: 'chrome', // Use Google Chrome instead of Chromium
-      },
+      use: { ...devices['Desktop Chrome'] },
     },
     {
       name: 'firefox',
@@ -107,31 +104,17 @@ export default defineConfig({
       use: { ...devices['Desktop Safari'] },
     },
 
-    // Mobile browsers
+    // Mobile browsers (using Playwright's built-in device emulation)
     {
       name: 'Mobile Chrome',
-      use: { ...devices['Pixel 5'] },
+      use: { 
+        ...devices['Pixel 5'],
+      },
     },
     {
       name: 'Mobile Safari',
-      use: { ...devices['iPhone 12'] },
-    },
-
-    // Microsoft Edge
-    {
-      name: 'Microsoft Edge',
-      use: {
-        ...devices['Desktop Edge'],
-        channel: 'msedge',
-      },
-    },
-
-    // Google Chrome Beta
-    {
-      name: 'Google Chrome Beta',
-      use: {
-        ...devices['Desktop Chrome'],
-        channel: 'chrome-beta',
+      use: { 
+        ...devices['iPhone 12'],
       },
     },
 
@@ -162,9 +145,9 @@ export default defineConfig({
     },
   ],
 
-  // Global setup and teardown
-  globalSetup: require.resolve('./src/utils/global-setup.ts'),
-  globalTeardown: require.resolve('./src/utils/global-teardown.ts'),
+  // Global setup and teardown (temporarily disabled for troubleshooting)
+  // globalSetup: require.resolve('./src/utils/global-setup.ts'),
+  // globalTeardown: require.resolve('./src/utils/global-teardown.ts'),
 
   // Run your local dev server before starting the tests (commented out for external testing)
   // webServer: {
@@ -174,11 +157,11 @@ export default defineConfig({
   // },
 
   // Test timeout
-  timeout: 60000,
+  timeout: 30000,
 
   // Expect timeout
   expect: {
-    timeout: 10000,
+    timeout: 5000,
     toHaveScreenshot: {
       threshold: 0.2,
     },

@@ -1,6 +1,862 @@
-<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="4.884797">
-<testsuite name="specs\secure-area.spec.ts" timestamp="2026-03-03T21:31:38.715Z" hostname="chromium" tests="1" failures="0" skipped="0" time="2.312" errors="0">
-<testcase name="Secure Area Functionality › Logout Tests › should successfully logout and show confirmation message @smoke" classname="specs\secure-area.spec.ts" time="2.312">
+<testsuites id="" name="" tests="210" failures="0" skipped="210" errors="0" time="0.031447999999999976">
+<testsuite name="specs\login.spec.ts" timestamp="2026-03-04T04:24:46.600Z" hostname="chromium" tests="22" failures="0" skipped="22" time="0" errors="0">
+<testcase name="Login Functionality › Positive Login Tests › should successfully login with valid credentials @smoke" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Positive Login Tests › should login successfully using Enter key submission" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Positive Login Tests › should maintain login state after page refresh" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Negative Login Tests › should show error for invalid username" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Negative Login Tests › should show error for invalid password" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Negative Login Tests › should show error for empty username" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Negative Login Tests › should show error for empty password" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Negative Login Tests › should show error for both empty fields" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Negative Login Tests › should handle whitespace-only credentials" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Edge Case Tests › should handle very long username" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Edge Case Tests › should handle special characters in credentials" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Edge Case Tests › should handle SQL injection attempts" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Edge Case Tests › should handle XSS attempts" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Edge Case Tests › should handle unicode characters" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › User Experience Tests › should support keyboard navigation" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › User Experience Tests › should validate form field states" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › User Experience Tests › should support different typing patterns" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › User Experience Tests › should handle erratic user behavior" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Security Tests › should not expose password in DOM" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Security Tests › should not store sensitive data in browser history" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Performance Tests › should login within acceptable time limits" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Page Structure and Content › should display correct page elements and text @smoke" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="specs\secure-area.spec.ts" timestamp="2026-03-04T04:24:46.600Z" hostname="chromium" tests="20" failures="0" skipped="20" time="0" errors="0">
+<testcase name="Secure Area Functionality › Logout Tests › should successfully logout and show confirmation message @smoke" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Logout Tests › should logout using keyboard navigation" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Logout Tests › should handle multiple logout attempts gracefully" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Secure Area Access Control › should prevent unauthenticated access to secure area" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Secure Area Access Control › should maintain authentication state across page refreshes" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Secure Area Access Control › should handle browser navigation (back/forward)" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Secure Area Content and Structure › should display correct page elements and content @smoke" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Secure Area Content and Structure › should have proper accessibility attributes" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Session Management Tests › should maintain session indicators" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Session Management Tests › should handle user idle behavior" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Session Management Tests › should handle concurrent sessions (security)" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Error Handling Tests › should handle network interruptions gracefully" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Error Handling Tests › should handle JavaScript errors gracefully" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Performance Tests › should load secure area within acceptable time" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Performance Tests › should logout within acceptable time" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Cross-Browser Compatibility › should work correctly in chromium" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Cross-Browser Compatibility › should work correctly in firefox" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Cross-Browser Compatibility › should work correctly in webkit" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="End-to-End User Journey › should complete full login-logout cycle successfully @smoke" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="End-to-End User Journey › should maintain security throughout user session" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="specs\login.spec.ts" timestamp="2026-03-04T04:24:46.600Z" hostname="firefox" tests="22" failures="0" skipped="22" time="0" errors="0">
+<testcase name="Login Functionality › Positive Login Tests › should successfully login with valid credentials @smoke" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Positive Login Tests › should login successfully using Enter key submission" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Positive Login Tests › should maintain login state after page refresh" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Negative Login Tests › should show error for invalid username" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Negative Login Tests › should show error for invalid password" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Negative Login Tests › should show error for empty username" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Negative Login Tests › should show error for empty password" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Negative Login Tests › should show error for both empty fields" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Negative Login Tests › should handle whitespace-only credentials" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Edge Case Tests › should handle very long username" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Edge Case Tests › should handle special characters in credentials" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Edge Case Tests › should handle SQL injection attempts" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Edge Case Tests › should handle XSS attempts" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Edge Case Tests › should handle unicode characters" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › User Experience Tests › should support keyboard navigation" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › User Experience Tests › should validate form field states" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › User Experience Tests › should support different typing patterns" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › User Experience Tests › should handle erratic user behavior" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Security Tests › should not expose password in DOM" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Security Tests › should not store sensitive data in browser history" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Performance Tests › should login within acceptable time limits" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Page Structure and Content › should display correct page elements and text @smoke" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="specs\secure-area.spec.ts" timestamp="2026-03-04T04:24:46.600Z" hostname="firefox" tests="20" failures="0" skipped="20" time="0" errors="0">
+<testcase name="Secure Area Functionality › Logout Tests › should successfully logout and show confirmation message @smoke" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Logout Tests › should logout using keyboard navigation" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Logout Tests › should handle multiple logout attempts gracefully" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Secure Area Access Control › should prevent unauthenticated access to secure area" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Secure Area Access Control › should maintain authentication state across page refreshes" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Secure Area Access Control › should handle browser navigation (back/forward)" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Secure Area Content and Structure › should display correct page elements and content @smoke" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Secure Area Content and Structure › should have proper accessibility attributes" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Session Management Tests › should maintain session indicators" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Session Management Tests › should handle user idle behavior" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Session Management Tests › should handle concurrent sessions (security)" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Error Handling Tests › should handle network interruptions gracefully" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Error Handling Tests › should handle JavaScript errors gracefully" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Performance Tests › should load secure area within acceptable time" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Performance Tests › should logout within acceptable time" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Cross-Browser Compatibility › should work correctly in chromium" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Cross-Browser Compatibility › should work correctly in firefox" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Cross-Browser Compatibility › should work correctly in webkit" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="End-to-End User Journey › should complete full login-logout cycle successfully @smoke" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="End-to-End User Journey › should maintain security throughout user session" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="specs\login.spec.ts" timestamp="2026-03-04T04:24:46.600Z" hostname="webkit" tests="22" failures="0" skipped="22" time="0" errors="0">
+<testcase name="Login Functionality › Positive Login Tests › should successfully login with valid credentials @smoke" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Positive Login Tests › should login successfully using Enter key submission" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Positive Login Tests › should maintain login state after page refresh" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Negative Login Tests › should show error for invalid username" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Negative Login Tests › should show error for invalid password" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Negative Login Tests › should show error for empty username" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Negative Login Tests › should show error for empty password" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Negative Login Tests › should show error for both empty fields" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Negative Login Tests › should handle whitespace-only credentials" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Edge Case Tests › should handle very long username" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Edge Case Tests › should handle special characters in credentials" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Edge Case Tests › should handle SQL injection attempts" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Edge Case Tests › should handle XSS attempts" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Edge Case Tests › should handle unicode characters" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › User Experience Tests › should support keyboard navigation" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › User Experience Tests › should validate form field states" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › User Experience Tests › should support different typing patterns" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › User Experience Tests › should handle erratic user behavior" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Security Tests › should not expose password in DOM" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Security Tests › should not store sensitive data in browser history" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Performance Tests › should login within acceptable time limits" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Page Structure and Content › should display correct page elements and text @smoke" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="specs\secure-area.spec.ts" timestamp="2026-03-04T04:24:46.600Z" hostname="webkit" tests="20" failures="0" skipped="20" time="0" errors="0">
+<testcase name="Secure Area Functionality › Logout Tests › should successfully logout and show confirmation message @smoke" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Logout Tests › should logout using keyboard navigation" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Logout Tests › should handle multiple logout attempts gracefully" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Secure Area Access Control › should prevent unauthenticated access to secure area" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Secure Area Access Control › should maintain authentication state across page refreshes" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Secure Area Access Control › should handle browser navigation (back/forward)" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Secure Area Content and Structure › should display correct page elements and content @smoke" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Secure Area Content and Structure › should have proper accessibility attributes" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Session Management Tests › should maintain session indicators" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Session Management Tests › should handle user idle behavior" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Session Management Tests › should handle concurrent sessions (security)" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Error Handling Tests › should handle network interruptions gracefully" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Error Handling Tests › should handle JavaScript errors gracefully" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Performance Tests › should load secure area within acceptable time" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Performance Tests › should logout within acceptable time" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Cross-Browser Compatibility › should work correctly in chromium" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Cross-Browser Compatibility › should work correctly in firefox" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Cross-Browser Compatibility › should work correctly in webkit" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="End-to-End User Journey › should complete full login-logout cycle successfully @smoke" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="End-to-End User Journey › should maintain security throughout user session" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="specs\login.spec.ts" timestamp="2026-03-04T04:24:46.600Z" hostname="Mobile Chrome" tests="22" failures="0" skipped="22" time="0" errors="0">
+<testcase name="Login Functionality › Positive Login Tests › should successfully login with valid credentials @smoke" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Positive Login Tests › should login successfully using Enter key submission" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Positive Login Tests › should maintain login state after page refresh" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Negative Login Tests › should show error for invalid username" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Negative Login Tests › should show error for invalid password" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Negative Login Tests › should show error for empty username" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Negative Login Tests › should show error for empty password" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Negative Login Tests › should show error for both empty fields" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Negative Login Tests › should handle whitespace-only credentials" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Edge Case Tests › should handle very long username" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Edge Case Tests › should handle special characters in credentials" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Edge Case Tests › should handle SQL injection attempts" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Edge Case Tests › should handle XSS attempts" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Edge Case Tests › should handle unicode characters" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › User Experience Tests › should support keyboard navigation" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › User Experience Tests › should validate form field states" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › User Experience Tests › should support different typing patterns" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › User Experience Tests › should handle erratic user behavior" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Security Tests › should not expose password in DOM" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Security Tests › should not store sensitive data in browser history" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Performance Tests › should login within acceptable time limits" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Page Structure and Content › should display correct page elements and text @smoke" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="specs\secure-area.spec.ts" timestamp="2026-03-04T04:24:46.600Z" hostname="Mobile Chrome" tests="20" failures="0" skipped="20" time="0" errors="0">
+<testcase name="Secure Area Functionality › Logout Tests › should successfully logout and show confirmation message @smoke" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Logout Tests › should logout using keyboard navigation" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Logout Tests › should handle multiple logout attempts gracefully" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Secure Area Access Control › should prevent unauthenticated access to secure area" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Secure Area Access Control › should maintain authentication state across page refreshes" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Secure Area Access Control › should handle browser navigation (back/forward)" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Secure Area Content and Structure › should display correct page elements and content @smoke" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Secure Area Content and Structure › should have proper accessibility attributes" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Session Management Tests › should maintain session indicators" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Session Management Tests › should handle user idle behavior" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Session Management Tests › should handle concurrent sessions (security)" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Error Handling Tests › should handle network interruptions gracefully" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Error Handling Tests › should handle JavaScript errors gracefully" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Performance Tests › should load secure area within acceptable time" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Performance Tests › should logout within acceptable time" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Cross-Browser Compatibility › should work correctly in chromium" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Cross-Browser Compatibility › should work correctly in firefox" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Cross-Browser Compatibility › should work correctly in webkit" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="End-to-End User Journey › should complete full login-logout cycle successfully @smoke" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="End-to-End User Journey › should maintain security throughout user session" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="specs\login.spec.ts" timestamp="2026-03-04T04:24:46.600Z" hostname="Mobile Safari" tests="22" failures="0" skipped="22" time="0" errors="0">
+<testcase name="Login Functionality › Positive Login Tests › should successfully login with valid credentials @smoke" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Positive Login Tests › should login successfully using Enter key submission" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Positive Login Tests › should maintain login state after page refresh" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Negative Login Tests › should show error for invalid username" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Negative Login Tests › should show error for invalid password" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Negative Login Tests › should show error for empty username" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Negative Login Tests › should show error for empty password" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Negative Login Tests › should show error for both empty fields" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Negative Login Tests › should handle whitespace-only credentials" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Edge Case Tests › should handle very long username" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Edge Case Tests › should handle special characters in credentials" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Edge Case Tests › should handle SQL injection attempts" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Edge Case Tests › should handle XSS attempts" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Edge Case Tests › should handle unicode characters" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › User Experience Tests › should support keyboard navigation" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › User Experience Tests › should validate form field states" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › User Experience Tests › should support different typing patterns" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › User Experience Tests › should handle erratic user behavior" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Security Tests › should not expose password in DOM" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Security Tests › should not store sensitive data in browser history" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Functionality › Performance Tests › should login within acceptable time limits" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Login Page Structure and Content › should display correct page elements and text @smoke" classname="specs\login.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+<testsuite name="specs\secure-area.spec.ts" timestamp="2026-03-04T04:24:46.600Z" hostname="Mobile Safari" tests="20" failures="0" skipped="20" time="0" errors="0">
+<testcase name="Secure Area Functionality › Logout Tests › should successfully logout and show confirmation message @smoke" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Logout Tests › should logout using keyboard navigation" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Logout Tests › should handle multiple logout attempts gracefully" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Secure Area Access Control › should prevent unauthenticated access to secure area" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Secure Area Access Control › should maintain authentication state across page refreshes" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Secure Area Access Control › should handle browser navigation (back/forward)" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Secure Area Content and Structure › should display correct page elements and content @smoke" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Secure Area Content and Structure › should have proper accessibility attributes" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Session Management Tests › should maintain session indicators" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Session Management Tests › should handle user idle behavior" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Session Management Tests › should handle concurrent sessions (security)" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Error Handling Tests › should handle network interruptions gracefully" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Error Handling Tests › should handle JavaScript errors gracefully" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Performance Tests › should load secure area within acceptable time" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Performance Tests › should logout within acceptable time" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Cross-Browser Compatibility › should work correctly in chromium" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Cross-Browser Compatibility › should work correctly in firefox" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="Secure Area Functionality › Cross-Browser Compatibility › should work correctly in webkit" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="End-to-End User Journey › should complete full login-logout cycle successfully @smoke" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="End-to-End User Journey › should maintain security throughout user session" classname="specs\secure-area.spec.ts" time="0">
+<skipped>
+</skipped>
 </testcase>
 </testsuite>
 </testsuites>
