@@ -15,7 +15,8 @@
       "Language": "TypeScript",
       "Environment": "development",
       "Build": "1.0.0",
-      "Browser Versions": "Latest Stable"
+      "Browser Versions": "Latest Stable",
+      "actualWorkers": 1
     },
     "preserveOutput": "always",
     "projects": [
@@ -28,7 +29,8 @@
           "Language": "TypeScript",
           "Environment": "development",
           "Build": "1.0.0",
-          "Browser Versions": "Latest Stable"
+          "Browser Versions": "Latest Stable",
+          "actualWorkers": 1
         },
         "id": "chromium",
         "name": "chromium",
@@ -46,7 +48,8 @@
           "Language": "TypeScript",
           "Environment": "development",
           "Build": "1.0.0",
-          "Browser Versions": "Latest Stable"
+          "Browser Versions": "Latest Stable",
+          "actualWorkers": 1
         },
         "id": "firefox",
         "name": "firefox",
@@ -64,7 +67,8 @@
           "Language": "TypeScript",
           "Environment": "development",
           "Build": "1.0.0",
-          "Browser Versions": "Latest Stable"
+          "Browser Versions": "Latest Stable",
+          "actualWorkers": 1
         },
         "id": "webkit",
         "name": "webkit",
@@ -82,7 +86,8 @@
           "Language": "TypeScript",
           "Environment": "development",
           "Build": "1.0.0",
-          "Browser Versions": "Latest Stable"
+          "Browser Versions": "Latest Stable",
+          "actualWorkers": 1
         },
         "id": "Mobile Chrome",
         "name": "Mobile Chrome",
@@ -100,7 +105,8 @@
           "Language": "TypeScript",
           "Environment": "development",
           "Build": "1.0.0",
-          "Browser Versions": "Latest Stable"
+          "Browser Versions": "Latest Stable",
+          "actualWorkers": 1
         },
         "id": "Mobile Safari",
         "name": "Mobile Safari",
@@ -118,7 +124,8 @@
           "Language": "TypeScript",
           "Environment": "development",
           "Build": "1.0.0",
-          "Browser Versions": "Latest Stable"
+          "Browser Versions": "Latest Stable",
+          "actualWorkers": 1
         },
         "id": "setup",
         "name": "setup",
@@ -136,7 +143,8 @@
           "Language": "TypeScript",
           "Environment": "development",
           "Build": "1.0.0",
-          "Browser Versions": "Latest Stable"
+          "Browser Versions": "Latest Stable",
+          "actualWorkers": 1
         },
         "id": "cleanup",
         "name": "cleanup",
@@ -154,7 +162,8 @@
           "Language": "TypeScript",
           "Environment": "development",
           "Build": "1.0.0",
-          "Browser Versions": "Latest Stable"
+          "Browser Versions": "Latest Stable",
+          "actualWorkers": 1
         },
         "id": "api",
         "name": "api",
@@ -240,8 +249,36 @@
                       "expectedStatus": "passed",
                       "projectId": "chromium",
                       "projectName": "chromium",
-                      "results": [],
-                      "status": "skipped"
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 4171,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "steps": [
+                            {
+                              "title": "Enter valid credentials",
+                              "duration": 33
+                            },
+                            {
+                              "title": "Submit login form",
+                              "duration": 126
+                            },
+                            {
+                              "title": "Validate successful login",
+                              "duration": 32
+                            }
+                          ],
+                          "startTime": "2026-03-04T06:16:08.492Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
                     }
                   ],
                   "id": "e7da2f3a65ad9cd8e037-766d19dcc33163c37420",
@@ -250,46 +287,6 @@
                   "column": 9
                 },
                 {
-                  "title": "should login successfully using Enter key submission",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "chromium",
-                      "projectName": "chromium",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-615fb666ec3bb2bca4e5",
-                  "file": "specs/login.spec.ts",
-                  "line": 35,
-                  "column": 9
-                },
-                {
-                  "title": "should maintain login state after page refresh",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "chromium",
-                      "projectName": "chromium",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-b04777e72f0f6809117b",
-                  "file": "specs/login.spec.ts",
-                  "line": 50,
-                  "column": 9
-                },
-                {
                   "title": "should successfully login with valid credentials @smoke",
                   "ok": true,
                   "tags": ["smoke"],
@@ -300,8 +297,36 @@
                       "expectedStatus": "passed",
                       "projectId": "firefox",
                       "projectName": "firefox",
-                      "results": [],
-                      "status": "skipped"
+                      "results": [
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 2181,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "steps": [
+                            {
+                              "title": "Enter valid credentials",
+                              "duration": 46
+                            },
+                            {
+                              "title": "Submit login form",
+                              "duration": 140
+                            },
+                            {
+                              "title": "Validate successful login",
+                              "duration": 76
+                            }
+                          ],
+                          "startTime": "2026-03-04T06:16:21.954Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
                     }
                   ],
                   "id": "e7da2f3a65ad9cd8e037-09f6444019a2cde8ae88",
@@ -310,46 +335,6 @@
                   "column": 9
                 },
                 {
-                  "title": "should login successfully using Enter key submission",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "firefox",
-                      "projectName": "firefox",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-c3617732ac010770ea2e",
-                  "file": "specs/login.spec.ts",
-                  "line": 35,
-                  "column": 9
-                },
-                {
-                  "title": "should maintain login state after page refresh",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "firefox",
-                      "projectName": "firefox",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-1ec69ccaf060b3191c31",
-                  "file": "specs/login.spec.ts",
-                  "line": 50,
-                  "column": 9
-                },
-                {
                   "title": "should successfully login with valid credentials @smoke",
                   "ok": true,
                   "tags": ["smoke"],
@@ -360,8 +345,36 @@
                       "expectedStatus": "passed",
                       "projectId": "webkit",
                       "projectName": "webkit",
-                      "results": [],
-                      "status": "skipped"
+                      "results": [
+                        {
+                          "workerIndex": 2,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1954,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "steps": [
+                            {
+                              "title": "Enter valid credentials",
+                              "duration": 93
+                            },
+                            {
+                              "title": "Submit login form",
+                              "duration": 303
+                            },
+                            {
+                              "title": "Validate successful login",
+                              "duration": 52
+                            }
+                          ],
+                          "startTime": "2026-03-04T06:16:33.881Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
                     }
                   ],
                   "id": "e7da2f3a65ad9cd8e037-a4284e1d894fe84ebcbe",
@@ -370,46 +383,6 @@
                   "column": 9
                 },
                 {
-                  "title": "should login successfully using Enter key submission",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "webkit",
-                      "projectName": "webkit",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-6828da14a53fcd12e7b7",
-                  "file": "specs/login.spec.ts",
-                  "line": 35,
-                  "column": 9
-                },
-                {
-                  "title": "should maintain login state after page refresh",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "webkit",
-                      "projectName": "webkit",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-9981f760d341c62fbfe8",
-                  "file": "specs/login.spec.ts",
-                  "line": 50,
-                  "column": 9
-                },
-                {
                   "title": "should successfully login with valid credentials @smoke",
                   "ok": true,
                   "tags": ["smoke"],
@@ -420,8 +393,36 @@
                       "expectedStatus": "passed",
                       "projectId": "Mobile Chrome",
                       "projectName": "Mobile Chrome",
-                      "results": [],
-                      "status": "skipped"
+                      "results": [
+                        {
+                          "workerIndex": 3,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1946,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "steps": [
+                            {
+                              "title": "Enter valid credentials",
+                              "duration": 32
+                            },
+                            {
+                              "title": "Submit login form",
+                              "duration": 666
+                            },
+                            {
+                              "title": "Validate successful login",
+                              "duration": 31
+                            }
+                          ],
+                          "startTime": "2026-03-04T06:16:47.682Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
                     }
                   ],
                   "id": "e7da2f3a65ad9cd8e037-35677d222a16832b78c4",
@@ -430,46 +431,6 @@
                   "column": 9
                 },
                 {
-                  "title": "should login successfully using Enter key submission",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Chrome",
-                      "projectName": "Mobile Chrome",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-8fa7ba071bda5757d7a8",
-                  "file": "specs/login.spec.ts",
-                  "line": 35,
-                  "column": 9
-                },
-                {
-                  "title": "should maintain login state after page refresh",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Chrome",
-                      "projectName": "Mobile Chrome",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-368174dc6fdf10c32682",
-                  "file": "specs/login.spec.ts",
-                  "line": 50,
-                  "column": 9
-                },
-                {
                   "title": "should successfully login with valid credentials @smoke",
                   "ok": true,
                   "tags": ["smoke"],
@@ -480,1893 +441,41 @@
                       "expectedStatus": "passed",
                       "projectId": "Mobile Safari",
                       "projectName": "Mobile Safari",
-                      "results": [],
-                      "status": "skipped"
+                      "results": [
+                        {
+                          "workerIndex": 4,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1660,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "steps": [
+                            {
+                              "title": "Enter valid credentials",
+                              "duration": 54
+                            },
+                            {
+                              "title": "Submit login form",
+                              "duration": 149
+                            },
+                            {
+                              "title": "Validate successful login",
+                              "duration": 143
+                            }
+                          ],
+                          "startTime": "2026-03-04T06:16:59.070Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
                     }
                   ],
                   "id": "e7da2f3a65ad9cd8e037-a87c21a0a32998a74dcb",
                   "file": "specs/login.spec.ts",
                   "line": 16,
-                  "column": 9
-                },
-                {
-                  "title": "should login successfully using Enter key submission",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Safari",
-                      "projectName": "Mobile Safari",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-e141017c93fe99454064",
-                  "file": "specs/login.spec.ts",
-                  "line": 35,
-                  "column": 9
-                },
-                {
-                  "title": "should maintain login state after page refresh",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Safari",
-                      "projectName": "Mobile Safari",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-f505efb41c2d1a28ae9c",
-                  "file": "specs/login.spec.ts",
-                  "line": 50,
-                  "column": 9
-                }
-              ]
-            },
-            {
-              "title": "Negative Login Tests",
-              "file": "specs/login.spec.ts",
-              "line": 66,
-              "column": 8,
-              "specs": [
-                {
-                  "title": "should show error for invalid username",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "chromium",
-                      "projectName": "chromium",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-c8dcd37a71bd72a18be4",
-                  "file": "specs/login.spec.ts",
-                  "line": 67,
-                  "column": 9
-                },
-                {
-                  "title": "should show error for invalid password",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "chromium",
-                      "projectName": "chromium",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-40bb564d275288edf725",
-                  "file": "specs/login.spec.ts",
-                  "line": 80,
-                  "column": 9
-                },
-                {
-                  "title": "should show error for empty username",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "chromium",
-                      "projectName": "chromium",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-ceab8c215af4ae3fe3dc",
-                  "file": "specs/login.spec.ts",
-                  "line": 92,
-                  "column": 9
-                },
-                {
-                  "title": "should show error for empty password",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "chromium",
-                      "projectName": "chromium",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-dbaebe4b17af6c8bea3e",
-                  "file": "specs/login.spec.ts",
-                  "line": 104,
-                  "column": 9
-                },
-                {
-                  "title": "should show error for both empty fields",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "chromium",
-                      "projectName": "chromium",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-c1c3cb18f062afa7fe6e",
-                  "file": "specs/login.spec.ts",
-                  "line": 116,
-                  "column": 9
-                },
-                {
-                  "title": "should handle whitespace-only credentials",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "chromium",
-                      "projectName": "chromium",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-c7f148c447b9153e5780",
-                  "file": "specs/login.spec.ts",
-                  "line": 128,
-                  "column": 9
-                },
-                {
-                  "title": "should show error for invalid username",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "firefox",
-                      "projectName": "firefox",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-c76cdcad9c898ec52538",
-                  "file": "specs/login.spec.ts",
-                  "line": 67,
-                  "column": 9
-                },
-                {
-                  "title": "should show error for invalid password",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "firefox",
-                      "projectName": "firefox",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-56591bc5a971f7c618a2",
-                  "file": "specs/login.spec.ts",
-                  "line": 80,
-                  "column": 9
-                },
-                {
-                  "title": "should show error for empty username",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "firefox",
-                      "projectName": "firefox",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-7026a5f33263a072a7e4",
-                  "file": "specs/login.spec.ts",
-                  "line": 92,
-                  "column": 9
-                },
-                {
-                  "title": "should show error for empty password",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "firefox",
-                      "projectName": "firefox",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-21a699c5f195255edd15",
-                  "file": "specs/login.spec.ts",
-                  "line": 104,
-                  "column": 9
-                },
-                {
-                  "title": "should show error for both empty fields",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "firefox",
-                      "projectName": "firefox",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-56acff2a70dddeddd046",
-                  "file": "specs/login.spec.ts",
-                  "line": 116,
-                  "column": 9
-                },
-                {
-                  "title": "should handle whitespace-only credentials",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "firefox",
-                      "projectName": "firefox",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-980068037d823ab6bdde",
-                  "file": "specs/login.spec.ts",
-                  "line": 128,
-                  "column": 9
-                },
-                {
-                  "title": "should show error for invalid username",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "webkit",
-                      "projectName": "webkit",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-078637c980085f043363",
-                  "file": "specs/login.spec.ts",
-                  "line": 67,
-                  "column": 9
-                },
-                {
-                  "title": "should show error for invalid password",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "webkit",
-                      "projectName": "webkit",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-54397340991fcd977b21",
-                  "file": "specs/login.spec.ts",
-                  "line": 80,
-                  "column": 9
-                },
-                {
-                  "title": "should show error for empty username",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "webkit",
-                      "projectName": "webkit",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-2d1bde4967312d808f07",
-                  "file": "specs/login.spec.ts",
-                  "line": 92,
-                  "column": 9
-                },
-                {
-                  "title": "should show error for empty password",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "webkit",
-                      "projectName": "webkit",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-fb1dc320bcc3650bf892",
-                  "file": "specs/login.spec.ts",
-                  "line": 104,
-                  "column": 9
-                },
-                {
-                  "title": "should show error for both empty fields",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "webkit",
-                      "projectName": "webkit",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-a806c65b2604f95db906",
-                  "file": "specs/login.spec.ts",
-                  "line": 116,
-                  "column": 9
-                },
-                {
-                  "title": "should handle whitespace-only credentials",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "webkit",
-                      "projectName": "webkit",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-69f53d4d031acdb650f4",
-                  "file": "specs/login.spec.ts",
-                  "line": 128,
-                  "column": 9
-                },
-                {
-                  "title": "should show error for invalid username",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Chrome",
-                      "projectName": "Mobile Chrome",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-236461f8fa66f96dd64b",
-                  "file": "specs/login.spec.ts",
-                  "line": 67,
-                  "column": 9
-                },
-                {
-                  "title": "should show error for invalid password",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Chrome",
-                      "projectName": "Mobile Chrome",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-a36b5f575ced7dc47378",
-                  "file": "specs/login.spec.ts",
-                  "line": 80,
-                  "column": 9
-                },
-                {
-                  "title": "should show error for empty username",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Chrome",
-                      "projectName": "Mobile Chrome",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-26cd0d70b54772452da4",
-                  "file": "specs/login.spec.ts",
-                  "line": 92,
-                  "column": 9
-                },
-                {
-                  "title": "should show error for empty password",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Chrome",
-                      "projectName": "Mobile Chrome",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-522c1f63af0b6d3046e8",
-                  "file": "specs/login.spec.ts",
-                  "line": 104,
-                  "column": 9
-                },
-                {
-                  "title": "should show error for both empty fields",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Chrome",
-                      "projectName": "Mobile Chrome",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-f9c209fbda45fd9a0bd2",
-                  "file": "specs/login.spec.ts",
-                  "line": 116,
-                  "column": 9
-                },
-                {
-                  "title": "should handle whitespace-only credentials",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Chrome",
-                      "projectName": "Mobile Chrome",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-e38fe24f870567d7190c",
-                  "file": "specs/login.spec.ts",
-                  "line": 128,
-                  "column": 9
-                },
-                {
-                  "title": "should show error for invalid username",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Safari",
-                      "projectName": "Mobile Safari",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-08d58c96c48a6ebf9800",
-                  "file": "specs/login.spec.ts",
-                  "line": 67,
-                  "column": 9
-                },
-                {
-                  "title": "should show error for invalid password",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Safari",
-                      "projectName": "Mobile Safari",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-789e4838ed5d245fe14d",
-                  "file": "specs/login.spec.ts",
-                  "line": 80,
-                  "column": 9
-                },
-                {
-                  "title": "should show error for empty username",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Safari",
-                      "projectName": "Mobile Safari",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-094ad0b7335cce84936b",
-                  "file": "specs/login.spec.ts",
-                  "line": 92,
-                  "column": 9
-                },
-                {
-                  "title": "should show error for empty password",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Safari",
-                      "projectName": "Mobile Safari",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-938695ebe6747f383681",
-                  "file": "specs/login.spec.ts",
-                  "line": 104,
-                  "column": 9
-                },
-                {
-                  "title": "should show error for both empty fields",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Safari",
-                      "projectName": "Mobile Safari",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-be1657851aa15fd47a39",
-                  "file": "specs/login.spec.ts",
-                  "line": 116,
-                  "column": 9
-                },
-                {
-                  "title": "should handle whitespace-only credentials",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Safari",
-                      "projectName": "Mobile Safari",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-7ea9f2ff151e809ac120",
-                  "file": "specs/login.spec.ts",
-                  "line": 128,
-                  "column": 9
-                }
-              ]
-            },
-            {
-              "title": "Edge Case Tests",
-              "file": "specs/login.spec.ts",
-              "line": 141,
-              "column": 8,
-              "specs": [
-                {
-                  "title": "should handle very long username",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "chromium",
-                      "projectName": "chromium",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-aac349e215724fbacb0e",
-                  "file": "specs/login.spec.ts",
-                  "line": 142,
-                  "column": 9
-                },
-                {
-                  "title": "should handle special characters in credentials",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "chromium",
-                      "projectName": "chromium",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-ef1d84a6c8dec4252c70",
-                  "file": "specs/login.spec.ts",
-                  "line": 156,
-                  "column": 9
-                },
-                {
-                  "title": "should handle SQL injection attempts",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "chromium",
-                      "projectName": "chromium",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-0845b84d01b48427428c",
-                  "file": "specs/login.spec.ts",
-                  "line": 169,
-                  "column": 9
-                },
-                {
-                  "title": "should handle XSS attempts",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "chromium",
-                      "projectName": "chromium",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-2069a07a9693a54c4866",
-                  "file": "specs/login.spec.ts",
-                  "line": 185,
-                  "column": 9
-                },
-                {
-                  "title": "should handle unicode characters",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "chromium",
-                      "projectName": "chromium",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-318f9c4e94d09b6c2435",
-                  "file": "specs/login.spec.ts",
-                  "line": 202,
-                  "column": 9
-                },
-                {
-                  "title": "should handle very long username",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "firefox",
-                      "projectName": "firefox",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-0445eb6a54aa79766e8b",
-                  "file": "specs/login.spec.ts",
-                  "line": 142,
-                  "column": 9
-                },
-                {
-                  "title": "should handle special characters in credentials",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "firefox",
-                      "projectName": "firefox",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-01242ee5da049550dd2b",
-                  "file": "specs/login.spec.ts",
-                  "line": 156,
-                  "column": 9
-                },
-                {
-                  "title": "should handle SQL injection attempts",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "firefox",
-                      "projectName": "firefox",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-7e5f3e676d30a6c3a32c",
-                  "file": "specs/login.spec.ts",
-                  "line": 169,
-                  "column": 9
-                },
-                {
-                  "title": "should handle XSS attempts",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "firefox",
-                      "projectName": "firefox",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-dc95b499bc50e2cec901",
-                  "file": "specs/login.spec.ts",
-                  "line": 185,
-                  "column": 9
-                },
-                {
-                  "title": "should handle unicode characters",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "firefox",
-                      "projectName": "firefox",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-d805c548e797cb3ee4c5",
-                  "file": "specs/login.spec.ts",
-                  "line": 202,
-                  "column": 9
-                },
-                {
-                  "title": "should handle very long username",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "webkit",
-                      "projectName": "webkit",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-562f8c83daa4bc58b1d8",
-                  "file": "specs/login.spec.ts",
-                  "line": 142,
-                  "column": 9
-                },
-                {
-                  "title": "should handle special characters in credentials",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "webkit",
-                      "projectName": "webkit",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-469d77636cf1225fbbfc",
-                  "file": "specs/login.spec.ts",
-                  "line": 156,
-                  "column": 9
-                },
-                {
-                  "title": "should handle SQL injection attempts",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "webkit",
-                      "projectName": "webkit",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-6675141e575bfaedc672",
-                  "file": "specs/login.spec.ts",
-                  "line": 169,
-                  "column": 9
-                },
-                {
-                  "title": "should handle XSS attempts",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "webkit",
-                      "projectName": "webkit",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-ea8e831173e3750e6a17",
-                  "file": "specs/login.spec.ts",
-                  "line": 185,
-                  "column": 9
-                },
-                {
-                  "title": "should handle unicode characters",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "webkit",
-                      "projectName": "webkit",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-4546c5eea86380b88b7e",
-                  "file": "specs/login.spec.ts",
-                  "line": 202,
-                  "column": 9
-                },
-                {
-                  "title": "should handle very long username",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Chrome",
-                      "projectName": "Mobile Chrome",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-2c0ea7812c0a1d51acde",
-                  "file": "specs/login.spec.ts",
-                  "line": 142,
-                  "column": 9
-                },
-                {
-                  "title": "should handle special characters in credentials",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Chrome",
-                      "projectName": "Mobile Chrome",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-349acd9a3f7e3d867292",
-                  "file": "specs/login.spec.ts",
-                  "line": 156,
-                  "column": 9
-                },
-                {
-                  "title": "should handle SQL injection attempts",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Chrome",
-                      "projectName": "Mobile Chrome",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-42373a85d304faf81210",
-                  "file": "specs/login.spec.ts",
-                  "line": 169,
-                  "column": 9
-                },
-                {
-                  "title": "should handle XSS attempts",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Chrome",
-                      "projectName": "Mobile Chrome",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-395929a108ba12a834bc",
-                  "file": "specs/login.spec.ts",
-                  "line": 185,
-                  "column": 9
-                },
-                {
-                  "title": "should handle unicode characters",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Chrome",
-                      "projectName": "Mobile Chrome",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-c406dcad0889ad19117e",
-                  "file": "specs/login.spec.ts",
-                  "line": 202,
-                  "column": 9
-                },
-                {
-                  "title": "should handle very long username",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Safari",
-                      "projectName": "Mobile Safari",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-b3c78a6f200fa561295c",
-                  "file": "specs/login.spec.ts",
-                  "line": 142,
-                  "column": 9
-                },
-                {
-                  "title": "should handle special characters in credentials",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Safari",
-                      "projectName": "Mobile Safari",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-6f358050f2087473d445",
-                  "file": "specs/login.spec.ts",
-                  "line": 156,
-                  "column": 9
-                },
-                {
-                  "title": "should handle SQL injection attempts",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Safari",
-                      "projectName": "Mobile Safari",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-c3f1b9cdf28e0bac7937",
-                  "file": "specs/login.spec.ts",
-                  "line": 169,
-                  "column": 9
-                },
-                {
-                  "title": "should handle XSS attempts",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Safari",
-                      "projectName": "Mobile Safari",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-3e1035977e467dcc522c",
-                  "file": "specs/login.spec.ts",
-                  "line": 185,
-                  "column": 9
-                },
-                {
-                  "title": "should handle unicode characters",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Safari",
-                      "projectName": "Mobile Safari",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-0d11859c28fc0d267c73",
-                  "file": "specs/login.spec.ts",
-                  "line": 202,
-                  "column": 9
-                }
-              ]
-            },
-            {
-              "title": "User Experience Tests",
-              "file": "specs/login.spec.ts",
-              "line": 218,
-              "column": 8,
-              "specs": [
-                {
-                  "title": "should support keyboard navigation",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "chromium",
-                      "projectName": "chromium",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-e73e32531c6344e5752c",
-                  "file": "specs/login.spec.ts",
-                  "line": 219,
-                  "column": 9
-                },
-                {
-                  "title": "should validate form field states",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "chromium",
-                      "projectName": "chromium",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-847443cf6fcf4b327bcc",
-                  "file": "specs/login.spec.ts",
-                  "line": 229,
-                  "column": 9
-                },
-                {
-                  "title": "should support different typing patterns",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "chromium",
-                      "projectName": "chromium",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-e2ee4b12c7a9eedf4002",
-                  "file": "specs/login.spec.ts",
-                  "line": 237,
-                  "column": 9
-                },
-                {
-                  "title": "should handle erratic user behavior",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "chromium",
-                      "projectName": "chromium",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-93f010f87e24c2d62958",
-                  "file": "specs/login.spec.ts",
-                  "line": 245,
-                  "column": 9
-                },
-                {
-                  "title": "should support keyboard navigation",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "firefox",
-                      "projectName": "firefox",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-9647e0f8965ec1971399",
-                  "file": "specs/login.spec.ts",
-                  "line": 219,
-                  "column": 9
-                },
-                {
-                  "title": "should validate form field states",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "firefox",
-                      "projectName": "firefox",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-e83690bb5b82129c46fc",
-                  "file": "specs/login.spec.ts",
-                  "line": 229,
-                  "column": 9
-                },
-                {
-                  "title": "should support different typing patterns",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "firefox",
-                      "projectName": "firefox",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-9bcb555301096a345b39",
-                  "file": "specs/login.spec.ts",
-                  "line": 237,
-                  "column": 9
-                },
-                {
-                  "title": "should handle erratic user behavior",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "firefox",
-                      "projectName": "firefox",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-6f4d9872cafcdc614b1c",
-                  "file": "specs/login.spec.ts",
-                  "line": 245,
-                  "column": 9
-                },
-                {
-                  "title": "should support keyboard navigation",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "webkit",
-                      "projectName": "webkit",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-b77a9fb8d4935f472310",
-                  "file": "specs/login.spec.ts",
-                  "line": 219,
-                  "column": 9
-                },
-                {
-                  "title": "should validate form field states",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "webkit",
-                      "projectName": "webkit",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-6449747bb5e99b52e6bd",
-                  "file": "specs/login.spec.ts",
-                  "line": 229,
-                  "column": 9
-                },
-                {
-                  "title": "should support different typing patterns",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "webkit",
-                      "projectName": "webkit",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-18f0862e188c54506a1d",
-                  "file": "specs/login.spec.ts",
-                  "line": 237,
-                  "column": 9
-                },
-                {
-                  "title": "should handle erratic user behavior",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "webkit",
-                      "projectName": "webkit",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-9011404152eff2d68cdd",
-                  "file": "specs/login.spec.ts",
-                  "line": 245,
-                  "column": 9
-                },
-                {
-                  "title": "should support keyboard navigation",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Chrome",
-                      "projectName": "Mobile Chrome",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-e6312de88a0f16b4a558",
-                  "file": "specs/login.spec.ts",
-                  "line": 219,
-                  "column": 9
-                },
-                {
-                  "title": "should validate form field states",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Chrome",
-                      "projectName": "Mobile Chrome",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-26c8931290098714d29e",
-                  "file": "specs/login.spec.ts",
-                  "line": 229,
-                  "column": 9
-                },
-                {
-                  "title": "should support different typing patterns",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Chrome",
-                      "projectName": "Mobile Chrome",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-492dd340fe3edb7f5619",
-                  "file": "specs/login.spec.ts",
-                  "line": 237,
-                  "column": 9
-                },
-                {
-                  "title": "should handle erratic user behavior",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Chrome",
-                      "projectName": "Mobile Chrome",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-afcafe0f4929d3ed1ed9",
-                  "file": "specs/login.spec.ts",
-                  "line": 245,
-                  "column": 9
-                },
-                {
-                  "title": "should support keyboard navigation",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Safari",
-                      "projectName": "Mobile Safari",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-da0c7a5b53ced30921e0",
-                  "file": "specs/login.spec.ts",
-                  "line": 219,
-                  "column": 9
-                },
-                {
-                  "title": "should validate form field states",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Safari",
-                      "projectName": "Mobile Safari",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-a9992febd0ae200326df",
-                  "file": "specs/login.spec.ts",
-                  "line": 229,
-                  "column": 9
-                },
-                {
-                  "title": "should support different typing patterns",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Safari",
-                      "projectName": "Mobile Safari",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-992a1d8b37457702d343",
-                  "file": "specs/login.spec.ts",
-                  "line": 237,
-                  "column": 9
-                },
-                {
-                  "title": "should handle erratic user behavior",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Safari",
-                      "projectName": "Mobile Safari",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-d41f66eceda40c649d92",
-                  "file": "specs/login.spec.ts",
-                  "line": 245,
-                  "column": 9
-                }
-              ]
-            },
-            {
-              "title": "Security Tests",
-              "file": "specs/login.spec.ts",
-              "line": 254,
-              "column": 8,
-              "specs": [
-                {
-                  "title": "should not expose password in DOM",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "chromium",
-                      "projectName": "chromium",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-40fa4d70e97565df249c",
-                  "file": "specs/login.spec.ts",
-                  "line": 255,
-                  "column": 9
-                },
-                {
-                  "title": "should not store sensitive data in browser history",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "chromium",
-                      "projectName": "chromium",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-266a356c1a52606749dc",
-                  "file": "specs/login.spec.ts",
-                  "line": 267,
-                  "column": 9
-                },
-                {
-                  "title": "should not expose password in DOM",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "firefox",
-                      "projectName": "firefox",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-c0c153232a3b8b5c4d4a",
-                  "file": "specs/login.spec.ts",
-                  "line": 255,
-                  "column": 9
-                },
-                {
-                  "title": "should not store sensitive data in browser history",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "firefox",
-                      "projectName": "firefox",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-12847cc197de78a376e9",
-                  "file": "specs/login.spec.ts",
-                  "line": 267,
-                  "column": 9
-                },
-                {
-                  "title": "should not expose password in DOM",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "webkit",
-                      "projectName": "webkit",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-4a2b8b69a806d5f07841",
-                  "file": "specs/login.spec.ts",
-                  "line": 255,
-                  "column": 9
-                },
-                {
-                  "title": "should not store sensitive data in browser history",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "webkit",
-                      "projectName": "webkit",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-ee822bc96adb9470dda2",
-                  "file": "specs/login.spec.ts",
-                  "line": 267,
-                  "column": 9
-                },
-                {
-                  "title": "should not expose password in DOM",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Chrome",
-                      "projectName": "Mobile Chrome",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-35e173eaa91acc5c83e9",
-                  "file": "specs/login.spec.ts",
-                  "line": 255,
-                  "column": 9
-                },
-                {
-                  "title": "should not store sensitive data in browser history",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Chrome",
-                      "projectName": "Mobile Chrome",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-6dfe0a91d64c33921048",
-                  "file": "specs/login.spec.ts",
-                  "line": 267,
-                  "column": 9
-                },
-                {
-                  "title": "should not expose password in DOM",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Safari",
-                      "projectName": "Mobile Safari",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-ab89117fbc132f2d9c70",
-                  "file": "specs/login.spec.ts",
-                  "line": 255,
-                  "column": 9
-                },
-                {
-                  "title": "should not store sensitive data in browser history",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Safari",
-                      "projectName": "Mobile Safari",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-a12455847e52fb20a991",
-                  "file": "specs/login.spec.ts",
-                  "line": 267,
-                  "column": 9
-                }
-              ]
-            },
-            {
-              "title": "Performance Tests",
-              "file": "specs/login.spec.ts",
-              "line": 284,
-              "column": 8,
-              "specs": [
-                {
-                  "title": "should login within acceptable time limits",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "chromium",
-                      "projectName": "chromium",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-de26b4aeb2b3ce007489",
-                  "file": "specs/login.spec.ts",
-                  "line": 285,
-                  "column": 9
-                },
-                {
-                  "title": "should login within acceptable time limits",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "firefox",
-                      "projectName": "firefox",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-11f45a5b2fae99e2868c",
-                  "file": "specs/login.spec.ts",
-                  "line": 285,
-                  "column": 9
-                },
-                {
-                  "title": "should login within acceptable time limits",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "webkit",
-                      "projectName": "webkit",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-4901fa9a62825b25e60f",
-                  "file": "specs/login.spec.ts",
-                  "line": 285,
-                  "column": 9
-                },
-                {
-                  "title": "should login within acceptable time limits",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Chrome",
-                      "projectName": "Mobile Chrome",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-6a235ae9a77a8ee7bd1e",
-                  "file": "specs/login.spec.ts",
-                  "line": 285,
-                  "column": 9
-                },
-                {
-                  "title": "should login within acceptable time limits",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Safari",
-                      "projectName": "Mobile Safari",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "e7da2f3a65ad9cd8e037-a72e1036c36de8841111",
-                  "file": "specs/login.spec.ts",
-                  "line": 285,
                   "column": 9
                 }
               ]
@@ -2390,8 +499,36 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1206,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Validate page structure",
+                          "duration": 26
+                        },
+                        {
+                          "title": "Validate page content",
+                          "duration": 5
+                        },
+                        {
+                          "title": "Validate form labels",
+                          "duration": 6
+                        }
+                      ],
+                      "startTime": "2026-03-04T06:16:13.194Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
                 }
               ],
               "id": "e7da2f3a65ad9cd8e037-5ad9c7cccfc386292603",
@@ -2410,8 +547,36 @@
                   "expectedStatus": "passed",
                   "projectId": "firefox",
                   "projectName": "firefox",
-                  "results": [],
-                  "status": "skipped"
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1246,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Validate page structure",
+                          "duration": 32
+                        },
+                        {
+                          "title": "Validate page content",
+                          "duration": 9
+                        },
+                        {
+                          "title": "Validate form labels",
+                          "duration": 9
+                        }
+                      ],
+                      "startTime": "2026-03-04T06:16:24.555Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
                 }
               ],
               "id": "e7da2f3a65ad9cd8e037-92d4de53e937fa183517",
@@ -2430,8 +595,36 @@
                   "expectedStatus": "passed",
                   "projectId": "webkit",
                   "projectName": "webkit",
-                  "results": [],
-                  "status": "skipped"
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1395,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Validate page structure",
+                          "duration": 40
+                        },
+                        {
+                          "title": "Validate page content",
+                          "duration": 13
+                        },
+                        {
+                          "title": "Validate form labels",
+                          "duration": 60
+                        }
+                      ],
+                      "startTime": "2026-03-04T06:16:36.262Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
                 }
               ],
               "id": "e7da2f3a65ad9cd8e037-d5b0cab8654f368ff4c8",
@@ -2450,8 +643,36 @@
                   "expectedStatus": "passed",
                   "projectId": "Mobile Chrome",
                   "projectName": "Mobile Chrome",
-                  "results": [],
-                  "status": "skipped"
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1279,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Validate page structure",
+                          "duration": 49
+                        },
+                        {
+                          "title": "Validate page content",
+                          "duration": 10
+                        },
+                        {
+                          "title": "Validate form labels",
+                          "duration": 8
+                        }
+                      ],
+                      "startTime": "2026-03-04T06:16:49.695Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
                 }
               ],
               "id": "e7da2f3a65ad9cd8e037-6c4098f5bd189f6a1161",
@@ -2470,8 +691,36 @@
                   "expectedStatus": "passed",
                   "projectId": "Mobile Safari",
                   "projectName": "Mobile Safari",
-                  "results": [],
-                  "status": "skipped"
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1290,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Validate page structure",
+                          "duration": 50
+                        },
+                        {
+                          "title": "Validate page content",
+                          "duration": 14
+                        },
+                        {
+                          "title": "Validate form labels",
+                          "duration": 12
+                        }
+                      ],
+                      "startTime": "2026-03-04T06:17:00.777Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
                 }
               ],
               "id": "e7da2f3a65ad9cd8e037-1abd3d3fea8efbc86e91",
@@ -2514,8 +763,40 @@
                       "expectedStatus": "passed",
                       "projectId": "chromium",
                       "projectName": "chromium",
-                      "results": [],
-                      "status": "skipped"
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 2063,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "steps": [
+                            {
+                              "title": "Validate user is on secure area",
+                              "duration": 8
+                            },
+                            {
+                              "title": "Perform logout",
+                              "duration": 101
+                            },
+                            {
+                              "title": "Validate successful logout",
+                              "duration": 14
+                            },
+                            {
+                              "title": "Validate user can no longer access secure area",
+                              "duration": 98
+                            }
+                          ],
+                          "startTime": "2026-03-04T06:16:14.409Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
                     }
                   ],
                   "id": "7b8b6b69b7a1e58bff3b-d01f31b8be9d605301db",
@@ -2524,46 +805,6 @@
                   "column": 9
                 },
                 {
-                  "title": "should logout using keyboard navigation",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "chromium",
-                      "projectName": "chromium",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-fcb7814a1a61fbb36a36",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 39,
-                  "column": 9
-                },
-                {
-                  "title": "should handle multiple logout attempts gracefully",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "chromium",
-                      "projectName": "chromium",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-1df80469f2f12288baf7",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 55,
-                  "column": 9
-                },
-                {
                   "title": "should successfully logout and show confirmation message @smoke",
                   "ok": true,
                   "tags": ["smoke"],
@@ -2574,8 +815,40 @@
                       "expectedStatus": "passed",
                       "projectId": "firefox",
                       "projectName": "firefox",
-                      "results": [],
-                      "status": "skipped"
+                      "results": [
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 2277,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "steps": [
+                            {
+                              "title": "Validate user is on secure area",
+                              "duration": 10
+                            },
+                            {
+                              "title": "Perform logout",
+                              "duration": 130
+                            },
+                            {
+                              "title": "Validate successful logout",
+                              "duration": 64
+                            },
+                            {
+                              "title": "Validate user can no longer access secure area",
+                              "duration": 109
+                            }
+                          ],
+                          "startTime": "2026-03-04T06:16:25.810Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
                     }
                   ],
                   "id": "7b8b6b69b7a1e58bff3b-a1d7834eaa0e8255fa13",
@@ -2584,46 +857,6 @@
                   "column": 9
                 },
                 {
-                  "title": "should logout using keyboard navigation",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "firefox",
-                      "projectName": "firefox",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-760520628770ff370e9b",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 39,
-                  "column": 9
-                },
-                {
-                  "title": "should handle multiple logout attempts gracefully",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "firefox",
-                      "projectName": "firefox",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-e5dae72956994575eacb",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 55,
-                  "column": 9
-                },
-                {
                   "title": "should successfully logout and show confirmation message @smoke",
                   "ok": true,
                   "tags": ["smoke"],
@@ -2634,8 +867,40 @@
                       "expectedStatus": "passed",
                       "projectId": "webkit",
                       "projectName": "webkit",
-                      "results": [],
-                      "status": "skipped"
+                      "results": [
+                        {
+                          "workerIndex": 2,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 3326,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "steps": [
+                            {
+                              "title": "Validate user is on secure area",
+                              "duration": 17
+                            },
+                            {
+                              "title": "Perform logout",
+                              "duration": 296
+                            },
+                            {
+                              "title": "Validate successful logout",
+                              "duration": 48
+                            },
+                            {
+                              "title": "Validate user can no longer access secure area",
+                              "duration": 189
+                            }
+                          ],
+                          "startTime": "2026-03-04T06:16:37.677Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
                     }
                   ],
                   "id": "7b8b6b69b7a1e58bff3b-e9f0c90c61a7d801c703",
@@ -2644,46 +909,6 @@
                   "column": 9
                 },
                 {
-                  "title": "should logout using keyboard navigation",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "webkit",
-                      "projectName": "webkit",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-258da58918db432b3ef7",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 39,
-                  "column": 9
-                },
-                {
-                  "title": "should handle multiple logout attempts gracefully",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "webkit",
-                      "projectName": "webkit",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-e09d9fd98378f6d275b6",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 55,
-                  "column": 9
-                },
-                {
                   "title": "should successfully logout and show confirmation message @smoke",
                   "ok": true,
                   "tags": ["smoke"],
@@ -2694,8 +919,40 @@
                       "expectedStatus": "passed",
                       "projectId": "Mobile Chrome",
                       "projectName": "Mobile Chrome",
-                      "results": [],
-                      "status": "skipped"
+                      "results": [
+                        {
+                          "workerIndex": 3,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 2202,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "steps": [
+                            {
+                              "title": "Validate user is on secure area",
+                              "duration": 16
+                            },
+                            {
+                              "title": "Perform logout",
+                              "duration": 102
+                            },
+                            {
+                              "title": "Validate successful logout",
+                              "duration": 21
+                            },
+                            {
+                              "title": "Validate user can no longer access secure area",
+                              "duration": 100
+                            }
+                          ],
+                          "startTime": "2026-03-04T06:16:50.990Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
                     }
                   ],
                   "id": "7b8b6b69b7a1e58bff3b-b234f490be8b888b4fe0",
@@ -2704,46 +961,6 @@
                   "column": 9
                 },
                 {
-                  "title": "should logout using keyboard navigation",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Chrome",
-                      "projectName": "Mobile Chrome",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-ee62a55e24212ce0cb99",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 39,
-                  "column": 9
-                },
-                {
-                  "title": "should handle multiple logout attempts gracefully",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Chrome",
-                      "projectName": "Mobile Chrome",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-4c09fefa415e3a06a898",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 55,
-                  "column": 9
-                },
-                {
                   "title": "should successfully logout and show confirmation message @smoke",
                   "ok": true,
                   "tags": ["smoke"],
@@ -2754,361 +971,45 @@
                       "expectedStatus": "passed",
                       "projectId": "Mobile Safari",
                       "projectName": "Mobile Safari",
-                      "results": [],
-                      "status": "skipped"
+                      "results": [
+                        {
+                          "workerIndex": 4,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 2972,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "steps": [
+                            {
+                              "title": "Validate user is on secure area",
+                              "duration": 22
+                            },
+                            {
+                              "title": "Perform logout",
+                              "duration": 316
+                            },
+                            {
+                              "title": "Validate successful logout",
+                              "duration": 58
+                            },
+                            {
+                              "title": "Validate user can no longer access secure area",
+                              "duration": 121
+                            }
+                          ],
+                          "startTime": "2026-03-04T06:17:02.082Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
                     }
                   ],
                   "id": "7b8b6b69b7a1e58bff3b-2a3867edb1846092fbb7",
                   "file": "specs/secure-area.spec.ts",
                   "line": 13,
-                  "column": 9
-                },
-                {
-                  "title": "should logout using keyboard navigation",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Safari",
-                      "projectName": "Mobile Safari",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-c6d485083ce597eaec60",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 39,
-                  "column": 9
-                },
-                {
-                  "title": "should handle multiple logout attempts gracefully",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Safari",
-                      "projectName": "Mobile Safari",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-46bed80c3724ee872be9",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 55,
-                  "column": 9
-                }
-              ]
-            },
-            {
-              "title": "Secure Area Access Control",
-              "file": "specs/secure-area.spec.ts",
-              "line": 73,
-              "column": 8,
-              "specs": [
-                {
-                  "title": "should prevent unauthenticated access to secure area",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "chromium",
-                      "projectName": "chromium",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-3c2c0c10663a5ea9196a",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 74,
-                  "column": 9
-                },
-                {
-                  "title": "should maintain authentication state across page refreshes",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "chromium",
-                      "projectName": "chromium",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-a799f8bd33464ef5955e",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 91,
-                  "column": 9
-                },
-                {
-                  "title": "should handle browser navigation (back/forward)",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "chromium",
-                      "projectName": "chromium",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-5efdf45bbc0ebf7c0c73",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 104,
-                  "column": 9
-                },
-                {
-                  "title": "should prevent unauthenticated access to secure area",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "firefox",
-                      "projectName": "firefox",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-8104f919a3d0f6eb9a57",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 74,
-                  "column": 9
-                },
-                {
-                  "title": "should maintain authentication state across page refreshes",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "firefox",
-                      "projectName": "firefox",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-dfa433fcdfbe74c2ac1a",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 91,
-                  "column": 9
-                },
-                {
-                  "title": "should handle browser navigation (back/forward)",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "firefox",
-                      "projectName": "firefox",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-517b98852bdbe5fe32fd",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 104,
-                  "column": 9
-                },
-                {
-                  "title": "should prevent unauthenticated access to secure area",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "webkit",
-                      "projectName": "webkit",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-6c4e22d5bf0e8c44c560",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 74,
-                  "column": 9
-                },
-                {
-                  "title": "should maintain authentication state across page refreshes",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "webkit",
-                      "projectName": "webkit",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-353a6ae1ca28c6c4a971",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 91,
-                  "column": 9
-                },
-                {
-                  "title": "should handle browser navigation (back/forward)",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "webkit",
-                      "projectName": "webkit",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-d681f4af10e01db0a1d1",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 104,
-                  "column": 9
-                },
-                {
-                  "title": "should prevent unauthenticated access to secure area",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Chrome",
-                      "projectName": "Mobile Chrome",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-8916965aec048426671c",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 74,
-                  "column": 9
-                },
-                {
-                  "title": "should maintain authentication state across page refreshes",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Chrome",
-                      "projectName": "Mobile Chrome",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-284d0375991070c23838",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 91,
-                  "column": 9
-                },
-                {
-                  "title": "should handle browser navigation (back/forward)",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Chrome",
-                      "projectName": "Mobile Chrome",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-837e79a9558dbc1b3286",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 104,
-                  "column": 9
-                },
-                {
-                  "title": "should prevent unauthenticated access to secure area",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Safari",
-                      "projectName": "Mobile Safari",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-12a5c465f9cb7f7ef8b1",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 74,
-                  "column": 9
-                },
-                {
-                  "title": "should maintain authentication state across page refreshes",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Safari",
-                      "projectName": "Mobile Safari",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-2a2edb9faac7150a2f5e",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 91,
-                  "column": 9
-                },
-                {
-                  "title": "should handle browser navigation (back/forward)",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Safari",
-                      "projectName": "Mobile Safari",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-694873850fe7b6ebc7c8",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 104,
                   "column": 9
                 }
               ]
@@ -3130,8 +1031,36 @@
                       "expectedStatus": "passed",
                       "projectId": "chromium",
                       "projectName": "chromium",
-                      "results": [],
-                      "status": "skipped"
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1874,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "steps": [
+                            {
+                              "title": "Validate page structure",
+                              "duration": 12
+                            },
+                            {
+                              "title": "Validate page content",
+                              "duration": 6
+                            },
+                            {
+                              "title": "Validate logout button",
+                              "duration": 10
+                            }
+                          ],
+                          "startTime": "2026-03-04T06:16:16.479Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
                     }
                   ],
                   "id": "7b8b6b69b7a1e58bff3b-021845c57a63f126c2b7",
@@ -3140,26 +1069,6 @@
                   "column": 9
                 },
                 {
-                  "title": "should have proper accessibility attributes",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "chromium",
-                      "projectName": "chromium",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-413decb23ed618436633",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 153,
-                  "column": 9
-                },
-                {
                   "title": "should display correct page elements and content @smoke",
                   "ok": true,
                   "tags": ["smoke"],
@@ -3170,8 +1079,36 @@
                       "expectedStatus": "passed",
                       "projectId": "firefox",
                       "projectName": "firefox",
-                      "results": [],
-                      "status": "skipped"
+                      "results": [
+                        {
+                          "workerIndex": 1,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 2017,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "steps": [
+                            {
+                              "title": "Validate page structure",
+                              "duration": 17
+                            },
+                            {
+                              "title": "Validate page content",
+                              "duration": 9
+                            },
+                            {
+                              "title": "Validate logout button",
+                              "duration": 13
+                            }
+                          ],
+                          "startTime": "2026-03-04T06:16:28.094Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
                     }
                   ],
                   "id": "7b8b6b69b7a1e58bff3b-648a06f6883016495963",
@@ -3180,26 +1117,6 @@
                   "column": 9
                 },
                 {
-                  "title": "should have proper accessibility attributes",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "firefox",
-                      "projectName": "firefox",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-6354d06b408bff0e7ef3",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 153,
-                  "column": 9
-                },
-                {
                   "title": "should display correct page elements and content @smoke",
                   "ok": true,
                   "tags": ["smoke"],
@@ -3210,8 +1127,36 @@
                       "expectedStatus": "passed",
                       "projectId": "webkit",
                       "projectName": "webkit",
-                      "results": [],
-                      "status": "skipped"
+                      "results": [
+                        {
+                          "workerIndex": 2,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 2631,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "steps": [
+                            {
+                              "title": "Validate page structure",
+                              "duration": 82
+                            },
+                            {
+                              "title": "Validate page content",
+                              "duration": 43
+                            },
+                            {
+                              "title": "Validate logout button",
+                              "duration": 25
+                            }
+                          ],
+                          "startTime": "2026-03-04T06:16:41.018Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
                     }
                   ],
                   "id": "7b8b6b69b7a1e58bff3b-991cead327f8e4ff6fce",
@@ -3220,26 +1165,6 @@
                   "column": 9
                 },
                 {
-                  "title": "should have proper accessibility attributes",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "webkit",
-                      "projectName": "webkit",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-e8f7f522eb1b50ba04ee",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 153,
-                  "column": 9
-                },
-                {
                   "title": "should display correct page elements and content @smoke",
                   "ok": true,
                   "tags": ["smoke"],
@@ -3250,8 +1175,36 @@
                       "expectedStatus": "passed",
                       "projectId": "Mobile Chrome",
                       "projectName": "Mobile Chrome",
-                      "results": [],
-                      "status": "skipped"
+                      "results": [
+                        {
+                          "workerIndex": 3,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1991,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "steps": [
+                            {
+                              "title": "Validate page structure",
+                              "duration": 21
+                            },
+                            {
+                              "title": "Validate page content",
+                              "duration": 12
+                            },
+                            {
+                              "title": "Validate logout button",
+                              "duration": 17
+                            }
+                          ],
+                          "startTime": "2026-03-04T06:16:53.206Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
                     }
                   ],
                   "id": "7b8b6b69b7a1e58bff3b-a5d14a2a6900079b33a1",
@@ -3260,26 +1213,6 @@
                   "column": 9
                 },
                 {
-                  "title": "should have proper accessibility attributes",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Chrome",
-                      "projectName": "Mobile Chrome",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-35784d98f3e253c51054",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 153,
-                  "column": 9
-                },
-                {
                   "title": "should display correct page elements and content @smoke",
                   "ok": true,
                   "tags": ["smoke"],
@@ -3290,1066 +1223,42 @@
                       "expectedStatus": "passed",
                       "projectId": "Mobile Safari",
                       "projectName": "Mobile Safari",
-                      "results": [],
-                      "status": "skipped"
+                      "results": [
+                        {
+                          "workerIndex": 4,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 2608,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "steps": [
+                            {
+                              "title": "Validate page structure",
+                              "duration": 55
+                            },
+                            {
+                              "title": "Validate page content",
+                              "duration": 20
+                            },
+                            {
+                              "title": "Validate logout button",
+                              "duration": 49
+                            }
+                          ],
+                          "startTime": "2026-03-04T06:17:05.069Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
                     }
                   ],
                   "id": "7b8b6b69b7a1e58bff3b-6ff231e66cdd8df35b71",
                   "file": "specs/secure-area.spec.ts",
                   "line": 128,
                   "column": 9
-                },
-                {
-                  "title": "should have proper accessibility attributes",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Safari",
-                      "projectName": "Mobile Safari",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-4c54ab82695384c689df",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 153,
-                  "column": 9
-                }
-              ]
-            },
-            {
-              "title": "Session Management Tests",
-              "file": "specs/secure-area.spec.ts",
-              "line": 164,
-              "column": 8,
-              "specs": [
-                {
-                  "title": "should maintain session indicators",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "chromium",
-                      "projectName": "chromium",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-60d9a285c02d3019367b",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 165,
-                  "column": 9
-                },
-                {
-                  "title": "should handle user idle behavior",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "chromium",
-                      "projectName": "chromium",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-2dc35ab7b33e7b268a23",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 176,
-                  "column": 9
-                },
-                {
-                  "title": "should handle concurrent sessions (security)",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "chromium",
-                      "projectName": "chromium",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-ab8f60abe297cb78b15e",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 188,
-                  "column": 9
-                },
-                {
-                  "title": "should maintain session indicators",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "firefox",
-                      "projectName": "firefox",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-2e78c670d0f5376f7d38",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 165,
-                  "column": 9
-                },
-                {
-                  "title": "should handle user idle behavior",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "firefox",
-                      "projectName": "firefox",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-6ead3dceda91645ee7fd",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 176,
-                  "column": 9
-                },
-                {
-                  "title": "should handle concurrent sessions (security)",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "firefox",
-                      "projectName": "firefox",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-94837b1248557e880c6c",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 188,
-                  "column": 9
-                },
-                {
-                  "title": "should maintain session indicators",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "webkit",
-                      "projectName": "webkit",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-62220c26f4cdd468e7f5",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 165,
-                  "column": 9
-                },
-                {
-                  "title": "should handle user idle behavior",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "webkit",
-                      "projectName": "webkit",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-86fdc0221275d7b215db",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 176,
-                  "column": 9
-                },
-                {
-                  "title": "should handle concurrent sessions (security)",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "webkit",
-                      "projectName": "webkit",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-23cab552bdb654fe4536",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 188,
-                  "column": 9
-                },
-                {
-                  "title": "should maintain session indicators",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Chrome",
-                      "projectName": "Mobile Chrome",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-70241d5ec8a2ed45aad9",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 165,
-                  "column": 9
-                },
-                {
-                  "title": "should handle user idle behavior",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Chrome",
-                      "projectName": "Mobile Chrome",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-17692500c4bd04f27692",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 176,
-                  "column": 9
-                },
-                {
-                  "title": "should handle concurrent sessions (security)",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Chrome",
-                      "projectName": "Mobile Chrome",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-af469f0a9f6c73b214e1",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 188,
-                  "column": 9
-                },
-                {
-                  "title": "should maintain session indicators",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Safari",
-                      "projectName": "Mobile Safari",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-a2b12b1416e2c050165e",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 165,
-                  "column": 9
-                },
-                {
-                  "title": "should handle user idle behavior",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Safari",
-                      "projectName": "Mobile Safari",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-a5e214a6ac2509280c47",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 176,
-                  "column": 9
-                },
-                {
-                  "title": "should handle concurrent sessions (security)",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Safari",
-                      "projectName": "Mobile Safari",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-82adaaff97d4233fd29a",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 188,
-                  "column": 9
-                }
-              ]
-            },
-            {
-              "title": "Error Handling Tests",
-              "file": "specs/secure-area.spec.ts",
-              "line": 223,
-              "column": 8,
-              "specs": [
-                {
-                  "title": "should handle network interruptions gracefully",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "chromium",
-                      "projectName": "chromium",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-d1441677f6603b445cb3",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 224,
-                  "column": 9
-                },
-                {
-                  "title": "should handle JavaScript errors gracefully",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "chromium",
-                      "projectName": "chromium",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-88c292e5048ec8586d88",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 240,
-                  "column": 9
-                },
-                {
-                  "title": "should handle network interruptions gracefully",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "firefox",
-                      "projectName": "firefox",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-2803866e2421cd86c017",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 224,
-                  "column": 9
-                },
-                {
-                  "title": "should handle JavaScript errors gracefully",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "firefox",
-                      "projectName": "firefox",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-5aa66777554e7f155015",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 240,
-                  "column": 9
-                },
-                {
-                  "title": "should handle network interruptions gracefully",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "webkit",
-                      "projectName": "webkit",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-5990de03833f6dc8f8c6",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 224,
-                  "column": 9
-                },
-                {
-                  "title": "should handle JavaScript errors gracefully",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "webkit",
-                      "projectName": "webkit",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-a22fabeb2bb6c94c2ca3",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 240,
-                  "column": 9
-                },
-                {
-                  "title": "should handle network interruptions gracefully",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Chrome",
-                      "projectName": "Mobile Chrome",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-86d87acae831f1b5b72e",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 224,
-                  "column": 9
-                },
-                {
-                  "title": "should handle JavaScript errors gracefully",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Chrome",
-                      "projectName": "Mobile Chrome",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-653998058aeecef20977",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 240,
-                  "column": 9
-                },
-                {
-                  "title": "should handle network interruptions gracefully",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Safari",
-                      "projectName": "Mobile Safari",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-6420d1f8588a43b8e5ab",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 224,
-                  "column": 9
-                },
-                {
-                  "title": "should handle JavaScript errors gracefully",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Safari",
-                      "projectName": "Mobile Safari",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-95fbd29d8b7f9733ee71",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 240,
-                  "column": 9
-                }
-              ]
-            },
-            {
-              "title": "Performance Tests",
-              "file": "specs/secure-area.spec.ts",
-              "line": 269,
-              "column": 8,
-              "specs": [
-                {
-                  "title": "should load secure area within acceptable time",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "chromium",
-                      "projectName": "chromium",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-5321b4ec900500ac968f",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 270,
-                  "column": 9
-                },
-                {
-                  "title": "should logout within acceptable time",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "chromium",
-                      "projectName": "chromium",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-f9d61aded4bf9b6ef0b4",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 287,
-                  "column": 9
-                },
-                {
-                  "title": "should load secure area within acceptable time",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "firefox",
-                      "projectName": "firefox",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-0f17b536f38f770efd23",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 270,
-                  "column": 9
-                },
-                {
-                  "title": "should logout within acceptable time",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "firefox",
-                      "projectName": "firefox",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-c328f8ea3321c0339f9a",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 287,
-                  "column": 9
-                },
-                {
-                  "title": "should load secure area within acceptable time",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "webkit",
-                      "projectName": "webkit",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-6a32550a4f08953d0acf",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 270,
-                  "column": 9
-                },
-                {
-                  "title": "should logout within acceptable time",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "webkit",
-                      "projectName": "webkit",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-451ba309b9a844ebeb26",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 287,
-                  "column": 9
-                },
-                {
-                  "title": "should load secure area within acceptable time",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Chrome",
-                      "projectName": "Mobile Chrome",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-3d10d1d927296b8e0fd4",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 270,
-                  "column": 9
-                },
-                {
-                  "title": "should logout within acceptable time",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Chrome",
-                      "projectName": "Mobile Chrome",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-8a2225fa68b0d5090bf4",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 287,
-                  "column": 9
-                },
-                {
-                  "title": "should load secure area within acceptable time",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Safari",
-                      "projectName": "Mobile Safari",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-9e5f32122bc851109add",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 270,
-                  "column": 9
-                },
-                {
-                  "title": "should logout within acceptable time",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Safari",
-                      "projectName": "Mobile Safari",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-45760de37d59a8449163",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 287,
-                  "column": 9
-                }
-              ]
-            },
-            {
-              "title": "Cross-Browser Compatibility",
-              "file": "specs/secure-area.spec.ts",
-              "line": 301,
-              "column": 8,
-              "specs": [
-                {
-                  "title": "should work correctly in chromium",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "chromium",
-                      "projectName": "chromium",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-4ed27cc7a091df300b33",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 303,
-                  "column": 11
-                },
-                {
-                  "title": "should work correctly in firefox",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "chromium",
-                      "projectName": "chromium",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-5c39ea31f07dcdc976af",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 303,
-                  "column": 11
-                },
-                {
-                  "title": "should work correctly in webkit",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "chromium",
-                      "projectName": "chromium",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-0f96feacf7c5d9da8789",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 303,
-                  "column": 11
-                },
-                {
-                  "title": "should work correctly in chromium",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "firefox",
-                      "projectName": "firefox",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-26634cebbbb6c0e8d861",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 303,
-                  "column": 11
-                },
-                {
-                  "title": "should work correctly in firefox",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "firefox",
-                      "projectName": "firefox",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-9195725f97381d84febf",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 303,
-                  "column": 11
-                },
-                {
-                  "title": "should work correctly in webkit",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "firefox",
-                      "projectName": "firefox",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-e8ee6e038baae04761cf",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 303,
-                  "column": 11
-                },
-                {
-                  "title": "should work correctly in chromium",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "webkit",
-                      "projectName": "webkit",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-49b0e6aad42a4a4cba7c",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 303,
-                  "column": 11
-                },
-                {
-                  "title": "should work correctly in firefox",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "webkit",
-                      "projectName": "webkit",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-1b0718eacdcd82dffff2",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 303,
-                  "column": 11
-                },
-                {
-                  "title": "should work correctly in webkit",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "webkit",
-                      "projectName": "webkit",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-40b81847650a181baff3",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 303,
-                  "column": 11
-                },
-                {
-                  "title": "should work correctly in chromium",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Chrome",
-                      "projectName": "Mobile Chrome",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-e41b6f06cd247c8f218f",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 303,
-                  "column": 11
-                },
-                {
-                  "title": "should work correctly in firefox",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Chrome",
-                      "projectName": "Mobile Chrome",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-1bf9e90cc75e704c8e69",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 303,
-                  "column": 11
-                },
-                {
-                  "title": "should work correctly in webkit",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Chrome",
-                      "projectName": "Mobile Chrome",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-2346901c0fd42ea8771f",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 303,
-                  "column": 11
-                },
-                {
-                  "title": "should work correctly in chromium",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Safari",
-                      "projectName": "Mobile Safari",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-95d431567bac85da1f85",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 303,
-                  "column": 11
-                },
-                {
-                  "title": "should work correctly in firefox",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Safari",
-                      "projectName": "Mobile Safari",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-86052116f09ae5f5d5f0",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 303,
-                  "column": 11
-                },
-                {
-                  "title": "should work correctly in webkit",
-                  "ok": true,
-                  "tags": [],
-                  "tests": [
-                    {
-                      "timeout": 30000,
-                      "annotations": [],
-                      "expectedStatus": "passed",
-                      "projectId": "Mobile Safari",
-                      "projectName": "Mobile Safari",
-                      "results": [],
-                      "status": "skipped"
-                    }
-                  ],
-                  "id": "7b8b6b69b7a1e58bff3b-d1d8e775f66cca0fab30",
-                  "file": "specs/secure-area.spec.ts",
-                  "line": 303,
-                  "column": 11
                 }
               ]
             }
@@ -4358,7 +1267,7 @@
         {
           "title": "End-to-End User Journey",
           "file": "specs/secure-area.spec.ts",
-          "line": 316,
+          "line": 317,
           "column": 6,
           "specs": [
             {
@@ -4372,33 +1281,49 @@
                   "expectedStatus": "passed",
                   "projectId": "chromium",
                   "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2466,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Navigate to login page",
+                          "duration": 1026
+                        },
+                        {
+                          "title": "Login with valid credentials",
+                          "duration": 697
+                        },
+                        {
+                          "title": "Validate secure area access",
+                          "duration": 5
+                        },
+                        {
+                          "title": "Logout successfully",
+                          "duration": 622
+                        },
+                        {
+                          "title": "Validate return to login page",
+                          "duration": 9
+                        }
+                      ],
+                      "startTime": "2026-03-04T06:16:18.361Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
                 }
               ],
               "id": "7b8b6b69b7a1e58bff3b-a0cf293fb7ea67754cf3",
               "file": "specs/secure-area.spec.ts",
-              "line": 317,
-              "column": 7
-            },
-            {
-              "title": "should maintain security throughout user session",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "7b8b6b69b7a1e58bff3b-fa61b8b010d7fd4789ed",
-              "file": "specs/secure-area.spec.ts",
-              "line": 347,
+              "line": 318,
               "column": 7
             },
             {
@@ -4412,33 +1337,49 @@
                   "expectedStatus": "passed",
                   "projectId": "firefox",
                   "projectName": "firefox",
-                  "results": [],
-                  "status": "skipped"
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2706,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Navigate to login page",
+                          "duration": 1079
+                        },
+                        {
+                          "title": "Login with valid credentials",
+                          "duration": 756
+                        },
+                        {
+                          "title": "Validate secure area access",
+                          "duration": 7
+                        },
+                        {
+                          "title": "Logout successfully",
+                          "duration": 692
+                        },
+                        {
+                          "title": "Validate return to login page",
+                          "duration": 15
+                        }
+                      ],
+                      "startTime": "2026-03-04T06:16:30.118Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
                 }
               ],
               "id": "7b8b6b69b7a1e58bff3b-2d8066cd69d83bbe1c61",
               "file": "specs/secure-area.spec.ts",
-              "line": 317,
-              "column": 7
-            },
-            {
-              "title": "should maintain security throughout user session",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "firefox",
-                  "projectName": "firefox",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "7b8b6b69b7a1e58bff3b-582fd98cf611f49091bf",
-              "file": "specs/secure-area.spec.ts",
-              "line": 347,
+              "line": 318,
               "column": 7
             },
             {
@@ -4452,33 +1393,49 @@
                   "expectedStatus": "passed",
                   "projectId": "webkit",
                   "projectName": "webkit",
-                  "results": [],
-                  "status": "skipped"
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3271,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Navigate to login page",
+                          "duration": 1143
+                        },
+                        {
+                          "title": "Login with valid credentials",
+                          "duration": 733
+                        },
+                        {
+                          "title": "Validate secure area access",
+                          "duration": 17
+                        },
+                        {
+                          "title": "Logout successfully",
+                          "duration": 980
+                        },
+                        {
+                          "title": "Validate return to login page",
+                          "duration": 21
+                        }
+                      ],
+                      "startTime": "2026-03-04T06:16:43.662Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
                 }
               ],
               "id": "7b8b6b69b7a1e58bff3b-c0c4eb29a57cb04d3c86",
               "file": "specs/secure-area.spec.ts",
-              "line": 317,
-              "column": 7
-            },
-            {
-              "title": "should maintain security throughout user session",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "webkit",
-                  "projectName": "webkit",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "7b8b6b69b7a1e58bff3b-f31f0c99800ac4f5340d",
-              "file": "specs/secure-area.spec.ts",
-              "line": 347,
+              "line": 318,
               "column": 7
             },
             {
@@ -4492,33 +1449,49 @@
                   "expectedStatus": "passed",
                   "projectId": "Mobile Chrome",
                   "projectName": "Mobile Chrome",
-                  "results": [],
-                  "status": "skipped"
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2658,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Navigate to login page",
+                          "duration": 1033
+                        },
+                        {
+                          "title": "Login with valid credentials",
+                          "duration": 719
+                        },
+                        {
+                          "title": "Validate secure area access",
+                          "duration": 11
+                        },
+                        {
+                          "title": "Logout successfully",
+                          "duration": 687
+                        },
+                        {
+                          "title": "Validate return to login page",
+                          "duration": 10
+                        }
+                      ],
+                      "startTime": "2026-03-04T06:16:55.212Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
                 }
               ],
               "id": "7b8b6b69b7a1e58bff3b-b48512d0f06a0bcebc52",
               "file": "specs/secure-area.spec.ts",
-              "line": 317,
-              "column": 7
-            },
-            {
-              "title": "should maintain security throughout user session",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "Mobile Chrome",
-                  "projectName": "Mobile Chrome",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "7b8b6b69b7a1e58bff3b-81f37e8db23af9178e6e",
-              "file": "specs/secure-area.spec.ts",
-              "line": 347,
+              "line": 318,
               "column": 7
             },
             {
@@ -4532,33 +1505,49 @@
                   "expectedStatus": "passed",
                   "projectId": "Mobile Safari",
                   "projectName": "Mobile Safari",
-                  "results": [],
-                  "status": "skipped"
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2876,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Navigate to login page",
+                          "duration": 1145
+                        },
+                        {
+                          "title": "Login with valid credentials",
+                          "duration": 538
+                        },
+                        {
+                          "title": "Validate secure area access",
+                          "duration": 10
+                        },
+                        {
+                          "title": "Logout successfully",
+                          "duration": 904
+                        },
+                        {
+                          "title": "Validate return to login page",
+                          "duration": 48
+                        }
+                      ],
+                      "startTime": "2026-03-04T06:17:07.691Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
                 }
               ],
               "id": "7b8b6b69b7a1e58bff3b-bc19f1a23bbde8e6515a",
               "file": "specs/secure-area.spec.ts",
-              "line": 317,
-              "column": 7
-            },
-            {
-              "title": "should maintain security throughout user session",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "Mobile Safari",
-                  "projectName": "Mobile Safari",
-                  "results": [],
-                  "status": "skipped"
-                }
-              ],
-              "id": "7b8b6b69b7a1e58bff3b-f1bf1500595a6b40a31e",
-              "file": "specs/secure-area.spec.ts",
-              "line": 347,
+              "line": 318,
               "column": 7
             }
           ]
@@ -4568,10 +1557,10 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-03-04T04:24:46.569Z",
-    "duration": 31.44799999999998,
-    "expected": 0,
-    "skipped": 210,
+    "startTime": "2026-03-04T06:16:07.731Z",
+    "duration": 62886.001000000004,
+    "expected": 25,
+    "skipped": 0,
     "unexpected": 0,
     "flaky": 0
   }

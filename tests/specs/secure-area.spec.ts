@@ -36,7 +36,10 @@ test.describe('Secure Area Functionality', () => {
       });
     });
 
-    test('should logout using keyboard navigation', async ({ authenticatedPage, secureAreaPage }) => {
+    test('should logout using keyboard navigation', async ({
+      authenticatedPage,
+      secureAreaPage,
+    }) => {
       await test.step('Navigate to logout button via keyboard', async () => {
         await secureAreaPage.testKeyboardNavigation();
       });
@@ -151,7 +154,10 @@ test.describe('Secure Area Functionality', () => {
       });
     });
 
-    test('should have proper accessibility attributes', async ({ authenticatedPage, secureAreaPage }) => {
+    test('should have proper accessibility attributes', async ({
+      authenticatedPage,
+      secureAreaPage,
+    }) => {
       await test.step('Validate accessibility features', async () => {
         await secureAreaPage.validateAccessibility();
       });
