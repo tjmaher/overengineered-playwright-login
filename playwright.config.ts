@@ -107,13 +107,13 @@ export default defineConfig({
     // Mobile browsers (using Playwright's built-in device emulation)
     {
       name: 'Mobile Chrome',
-      use: { 
+      use: {
         ...devices['Pixel 5'],
       },
     },
     {
       name: 'Mobile Safari',
-      use: { 
+      use: {
         ...devices['iPhone 12'],
       },
     },

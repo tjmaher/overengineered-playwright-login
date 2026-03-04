@@ -10,7 +10,7 @@ An Overengineered, production-ready test automation framework built with GitHub 
 
 ## 📋 Table of Contents
 
-<table>
+<table width="100%">
 <tr>
 <th width="33%">Getting Started</th>
 <th width="33%">Technical Details</th>
@@ -66,7 +66,7 @@ This framework provides automated testing for login functionality using the [The
 
 #### 📊 **Detailed Breakdown**
 
-<table>
+<table width="100%">
 <tr><th colspan="4">🔐 Login Page Test Suite (20 Tests)</th></tr>
 <tr>
 <td><strong>✅ Positive Scenarios</strong><br/>3 tests</td>
@@ -76,7 +76,7 @@ This framework provides automated testing for login functionality using the [The
 </tr>
 </table>
 
-<table>
+<table width="100%">
 <tr><th colspan="4">🏠 Secure Area Test Suite (20 Tests)</th></tr>
 <tr>
 <td><strong>🚪 Logout & Access</strong><br/>6 tests</td>
@@ -90,12 +90,12 @@ This framework provides automated testing for login functionality using the [The
 
 ### 🔧 Technical Stack
 
-- **🎭 [Playwright](https://playwright.dev/)** *(January 2020)*: Cross-browser automation framework ([DOCS](https://playwright.dev/docs/intro))
-- **📘 [TypeScript](https://www.typescriptlang.org/)** *(October 2012)*: Type-safe testing with modern JavaScript features ([DOCS](https://www.typescriptlang.org/docs/))
-- **📋 [Allure Reports](https://allurereport.org/)** *(2013)*: Comprehensive test reporting with screenshots and traces ([DOCS](https://docs.qameta.io/allure/))
-- **🔄 [GitHub Actions](https://github.com/features/actions)** *(October 2018)*: Full CI/CD pipeline with multiple stages ([DOCS](https://docs.github.com/en/actions))
-- **🎨 [Prettier](https://prettier.io/)** *(January 2017)*: Code formatting ([DOCS](https://prettier.io/docs/en/index.html))
-- **📦 [Page Object Model](https://martinfowler.com/bliki/PageObject.html)** *(September 2013)*: Maintainable test architecture ([DOCS](https://playwright.dev/docs/pom))
+- **🎭 [Playwright](https://playwright.dev/)** _(January 2020)_: Cross-browser automation framework ([DOCS](https://playwright.dev/docs/intro))
+- **📘 [TypeScript](https://www.typescriptlang.org/)** _(October 2012)_: Type-safe testing with modern JavaScript features ([DOCS](https://www.typescriptlang.org/docs/))
+- **📋 [Allure Reports](https://allurereport.org/)** _(2013)_: Comprehensive test reporting with screenshots and traces ([DOCS](https://docs.qameta.io/allure/))
+- **🔄 [GitHub Actions](https://github.com/features/actions)** _(October 2018)_: Full CI/CD pipeline with multiple stages ([DOCS](https://docs.github.com/en/actions))
+- **🎨 [Prettier](https://prettier.io/)** _(January 2017)_: Code formatting ([DOCS](https://prettier.io/docs/en/index.html))
+- **📦 [Page Object Model](https://martinfowler.com/bliki/PageObject.html)** _(September 2013)_: Maintainable test architecture ([DOCS](https://playwright.dev/docs/pom))
 
 ### 🚀 Framework Capabilities
 
@@ -151,11 +151,12 @@ graph TD
 
 #### **About the Gang of Four (GoF)**
 
-The **"Gang of Four"** refers to the four authors—[Erich Gamma](https://en.wikipedia.org/wiki/Erich_Gamma), [Richard Helm](https://en.wikipedia.org/wiki/Richard_Helm), [Ralph Johnson](https://en.wikipedia.org/wiki/Ralph_Johnson_(computer_scientist)), and [John Vlissides](https://en.wikipedia.org/wiki/John_Vlissides)—who authored the seminal book _"[Design Patterns: Elements of Reusable Object-Oriented Software](https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612)"_ _(1994)_. This foundational text catalogued 23 classic design patterns that became the standard vocabulary for object-oriented design.
+The **"Gang of Four"** refers to the four authors—[Erich Gamma](https://en.wikipedia.org/wiki/Erich_Gamma), [Richard Helm](https://en.wikipedia.org/wiki/Richard_Helm), [Ralph Johnson](<https://en.wikipedia.org/wiki/Ralph_Johnson_(computer_scientist)>), and [John Vlissides](https://en.wikipedia.org/wiki/John_Vlissides)—who authored the seminal book _"[Design Patterns: Elements of Reusable Object-Oriented Software](https://www.amazon.com/Design-Patterns-Elements-Reusable-Object-Oriented/dp/0201633612)"_ _(1994)_. This foundational text catalogued 23 classic design patterns that became the standard vocabulary for object-oriented design.
 
 **Key Contributions:**
+
 - **📚 Pattern Catalog**: Established the template for documenting design patterns (Intent, Structure, Participants, Consequences)
-- **🏗️ Common Vocabulary**: Created shared terminology for software architecture discussions  
+- **🏗️ Common Vocabulary**: Created shared terminology for software architecture discussions
 - **🎯 Problem-Solution Mapping**: Systematic approach to recurring design problems
 - **🔄 Reusability Principles**: Promoted composition over inheritance and programming to interfaces
 
@@ -274,11 +275,12 @@ playwright-typescript-login/
 
 #### **About OWASP and the Top 10**
 
-The **[Open Web Application Security Project (OWASP)](https://owasp.org/)** *(founded 2001)* is a nonprofit organization dedicated to improving software security through open-source tools, documentation, and community collaboration. OWASP provides vendor-neutral, practical security guidance that has become the de facto standard for web application security.
+The **[Open Web Application Security Project (OWASP)](https://owasp.org/)** _(founded 2001)_ is a nonprofit organization dedicated to improving software security through open-source tools, documentation, and community collaboration. OWASP provides vendor-neutral, practical security guidance that has become the de facto standard for web application security.
 
 **OWASP Top 10 History:**
-- **[First Version](https://owasp.org/www-pdf-archive/OWASP_Top_Ten_2003.pdf)**: *2003* - Established foundational web security risks
-- **[Latest Version](https://owasp.org/Top10/)**: *2021* - Includes modern threats like Software and Data Integrity Failures
+
+- **[First Version](https://owasp.org/www-pdf-archive/OWASP_Top_Ten_2003.pdf)**: _2003_ - Established foundational web security risks
+- **[Latest Version](https://owasp.org/Top10/)**: _2021_ - Includes modern threats like Software and Data Integrity Failures
 
 **Current Framework Tests:**
 
@@ -447,7 +449,7 @@ npm run allure:serve
 
 ### Playwright HTML Reports
 
-> **Documentation**: [Playwright HTML Reporter](https://playwright.dev/docs/test-reporters#html-reporter) *(January 2020)*
+> **Documentation**: [Playwright HTML Reporter](https://playwright.dev/docs/test-reporters#html-reporter) _(January 2020)_
 
 ```bash
 # View built-in HTML report
@@ -621,20 +623,20 @@ ALLURE_REPORT_DIR: 'allure-report'
 
 ### Report Dashboard Features
 
-> **Design Inspiration**: Custom dashboard built following [Material Design principles](https://material.io/design) and [GitHub Actions UI patterns](https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/using-workflow-run-logs). Inspired by enterprise CI/CD dashboards from [Jenkins Blue Ocean](https://www.jenkins.io/projects/blueocean/) *(2016)*, [GitLab CI](https://docs.gitlab.com/ee/ci/) *(2012)*, and [Azure DevOps](https://azure.microsoft.com/en-us/products/devops) *(2018)*.
+> **Design Inspiration**: Custom dashboard built following [Material Design principles](https://material.io/design) and [GitHub Actions UI patterns](https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/using-workflow-run-logs). Inspired by enterprise CI/CD dashboards from [Jenkins Blue Ocean](https://www.jenkins.io/projects/blueocean/) _(2016)_, [GitLab CI](https://docs.gitlab.com/ee/ci/) _(2012)_, and [Azure DevOps](https://azure.microsoft.com/en-us/products/devops) _(2018)_.
 
 #### **Dashboard Components:**
 
 - **Interactive Design**: Modern CSS with hover effects and responsive grid following [CSS Grid Layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout) standards
 - **Report Cards**: Separate cards for Playwright and Allure reports using [Card UI pattern](https://material.io/components/cards)
 - **Live Timestamps**: Generated timestamps for each report run per [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601)
-- **Direct Links**: One-click access to detailed test results with [deep linking](https://developer.mozilla.org/en-US/docs/Web/API/History_API) 
+- **Direct Links**: One-click access to detailed test results with [deep linking](https://developer.mozilla.org/en-US/docs/Web/API/History_API)
 - **Status Indicators**: Visual badges showing report freshness using [status badge patterns](https://shields.io/)
 - **GitHub Integration**: Links to source code and workflow runs via [GitHub API](https://docs.github.com/en/rest)
 
 ### Artifact Retention Strategy
 
-> **Standards Based On**: Retention periods follow [GitHub Actions artifact limits](https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts#downloading-and-deleting-artifacts-after-a-workflow-run-is-complete) *(90-day maximum)*, [AWS CloudWatch Logs retention](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html) best practices, and [NIST SP 800-88](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-88r1.pdf) data retention guidelines. Periods balance storage costs with debugging needs per [DevOps artifact management practices](https://www.atlassian.com/devops/devops-tools/test-automation) and [SRE monitoring principles](https://sre.google/sre-book/monitoring-distributed-systems/).
+> **Standards Based On**: Retention periods follow [GitHub Actions artifact limits](https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts#downloading-and-deleting-artifacts-after-a-workflow-run-is-complete) _(90-day maximum)_, [AWS CloudWatch Logs retention](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html) best practices, and [NIST SP 800-88](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-88r1.pdf) data retention guidelines. Periods balance storage costs with debugging needs per [DevOps artifact management practices](https://www.atlassian.com/devops/devops-tools/test-automation) and [SRE monitoring principles](https://sre.google/sre-book/monitoring-distributed-systems/).
 
 | Artifact Type         | Retention | Purpose                         |
 | --------------------- | --------- | ------------------------------- |
@@ -646,12 +648,12 @@ ALLURE_REPORT_DIR: 'allure-report'
 
 ### Performance Optimizations
 
-> **Based On**: CI/CD optimization practices from multiple industry sources: **DORA Research Team's** [Accelerate DevOps research](https://www.devops-research.com/research.html) *(2014-2018)*, **Microsoft's** [GitHub Actions performance guide](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstrategymatrix) *(2018)*, **Microsoft Playwright Team's** [Playwright best practices](https://playwright.dev/docs/best-practices) *(2020)*, **Google's** [Testing Blog principles](https://testing.googleblog.com/) *(2007-present)*, and **Netflix Engineering's** [CI/CD optimizations](https://netflixtechblog.com/towards-true-continuous-integration-distributed-repositories-and-dependencies-2a2e3108c051) *(2016)*.
+> **Based On**: CI/CD optimization practices from multiple industry sources: **DORA Research Team's** [Accelerate DevOps research](https://www.devops-research.com/research.html) _(2014-2018)_, **Microsoft's** [GitHub Actions performance guide](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstrategymatrix) _(2018)_, **Microsoft Playwright Team's** [Playwright best practices](https://playwright.dev/docs/best-practices) _(2020)_, **Google's** [Testing Blog principles](https://testing.googleblog.com/) _(2007-present)_, and **Netflix Engineering's** [CI/CD optimizations](https://netflixtechblog.com/towards-true-continuous-integration-distributed-repositories-and-dependencies-2a2e3108c051) _(2016)_.
 
 #### **Optimization Techniques:**
 
 - **Parallel Sharding**: 75% reduction in total test time using [Playwright test sharding](https://playwright.dev/docs/test-sharding) and [matrix strategy patterns](https://docs.github.com/en/actions/using-jobs/using-a-matrix-for-your-jobs)
-- **Conditional Execution**: Skip heavy tests on PRs unless labeled per [GitHub Actions conditional workflows](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idif) and [smart test selection](https://martinfowler.com/articles/rise-test-impact-analysis.html) *(2017)*
+- **Conditional Execution**: Skip heavy tests on PRs unless labeled per [GitHub Actions conditional workflows](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idif) and [smart test selection](https://martinfowler.com/articles/rise-test-impact-analysis.html) _(2017)_
 - **Browser Caching**: Playwright browser downloads cached using [GitHub Actions cache](https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows) and [dependency caching strategies](https://docs.github.com/en/actions/guides/caching-dependencies-to-speed-up-workflows)
 - **Dependency Caching**: npm packages cached between runs following [npm cache best practices](https://docs.npmjs.com/cli/v8/using-npm/registry#cache) and [Node.js CI optimization](https://nodejs.org/en/docs/guides/nodejs-docker-webapp/)
 - **Artifact Cleanup**: Automated cleanup prevents storage bloat per [storage optimization practices](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions#calculating-minute-and-storage-spending) and [FinOps principles](https://www.finops.org/introduction/what-is-finops/)
@@ -689,16 +691,16 @@ npm run type-check
 
 #### **Tool Integration**
 
-> **Sources**: Integration practices from **Prettier Team's** [VS Code Integration](https://prettier.io/docs/en/editors.html#visual-studio-code) guide *(2017)*, **Git Community's** [Pre-commit Hooks](https://prettier.io/docs/en/precommit.html) patterns established with **Git** *(2005)* and modernized by **Husky** *(2016)*, **DevOps Institute's** [CI/CD Validation](https://prettier.io/docs/en/cli.html#check) practices *(2010s)*, and **Microsoft TypeScript Team's** [TypeScript Config](https://www.typescriptlang.org/tsconfig) compiler options *(2012)*.
+> **Sources**: Integration practices from **Prettier Team's** [VS Code Integration](https://prettier.io/docs/en/editors.html#visual-studio-code) guide _(2017)_, **Git Community's** [Pre-commit Hooks](https://prettier.io/docs/en/precommit.html) patterns established with **Git** _(2005)_ and modernized by **Husky** _(2016)_, **DevOps Institute's** [CI/CD Validation](https://prettier.io/docs/en/cli.html#check) practices _(2010s)_, and **Microsoft TypeScript Team's** [TypeScript Config](https://www.typescriptlang.org/tsconfig) compiler options _(2012)_.
 
 - **[VS Code Integration](https://prettier.io/docs/en/editors.html#visual-studio-code)**: Format on save with Prettier extension
-- **[Pre-commit Hooks](https://prettier.io/docs/en/precommit.html)**: Automatic formatting before commits 
+- **[Pre-commit Hooks](https://prettier.io/docs/en/precommit.html)**: Automatic formatting before commits
 - **[CI/CD Validation](https://prettier.io/docs/en/cli.html#check)**: Pipeline fails on formatting violations
 - **[TypeScript Config](https://www.typescriptlang.org/tsconfig)**: Strict mode enabled for maximum type safety
 
 ### Pre-commit Hooks
 
-> **About Husky**: [Husky](https://typicode.github.io/husky/) *(2016)* is a popular npm package created by **Typicode (Julien Etienne)** that simplifies Git hooks management in JavaScript projects. It enables running scripts automatically before commits, pushes, and other Git operations, ensuring code quality gates are enforced locally before reaching CI/CD pipelines ([GitHub Repository](https://github.com/typicode/husky)).
+> **About Husky**: [Husky](https://typicode.github.io/husky/) _(2016)_ is a popular npm package created by **Typicode (Julien Etienne)** that simplifies Git hooks management in JavaScript projects. It enables running scripts automatically before commits, pushes, and other Git operations, ensuring code quality gates are enforced locally before reaching CI/CD pipelines ([GitHub Repository](https://github.com/typicode/husky)).
 
 **The project uses Husky for Git hooks:**
 
@@ -714,9 +716,10 @@ npm run type-check
 ```
 
 **Hook Configuration:**
-- **pre-commit**: Runs [lint-staged](https://github.com/okonet/lint-staged) *(2016)* to format only staged files
+
+- **pre-commit**: Runs [lint-staged](https://github.com/okonet/lint-staged) _(2016)_ to format only staged files
 - **pre-push**: Executes full validation suite before pushing to remote repository
-- **Integration**: Works with [Git hooks system](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) *(2005)* for local quality enforcement
+- **Integration**: Works with [Git hooks system](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks) _(2005)_ for local quality enforcement
 
 ### Adding New Tests
 
@@ -773,15 +776,15 @@ npm run type-check
 
 #### **Core Framework Documentation:**
 
-- **[Playwright Documentation](https://playwright.dev/)** *(January 2020)*: **Microsoft's official guides** - Essential for understanding browser automation APIs, configuration options, and best practices. Origin: **Microsoft Playwright Team** documentation site, continuously updated with each release.
+- **[Playwright Documentation](https://playwright.dev/)** _(January 2020)_: **Microsoft's official guides** - Essential for understanding browser automation APIs, configuration options, and best practices. Origin: **Microsoft Playwright Team** documentation site, continuously updated with each release.
 
-- **[TypeScript Handbook](https://www.typescriptlang.org/docs/)** *(October 2012)*: **Microsoft's comprehensive language reference** - Critical for type system understanding, compiler options, and advanced TypeScript features used throughout the framework. Origin: **Microsoft TypeScript Team**, the authoritative source for TypeScript language specification.
+- **[TypeScript Handbook](https://www.typescriptlang.org/docs/)** _(October 2012)_: **Microsoft's comprehensive language reference** - Critical for type system understanding, compiler options, and advanced TypeScript features used throughout the framework. Origin: **Microsoft TypeScript Team**, the authoritative source for TypeScript language specification.
 
 #### **Reporting & CI/CD Integration:**
 
-- **[Allure Reports](https://docs.qameta.io/allure/)** *(2013)*: **Qameta Software's official documentation** - Comprehensive guide for test reporting, analytics, and integration patterns. Origin: **Original creators of Allure Framework**, providing authoritative implementation guidance.
+- **[Allure Reports](https://docs.qameta.io/allure/)** _(2013)_: **Qameta Software's official documentation** - Comprehensive guide for test reporting, analytics, and integration patterns. Origin: **Original creators of Allure Framework**, providing authoritative implementation guidance.
 
-- **[GitHub Actions](https://docs.github.com/en/actions)** *(October 2018)*: **GitHub's official workflow documentation** - Complete reference for CI/CD pipeline configuration, matrix strategies, and optimization techniques used in the framework's automated testing pipeline. Origin: **GitHub Inc.**, the platform creators and maintainers.
+- **[GitHub Actions](https://docs.github.com/en/actions)** _(October 2018)_: **GitHub's official workflow documentation** - Complete reference for CI/CD pipeline configuration, matrix strategies, and optimization techniques used in the framework's automated testing pipeline. Origin: **GitHub Inc.**, the platform creators and maintainers.
 
 ### Learning Resources
 
@@ -789,23 +792,23 @@ npm run type-check
 
 #### **Essential Skill Development:**
 
-- **[Playwright Best Practices](https://playwright.dev/docs/best-practices)** *(January 2020)*: **Microsoft Playwright Team's curated recommendations** - Essential for avoiding common pitfalls, optimizing test performance, and following framework conventions. Origin: **Microsoft Engineering best practices**, distilled from internal usage at scale.
+- **[Playwright Best Practices](https://playwright.dev/docs/best-practices)** _(January 2020)_: **Microsoft Playwright Team's curated recommendations** - Essential for avoiding common pitfalls, optimizing test performance, and following framework conventions. Origin: **Microsoft Engineering best practices**, distilled from internal usage at scale.
 
-- **[Page Object Model](https://playwright.dev/docs/pom)** *(January 2020)*: **Playwright's official POM implementation guide** - Critical for building maintainable test architectures and reducing code duplication. Origin: **Microsoft Playwright Team**, adapting Martin Fowler's pattern *(2013)* for modern browser automation.
+- **[Page Object Model](https://playwright.dev/docs/pom)** _(January 2020)_: **Playwright's official POM implementation guide** - Critical for building maintainable test architectures and reducing code duplication. Origin: **Microsoft Playwright Team**, adapting Martin Fowler's pattern _(2013)_ for modern browser automation.
 
 #### **Advanced Implementation Techniques:**
 
-- **[Test Fixtures](https://playwright.dev/docs/test-fixtures)** *(January 2020)*: **Dependency injection and test setup patterns** - Advanced concept for creating reusable, composable test utilities and maintaining clean test architecture. Origin: **Microsoft Playwright Team**, inspired by pytest fixtures *(2004)*.
+- **[Test Fixtures](https://playwright.dev/docs/test-fixtures)** _(January 2020)_: **Dependency injection and test setup patterns** - Advanced concept for creating reusable, composable test utilities and maintaining clean test architecture. Origin: **Microsoft Playwright Team**, inspired by pytest fixtures _(2004)_.
 
-- **[Visual Comparisons](https://playwright.dev/docs/test-screenshots)** *(January 2020)*: **Screenshot testing and visual regression detection** - Modern approach to UI testing that complements functional testing. Origin: **Microsoft Playwright Team**, leveraging computer vision techniques for test automation.
+- **[Visual Comparisons](https://playwright.dev/docs/test-screenshots)** _(January 2020)_: **Screenshot testing and visual regression detection** - Modern approach to UI testing that complements functional testing. Origin: **Microsoft Playwright Team**, leveraging computer vision techniques for test automation.
 
 #### **Community Expert Resources:**
 
-- **[Playwright Solutions](https://playwrightsolutions.com)** *(2023)*: **Butch Mayhew's comprehensive tutorial library** - **Playwright Ambassador's** curated collection of practical solutions covering advanced testing scenarios, CI/CD integration, and real-world implementation challenges. Origin: **Playwright Ambassador Butch Mayhew**, **LinkedIn Learning instructor** and **Howdy QA consultancy founder** with 100+ practical tutorials and problem-solving guides.
+- **[Playwright Solutions](https://playwrightsolutions.com)** _(2023)_: **Butch Mayhew's comprehensive tutorial library** - **Playwright Ambassador's** curated collection of practical solutions covering advanced testing scenarios, CI/CD integration, and real-world implementation challenges. Origin: **Playwright Ambassador Butch Mayhew**, **LinkedIn Learning instructor** and **Howdy QA consultancy founder** with 100+ practical tutorials and problem-solving guides.
 
-- **[Learning Playwright - LinkedIn Learning](https://www.linkedin.com/learning/)** *(November 2024)*: **Professional video course series** - **Structured curriculum** from basic concepts to advanced implementation, taught by **Playwright Ambassador Butch Mayhew**. Comprehensive hands-on training with **enterprise-level best practices** and real-world scenarios. Origin: **LinkedIn Learning platform**, officially recognized corporate training resource.
+- **[Learning Playwright - LinkedIn Learning](https://www.linkedin.com/learning/)** _(November 2024)_: **Professional video course series** - **Structured curriculum** from basic concepts to advanced implementation, taught by **Playwright Ambassador Butch Mayhew**. Comprehensive hands-on training with **enterprise-level best practices** and real-world scenarios. Origin: **LinkedIn Learning platform**, officially recognized corporate training resource.
 
-- **[Awesome Sites to Test On](https://github.com/BMayhew/awesome-sites-to-test-on)** *(2020)*: **Community-curated practice environments** - Essential resource for hands-on learning with **972+ GitHub stars**, providing diverse testing scenarios from basic forms to complex applications. Origin: **Butch Mayhew's open-source project**, continuously maintained with community contributions for skill development.
+- **[Awesome Sites to Test On](https://github.com/BMayhew/awesome-sites-to-test-on)** _(2020)_: **Community-curated practice environments** - Essential resource for hands-on learning with **972+ GitHub stars**, providing diverse testing scenarios from basic forms to complex applications. Origin: **Butch Mayhew's open-source project**, continuously maintained with community contributions for skill development.
 
 ### Community and Support
 
@@ -813,13 +816,13 @@ npm run type-check
 
 #### **Official Development Channels:**
 
-- **[Playwright GitHub](https://github.com/microsoft/playwright)** *(January 2020)*: **Microsoft's official repository** - Primary channel for bug reports, feature requests, and source code access. **Direct maintainer involvement** with typical response within 24-48 hours for critical issues. Origin: **Microsoft Corporation**, with 45k+ stars and active development.
+- **[Playwright GitHub](https://github.com/microsoft/playwright)** _(January 2020)_: **Microsoft's official repository** - Primary channel for bug reports, feature requests, and source code access. **Direct maintainer involvement** with typical response within 24-48 hours for critical issues. Origin: **Microsoft Corporation**, with 45k+ stars and active development.
 
 #### **Community-Driven Support:**
 
-- **[Playwright Slack](https://playwright.dev/community/)** *(2020)*: **Real-time community discussions** - Ideal for quick questions, troubleshooting during development, and networking with other practitioners. **Community-moderated** with both users and maintainers participating. Origin: **Microsoft-sponsored community space**.
+- **[Playwright Slack](https://playwright.dev/community/)** _(2020)_: **Real-time community discussions** - Ideal for quick questions, troubleshooting during development, and networking with other practitioners. **Community-moderated** with both users and maintainers participating. Origin: **Microsoft-sponsored community space**.
 
-- **[Stack Overflow](https://stackoverflow.com/questions/tagged/playwright)** *(2008 platform, Playwright tag 2020)*: **Structured Q&A knowledge base** - Best for detailed technical questions requiring comprehensive answers. **Searchable solution database** with voting system for answer quality. Origin: **Stack Exchange Network**, with Playwright-tagged questions since framework release.
+- **[Stack Overflow](https://stackoverflow.com/questions/tagged/playwright)** _(2008 platform, Playwright tag 2020)_: **Structured Q&A knowledge base** - Best for detailed technical questions requiring comprehensive answers. **Searchable solution database** with voting system for answer quality. Origin: **Stack Exchange Network**, with Playwright-tagged questions since framework release.
 
 #### **Support Channel Selection Guide:**
 
