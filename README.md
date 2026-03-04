@@ -19,27 +19,27 @@ An Overengineered, production-ready test automation framework built with GitHub 
 <tr valign="top">
 <td>
 
-[Overview](#-overview)  
-[Features](#-features)  
-[Quick Start](#-quick-start)  
-[Project Structure](#-project-structure)
+• [Overview](#-overview)  
+• [Features](#-features)  
+• [Quick Start](#-quick-start)  
+• [Project Structure](#-project-structure)
 
 </td>
 <td>
 
-[Architecture](#️-architecture)  
-[Test Scenarios](#-test-scenarios)  
-[Configuration](#️-configuration)  
-[Running Tests](#️-running-tests)
+• [Architecture](#️-architecture)  
+• [Test Scenarios](#-test-scenarios)  
+• [Configuration](#️-configuration)  
+• [Running Tests](#️-running-tests)
 
 </td>
 <td>
 
-[Reports and Artifacts](#-reports-and-artifacts)  
-[CI/CD Pipeline](#-cicd-pipeline)  
-[Development](#️-development)  
-[Contributing](#-contributing)  
-[Resources](#-resources)
+• [Reports and Artifacts](#-reports-and-artifacts)  
+• [CI/CD Pipeline](#-cicd-pipeline)  
+• [Development](#️-development)  
+• [Contributing](#-contributing)  
+• [Resources](#-resources)
 
 </td>
 </tr>
