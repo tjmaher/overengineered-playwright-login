@@ -12,34 +12,34 @@ An Overengineered, production-ready test automation framework built with GitHub 
 
 <table>
 <tr>
-<th width="33%">🚀 Getting Started</th>
-<th width="33%">🔧 Technical Details</th>
-<th width="34%">📊 Operations & Resources</th>
+<th width="33%">Getting Started</th>
+<th width="33%">Technical Details</th>
+<th width="34%">Operations & Resources</th>
 </tr>
 <tr valign="top">
 <td>
 
-**1.** [🎯 Overview](#-overview)  
-**2.** [✨ Features](#-features)  
-**3.** [🚀 Quick Start](#-quick-start)  
-**4.** [📖 Project Structure](#-project-structure)
+[Overview](#-overview)  
+[Features](#-features)  
+[Quick Start](#-quick-start)  
+[Project Structure](#-project-structure)
 
 </td>
 <td>
 
-**5.** [🏗️ Architecture](#️-architecture)  
-**6.** [🧪 Test Scenarios](#-test-scenarios)  
-**7.** [⚙️ Configuration](#️-configuration)  
-**8.** [🏃‍♂️ Running Tests](#️-running-tests)
+[Architecture](#️-architecture)  
+[Test Scenarios](#-test-scenarios)  
+[Configuration](#️-configuration)  
+[Running Tests](#️-running-tests)
 
 </td>
 <td>
 
-**9.** [📊 Reports and Artifacts](#-reports-and-artifacts)  
-**10.** [🔄 CI/CD Pipeline](#-cicd-pipeline)  
-**11.** [🛠️ Development](#️-development)  
-**12.** [🤝 Contributing](#-contributing)  
-**13.** [📚 Resources](#-resources)
+[Reports and Artifacts](#-reports-and-artifacts)  
+[CI/CD Pipeline](#-cicd-pipeline)  
+[Development](#️-development)  
+[Contributing](#-contributing)  
+[Resources](#-resources)
 
 </td>
 </tr>
